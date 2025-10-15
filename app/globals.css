@@ -1,8 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --clr-primary: hsl(0, 0%, 100%);
+  --clr-secondary: hsl(159, 51%, 14%);
+  --clr-accent: hsl(48, 91%, 50%);
+  --clr-accent-3: hsla(159, 51%, 14%, 0.8);
+  --clr-color-4: hsl(100, 100%, 96%);
 }
 
 @theme inline {
