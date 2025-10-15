@@ -1,6 +1,5 @@
 import { bookLink } from '@/utils/links';
 import Link from 'next/link';
-import Buttons from '../buttons/Buttons';
 import Button from '../buttons/Button';
 
 const BookNowButton = () => {

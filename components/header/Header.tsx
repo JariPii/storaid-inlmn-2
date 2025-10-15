@@ -11,7 +11,6 @@ const Header = () => {
         <Contacts />
         <Socials />
       </div>
-      {/* <div className='flex justify-between w-full py-4 px-8'> */}
       <div className='grid grid-cols-[auto_1fr_auto] justify-between w-full py-4 px-8'>
         <Logo />
         <NavLinks />
