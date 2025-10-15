@@ -1,17 +1,13 @@
 import { bookLink } from '@/utils/links';
 import Link from 'next/link';
 import Buttons from '../buttons/Buttons';
+import Button from '../buttons/Button';
 
 const BookNowButton = () => {
   return (
-    <>
-      <Buttons />
-    </>
-    // <button>
-    //   <div className='text-amber-300 text-3xl'>
-    //     <Link href={bookLink.href}>{bookLink.label}</Link>
-    //   </div>
-    // </button>
+    <Button>
+      <Link href={bookLink.href}>{bookLink.label}</Link>
+    </Button>
   );
 };
 export default BookNowButton;
