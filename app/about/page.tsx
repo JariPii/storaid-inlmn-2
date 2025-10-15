@@ -1,12 +1,12 @@
-import Hero from '@/components/hero/Hero';
 import HeroAbout from '@/components/hero/HeroAbout';
+import Section from '@/components/utils/Section';
 
 const AboutPage = () => {
   return (
     <div>
-      <Hero>
+      <Section>
         <HeroAbout />
-      </Hero>
+      </Section>
     </div>
   );
 };

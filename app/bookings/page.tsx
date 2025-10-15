@@ -1,12 +1,12 @@
-import Hero from '@/components/hero/Hero';
 import HeroBooking from '@/components/hero/HeroBooking';
+import Section from '@/components/utils/Section';
 
 const BookingsPage = () => {
   return (
     <div>
-      <Hero>
+      <Section>
         <HeroBooking />
-      </Hero>
+      </Section>
     </div>
   );
 };
