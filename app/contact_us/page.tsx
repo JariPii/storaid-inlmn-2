@@ -1,4 +1,13 @@
+import Hero from '@/components/hero/Hero';
+import HeroContact from '@/components/hero/HeroContact';
+
 const ContactUsPage = () => {
-  return <div>ContactUsPage</div>;
+  return (
+    <div>
+      <Hero>
+        <HeroContact />
+      </Hero>
+    </div>
+  );
 };
 export default ContactUsPage;
