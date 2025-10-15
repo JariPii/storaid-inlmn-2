@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import logo from '../../public/images/Logo.png';
+import Image from 'next/image';
 
 const Logo = () => {
   return (
-    <div>
-      <Link href='/'>LOGO HERE</Link>
-    </div>
+    <Link href='/' className='fles items-center justify-center'>
+      <Image src={logo} alt='Company logo' />
+    </Link>
   );
 };
 export default Logo;
