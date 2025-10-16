@@ -41,4 +41,8 @@ body {
   .button-hover-light {
     @apply hover:bg-(--clr-secondary) hover:text-white;
   }
+
+  .image-frame {
+    @apply border-[5px] border-(--clr-color-2);
+  }
 }
