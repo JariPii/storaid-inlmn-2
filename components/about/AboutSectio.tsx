@@ -17,7 +17,7 @@ const AboutSection = () => {
         <Image
           src={moversImg}
           alt='Moving truck and movers trying to lift a big window.'
-          className='border-[5px] border-(--clr-color-2)'
+          className='image-frame'
         />
         <StatsCard className='absolute -bottom-1/12 left-1/20' />
       </div>
