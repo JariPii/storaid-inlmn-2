@@ -1,3 +1,4 @@
+import AboutSection from '@/components/about/AboutSectio';
 import HeroHome from '@/components/hero/HeroHome';
 import Section from '@/components/utils/Section';
 
@@ -7,6 +8,8 @@ const HomePage = () => {
       <Section>
         <HeroHome />
       </Section>
+
+      <AboutSection />
     </div>
   );
 };
