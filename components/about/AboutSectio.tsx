@@ -3,7 +3,6 @@ import Section from '../utils/Section';
 import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
 import Tile from '../utils/Tiles';
 import Button from '../buttons/Button';
-import { FaPhone } from 'react-icons/fa6';
 import { MdPhone } from 'react-icons/md';
 import StatsCard from '../utils/StatsCard';
 
