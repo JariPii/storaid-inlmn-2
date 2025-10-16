@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
 type SectionProps = {
-  variant?: 'dark' | 'light';
+  variant?: 'dark' | 'light' | 'brands';
   children: React.ReactNode;
   className?: string;
 };
@@ -10,6 +10,7 @@ const Section = ({ variant = 'dark', children, className }: SectionProps) => {
   const backgroundColor = {
     dark: 'bg-(--clr-accent-3)',
     light: 'bg-(--clr-primary)',
+    brands: 'bg-(--clr-color-3)',
   };
 
   return (
