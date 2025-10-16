@@ -1,13 +1,14 @@
-import Tile from '@/components/utils/Tiles';
+import { testimonials } from '../../mockData';
+import TestimonialCard from '@/components/testimonials/TestimonialCard';
 
 const ErrorPage = () => {
   return (
-    <div>
-      <Tile
-        title='Vision'
-        description='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque laudantium.'
-      />
-    </div>
+    <>
+      <h1>TESTIMONIALS</h1>
+      {testimonials.map((testimonial) => (
+        <TestimonialCard key={testimonial.id} {...testimonial} />
+      ))}
+    </>
   );
 };
 export default ErrorPage;
