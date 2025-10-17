@@ -34,6 +34,7 @@ const TestimonialCard = ({
             width={64}
             height={64}
             className='rounded-full'
+            unoptimized
           />
           <div>
             <h4 className='text-xl font-bold'>{name}</h4>
