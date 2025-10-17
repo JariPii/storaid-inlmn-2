@@ -1,4 +1,4 @@
-import { FaEnvelope, FaEnvelopeOpen, FaPhone } from 'react-icons/fa6';
+import { FaEnvelopeOpen } from 'react-icons/fa6';
 import { MdPhone } from 'react-icons/md';
 
 const Contacts = () => {

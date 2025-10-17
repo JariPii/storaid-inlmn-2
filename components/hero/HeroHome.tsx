@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import image from '../../public/images/Rectangle2.svg';
-import Buttons from '../buttons/Buttons';
 import Button from '../buttons/Button';
 import Link from 'next/link';
 

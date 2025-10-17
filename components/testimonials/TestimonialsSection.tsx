@@ -1,11 +1,9 @@
 import { testimonials } from '@/mockData';
 import Section from '../utils/Section';
 import TestimonialCard from './TestimonialCard';
-import bgImg from '../../public/images/BgImg.png';
 
 const TestimonialsSection = () => {
   return (
-    // <div className='bg-[url(/images/BgImg.png)]'>
     <Section backroundImage='with' className='py-24'>
       <div className='flex flex-col items-center gap-4'>
         <h3 className='text-(--clr-accent) text-2xl font-bold'>Testimonials</h3>
@@ -24,7 +22,6 @@ const TestimonialsSection = () => {
         </div>
       </div>
     </Section>
-    // </div>
   );
 };
 export default TestimonialsSection;
