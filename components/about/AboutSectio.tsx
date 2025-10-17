@@ -27,7 +27,7 @@ const AboutSection = () => {
         <h4 className='text-[3.25rem] leading-[52px] tracking-tight font-bold font-urbanist'>
           Providing a Safe Space for Your Treasured Items
         </h4>
-        <p className='leading-6 font-norma font-inter'>
+        <p className='leading-6 font-normal font-inter'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac
           blandit nisi, non sodales augue. Phasellus eget elit gravida.
