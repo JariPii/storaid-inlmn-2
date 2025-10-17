@@ -4,7 +4,7 @@ import HeroHome from '@/components/hero/HeroHome';
 import ServicesSection from '@/components/services/ServicesSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import Section from '@/components/utils/Section';
-import ErrorPage from './404/page';
+import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 
 const HomePage = () => {
   return (
@@ -16,6 +16,7 @@ const HomePage = () => {
       <BrandsBar />
       <ServicesSection />
       <TestimonialsSection />
+      <WhyChooseUs />
     </main>
   );
 };
