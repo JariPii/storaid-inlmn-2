@@ -11,7 +11,7 @@ type ButtonProps = {
   text?: string;
   href?: string;
   className?: string;
-  children: string;
+  children: React.ReactNode;
 };
 
 const Button = ({
