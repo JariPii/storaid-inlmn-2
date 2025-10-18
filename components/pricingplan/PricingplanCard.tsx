@@ -68,7 +68,7 @@ const PricingplanCard = ({
           </li>
         ))}
       </ul>
-      <Button>{buttonLabel}</Button>
+      <Button hover='dark'>{buttonLabel}</Button>
     </div>
   );
 };
