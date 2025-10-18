@@ -109,3 +109,40 @@ export const pricingPlans: Pricingplan[] = [
     ],
   },
 ];
+
+import img from '@/public/images/layoutImages/chuttersnap-BNBA1h-NgdY-unsplash.jpg';
+
+type BlogPost = {
+  image: string;
+  alt: string;
+  date: string;
+  title: string;
+  content: string;
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    image: img.src,
+    alt: 'Alt text',
+    date: 'August 17, 2025',
+    title: 'Safe and Secure: The Importance of Choosing the Right Storage',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a sem magna. Etiam ac odio sit amet lorem…',
+  },
+  {
+    image: img.src,
+    alt: 'Alt text',
+    date: 'July 12, 2025',
+    title: 'Storage Trends 2024: What’s New in the World of Storage',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a sem magna. Etiam ac odio sit amet lorem…',
+  },
+  {
+    image: img.src,
+    alt: 'Alt text',
+    date: 'April 8, 2025',
+    title: 'Free Up Your Space, Free Up Your Life: The Power of Decluttering',
+    content:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a sem magna. Etiam ac odio sit amet lorem…',
+  },
+];
