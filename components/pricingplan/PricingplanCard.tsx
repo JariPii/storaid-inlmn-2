@@ -55,6 +55,7 @@ const PricingplanCard = ({
             className='flex gap-4 group-hover:text-(--clr-primary)'
           >
             <div className=' bg-(--clr-secondary) group-hover:bg-(--clr-accent) rounded-full flex items-center justify-center p-1'>
+              {/* TODO: Change icon to FaCircleCheck */}
               <FaCheck className='text-(--clr-color-4) group-hover:text-(--clr-secondary)' />
             </div>
             <span>{item.text}</span>
