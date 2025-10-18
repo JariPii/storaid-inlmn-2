@@ -22,6 +22,7 @@ This is the second assigment we got. It's a page where we are to create reusable
         - [This is the utility funtion for class name merging](#this-is-the-utility-funtion-for-class-name-merging)
         - [Example of usage](#example-of-usage)
         - [Npm links for clsx and Tailwind-merge](#npm-links-for-clsx-and-tailwind-merge)
+      - [File tree](#file-tree)
 
 <hr>
 
@@ -149,5 +150,119 @@ I use the cn() utility to merge default Tailwind classes with additional classNa
 clsx -> [clsx](https://www.npmjs.com/package/clsx)
 
 tailwind-merge -> [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
+
+#### File tree
+
+```
+├── 📁 app
+│   ├── 📁 404
+│   │   └── 📄 page.tsx
+│   ├── 📁 about
+│   │   └── 📄 page.tsx
+│   ├── 📁 bookings
+│   │   └── 📄 page.tsx
+│   ├── 📁 contact_us
+│   │   └── 📄 page.tsx
+│   ├── 📁 our_services
+│   │   └── 📄 page.tsx
+│   ├── 📄 favicon.ico
+│   ├── 🎨 globals.css
+│   ├── 📄 layout.tsx
+│   └── 📄 page.tsx
+├── 📁 components
+│   ├── 📁 about
+│   │   └── 📄 AboutSectio.tsx
+│   ├── 📁 blog
+│   │   ├── 📄 BlogCard.tsx
+│   │   └── 📄 BlogSection.tsx
+│   ├── 📁 brands
+│   │   └── 📄 BrandsBar.tsx
+│   ├── 📁 buttons
+│   │   ├── 📄 Button.tsx
+│   │   └── 📄 Buttons.tsx
+│   ├── 📁 footer
+│   │   └── 📄 Footer.tsx
+│   ├── 📁 form
+│   │   ├── 📄 Form.tsx
+│   │   └── 📄 InputField.tsx
+│   ├── 📁 header
+│   │   ├── 📄 BookNow.tsx
+│   │   ├── 📄 Contacts.tsx
+│   │   ├── 📄 Header.tsx
+│   │   ├── 📄 Logo.tsx
+│   │   ├── 📄 NavLinks.tsx
+│   │   └── 📄 Socials.tsx
+│   ├── 📁 hero
+│   │   ├── 📄 HeroAbout.tsx
+│   │   ├── 📄 HeroBooking.tsx
+│   │   ├── 📄 HeroContact.tsx
+│   │   ├── 📄 HeroHome.tsx
+│   │   └── 📄 HeroServices.tsx
+│   ├── 📁 pricingplan
+│   │   ├── 📄 PricingSection.tsx
+│   │   └── 📄 PricingplanCard.tsx
+│   ├── 📁 services
+│   │   └── 📄 ServicesSection.tsx
+│   ├── 📁 subscribe
+│   │   └── 📄 SubscribeSection.tsx
+│   ├── 📁 suggestion
+│   │   └── 📄 SuggestionSection.tsx
+│   ├── 📁 testimonials
+│   │   ├── 📄 TestimonialCard.tsx
+│   │   └── 📄 TestimonialsSection.tsx
+│   ├── 📁 utils
+│   │   ├── 📄 Section.tsx
+│   │   ├── 📄 StatsCard.tsx
+│   │   └── 📄 Tiles.tsx
+│   └── 📁 why_choose_us
+│       └── 📄 WhyChooseUs.tsx
+├── 📁 lib
+│   └── 📄 utils.ts
+├── 📁 public
+│   ├── 📁 images
+│   │   ├── 📁 icons
+│   │   │   ├── 📄 CheckMark.js
+│   │   │   ├── 🖼️ broom.svg
+│   │   │   ├── 🖼️ check.svg
+│   │   │   ├── 🖼️ checkmark.svg
+│   │   │   ├── 🖼️ clock.svg
+│   │   │   ├── 📄 icons.ts
+│   │   │   ├── 🖼️ moneybag.svg
+│   │   │   └── 🖼️ padlock.svg
+│   │   ├── 📁 layoutImages
+│   │   │   ├── 🖼️ alberto-rodriguez--aCrA9FmT8Y-unsplash.jpg
+│   │   │   ├── 🖼️ centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg
+│   │   │   ├── 🖼️ chuttersnap-BNBA1h-NgdY-unsplash.jpg
+│   │   │   ├── 🖼️ jacques-dillies-jcav1COVvOc-unsplash.jpg
+│   │   │   └── 🖼️ robinson-greig-HrnAxAUwle8-unsplash.jpg
+│   │   ├── 🖼️ 54b19ada-d53e-4ee9-8882-9dfed1bf1396.jpg
+│   │   ├── 🖼️ 62424a3e-9cdc-422f-a2c8-5cce272934e2.jpg
+│   │   ├── 🖼️ BgImg.png
+│   │   ├── 🖼️ Logo.png
+│   │   ├── 🖼️ Logoipsum1.png
+│   │   ├── 🖼️ Logoipsum2.png
+│   │   ├── 🖼️ Logoipsum3.png
+│   │   ├── 🖼️ Logoipsum4.png
+│   │   ├── 🖼️ Logoipsum5.png
+│   │   ├── 🖼️ Rectangle2.svg
+│   │   ├── 🖼️ quotes.svg
+│   │   └── 🖼️ star.svg
+│   ├── 🖼️ file.svg
+│   ├── 🖼️ globe.svg
+│   ├── 🖼️ next.svg
+│   ├── 🖼️ vercel.svg
+│   └── 🖼️ window.svg
+├── 📁 utils
+│   └── 📄 links.ts
+├── ⚙️ .gitignore
+├── 📝 README.md
+├── 📄 eslint.config.mjs
+├── 📄 mockData.ts
+├── 📄 next.config.ts
+├── ⚙️ package-lock.json
+├── ⚙️ package.json
+├── 📄 postcss.config.mjs
+└── ⚙️ tsconfig.json
+```
 
 [Back to top](#table-of-content)
