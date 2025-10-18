@@ -47,7 +47,7 @@ const PricingplanCard = ({
         {description}
       </p>
 
-      <div className='border-2 w-full'></div>
+      <div className='border-b-[1px] w-full group-hover:border-(--clr-primary)'></div>
       <ul className='flex flex-col gap-2'>
         {checks.map((item, index) => (
           <li
