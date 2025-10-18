@@ -57,13 +57,6 @@ const PricingplanCard = ({
             <div className=' bg-(--clr-secondary) group-hover:bg-(--clr-accent) rounded-full flex items-center justify-center p-1'>
               <FaCheck className='text-(--clr-color-4) group-hover:text-(--clr-secondary)' />
             </div>
-            {/* <Image
-              src={check}
-              alt='Check icon'
-              width={20}
-              height={20}
-              className='w-5 h-5 text-amber-800'
-            /> */}
             <span>{item.text}</span>
           </li>
         ))}
