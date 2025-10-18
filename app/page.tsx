@@ -1,16 +1,14 @@
 import AboutSection from '@/components/about/AboutSectio';
-import BlogCard from '@/components/blog/BlogCard';
 import BlogSection from '@/components/blog/BlogSection';
 import BrandsBar from '@/components/brands/BrandsBar';
-import InputField from '@/components/form/InputField';
 import HeroHome from '@/components/hero/HeroHome';
 import PricingSection from '@/components/pricingplan/PricingSection';
 import ServicesSection from '@/components/services/ServicesSection';
+import SubscribeSection from '@/components/subscribe/SubscribeSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import Section from '@/components/utils/Section';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
-import { blogPosts } from '@/mockData';
 
 const HomePage = () => {
   return (
@@ -26,6 +24,7 @@ const HomePage = () => {
       <PricingSection />
       <SuggestionSection />
       <BlogSection />
+      <SubscribeSection />
     </main>
   );
 };

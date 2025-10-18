@@ -11,7 +11,7 @@ type ButtonProps = {
   text?: string;
   href?: string;
   className?: string;
-  children: React.ReactNode;
+  children: string;
 };
 
 const Button = ({
@@ -32,7 +32,12 @@ const Button = ({
     dark: 'hover:bg-(--clr-primary)',
   };
   return (
-    <button className={cn(`button-primary ${buttonHover[hover]} py-10`)}>
+    <button
+      className={cn(
+        `button-primary ${buttonHover[hover]} py-10 font-semibold`,
+        className
+      )}
+    >
       {children}
     </button>
   );
