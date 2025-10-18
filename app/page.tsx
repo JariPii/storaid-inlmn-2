@@ -2,6 +2,7 @@ import AboutSection from '@/components/about/AboutSectio';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSection from '@/components/blog/BlogSection';
 import BrandsBar from '@/components/brands/BrandsBar';
+import InputField from '@/components/form/InputField';
 import HeroHome from '@/components/hero/HeroHome';
 import PricingSection from '@/components/pricingplan/PricingSection';
 import ServicesSection from '@/components/services/ServicesSection';
