@@ -1,6 +1,6 @@
 # Assignment 2 at Ec Utbildning
 
-This is the second assigment we got. It a page where we are to create reusable components and create the page from a figma file.
+This is the second assigment we got. It's a page where we are to create reusable components and create the page from a figma file.
 
 <hr>
 
@@ -147,6 +147,7 @@ I use the cn() utility to merge default Tailwind classes with additional classNa
 ##### Npm links for clsx and Tailwind-merge
 
 clsx -> [clsx](https://www.npmjs.com/package/clsx)
+
 tailwind-merge -> [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
 
 [Back to top](#table-of-content)
