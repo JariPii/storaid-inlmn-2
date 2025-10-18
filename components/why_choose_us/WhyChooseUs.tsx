@@ -6,7 +6,7 @@ import { padlock, moneybag, broom, clock } from '@/public/images/icons/icons';
 const WhyChooseUs = () => {
   return (
     <div>
-      <Section variant='light' className='flex flex-col gap-4 py-20'>
+      <Section variant='brands' className='flex flex-col gap-4 py-20'>
         <div>
           <h3 className='text-2xl text-(--clr-accent) font-bold'>
             Why Choose Us
