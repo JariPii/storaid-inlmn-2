@@ -15,7 +15,7 @@ const NavLinks = () => {
             href={link.href}
             className={`${
               isActive ? 'text-(--clr-accent)' : 'text-(--clr-secondary)'
-            }`}
+            } hover:text-(--clr-accent)`}
           >
             {link.label}
           </Link>
