@@ -3,6 +3,7 @@ import BrandsBar from '@/components/brands/BrandsBar';
 import HeroHome from '@/components/hero/HeroHome';
 import PricingSection from '@/components/pricingplan/PricingSection';
 import ServicesSection from '@/components/services/ServicesSection';
+import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import Section from '@/components/utils/Section';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
@@ -19,6 +20,7 @@ const HomePage = () => {
       <TestimonialsSection />
       <WhyChooseUs />
       <PricingSection />
+      <SuggestionSection />
     </main>
   );
 };
