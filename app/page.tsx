@@ -24,7 +24,7 @@ const HomePage = () => {
       <PricingSection />
       <SuggestionSection />
       <BlogSection />
-      <SubscribeSection />
+      {/* <SubscribeSection /> */}
     </main>
   );
 };

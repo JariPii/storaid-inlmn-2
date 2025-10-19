@@ -16,7 +16,7 @@ const AboutPage = () => {
       <BrandsBar />
       <TestimonialsSection />
       <WhyChooseUs />
-      <SubscribeSection />
+      {/* <SubscribeSection /> */}
     </div>
   );
 };
