@@ -21,7 +21,7 @@ const Section = ({
 
   const withBackgroundImage = {
     with: 'bg-[url(/images/BgImg.png)] bg-no-repeat bg-cover bg-top',
-    withOut: 'bg-none',
+    withOut: 'bg-transparent',
   };
 
   return (

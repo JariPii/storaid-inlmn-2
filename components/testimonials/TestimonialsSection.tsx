@@ -2,9 +2,16 @@ import { testimonials } from '@/mockData';
 import Section from '../utils/Section';
 import TestimonialCard from './TestimonialCard';
 
-const TestimonialsSection = () => {
+type TestimonialBackgroundProps = {
+  backgroundImage?: 'with' | 'withOut';
+};
+
+const TestimonialsSection = ({
+  backgroundImage = 'withOut',
+}: TestimonialBackgroundProps) => {
   return (
-    <Section backroundImage='with' className='py-24'>
+    <Section backroundImage={backgroundImage} className='py-24'>
+      {/* <div className='py-20'> */}
       <div className='flex flex-col items-center gap-4'>
         <h3 className='text-(--clr-accent) text-2xl font-bold'>Testimonials</h3>
         <h4 className='text-[3.125rem] text-(--clr-primary) font-bold'>
@@ -21,6 +28,7 @@ const TestimonialsSection = () => {
           ))}
         </div>
       </div>
+      {/* </div> */}
     </Section>
   );
 };

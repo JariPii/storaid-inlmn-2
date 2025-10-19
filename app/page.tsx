@@ -19,8 +19,8 @@ const HomePage = () => {
       <AboutSection />
       <BrandsBar />
       <ServicesSection />
-      <TestimonialsSection />
-      <WhyChooseUs />
+      <TestimonialsSection backgroundImage='with' />
+      <WhyChooseUs variant='brands' />
       <PricingSection />
       <SuggestionSection />
       <BlogSection />
