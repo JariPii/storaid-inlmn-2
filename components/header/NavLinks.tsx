@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 const NavLinks = () => {
   const pathname = usePathname();
   return (
-    <div className='flex items-center justify-center gap-6 text-[var(--clr-secondary)] font-semibold size-[1.125rem] w-full h-full '>
+    <nav className='flex items-center justify-center gap-6 text-[var(--clr-secondary)] font-semibold size-[1.125rem] w-full h-full '>
       {links.map((link) => {
         const isActive = pathname === link.href;
         return (
@@ -21,7 +21,7 @@ const NavLinks = () => {
           </Link>
         );
       })}
-    </div>
+    </nav>
   );
 };
 export default NavLinks;
