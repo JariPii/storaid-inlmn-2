@@ -1,25 +1,24 @@
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaXTwitter,
-  FaYoutube,
-} from 'react-icons/fa6';
+import { socialLinks } from '@/utils/socialLinks';
 
 const HeaderSocials = () => {
   return (
     <div className='flex gap-4'>
-      <div className='h-auto rounded-full bg-(--clr-accent) p-1'>
-        <FaFacebookF className='w-[1.5rem] h-[1.5rem] text-[var(--clr-secondary)] ' />
-      </div>
-      <div className='h-auto rounded-full bg-(--clr-accent) p-1'>
-        <FaXTwitter className='w-[1.5rem] h-[1.5rem] text-[var(--clr-secondary)] ' />
-      </div>
-      <div className='h-auto rounded-full bg-(--clr-accent) p-1'>
-        <FaInstagram className='w-[1.5rem] h-[1.5rem] text-[var(--clr-secondary)] ' />
-      </div>
-      <div className='h-auto rounded-full bg-(--clr-accent) p-1'>
-        <FaYoutube className='w-[1.5rem] h-[1.5rem] text-[var(--clr-secondary)] ' />
-      </div>
+      {socialLinks.map((link, i) => {
+        const Icon = link.icon;
+        const { ariaLabelName, href } = link;
+        return (
+          <div key={i} className='h-auto rounded-full bg-(--clr-accent) p-1'>
+            <a
+              href={href}
+              aria-label={ariaLabelName}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <Icon className='w-[1.5rem] h-[1.5rem] text-(--clr-secondary)' />
+            </a>
+          </div>
+        );
+      })}
     </div>
   );
 };

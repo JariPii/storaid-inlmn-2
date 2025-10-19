@@ -1,8 +1,8 @@
-import BookNowButton from './BookNow';
 import Logo from './Logo';
 import NavLinks from './NavLinks';
 import Socials from './Socials';
 import Contacts from './Contacts';
+import NavButton from '../buttons/NavButton';
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
       <div className='grid grid-cols-[auto_1fr_auto] justify-between w-full py-4 px-8'>
         <Logo />
         <NavLinks />
-        <BookNowButton />
+        <NavButton dest='bookings' />
       </div>
     </div>
   );

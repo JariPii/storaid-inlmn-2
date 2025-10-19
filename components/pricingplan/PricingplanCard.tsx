@@ -12,6 +12,8 @@ type PricingplanCardProps = {
   className?: string;
 };
 
+// TODO: Add destination to bookings page with chosen unit allready set in the form
+
 const PricingplanCard = ({
   title,
   //   currency,
