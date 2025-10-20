@@ -1,6 +1,11 @@
+import { subscribeEmil } from '@/utils/actions';
 import Button from '../buttons/Button';
+import Form from '../form/Form';
 import InputField from '../form/InputField';
 import Section from '../utils/Section';
+import SubscribeForm from '../form/SubscribeForm';
+
+// TODO: Send email action
 
 const SubscribeSection = () => {
   return (
@@ -15,15 +20,17 @@ const SubscribeSection = () => {
         </p>
       </div>
       <div className='flex items-center justify-center gap-4'>
-        <InputField
-          labelVisibility='hidden'
-          type='email'
-          id='subscribe'
-          name='subscribe'
-          placeholder='Enter your email'
-          className='h-12'
-        />
-        <Button className='h-12'>Submit</Button>
+        {/* <Form action={subscribeEmil}>
+          <InputField
+            labelVisibility='hidden'
+            type='email'
+            name='subscribe'
+            placeholder='Enter your email'
+            className='h-12'
+          />
+          <Button className='h-12'>Submit</Button>
+        </Form> */}
+        <SubscribeForm />
       </div>
     </Section>
   );
