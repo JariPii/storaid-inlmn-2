@@ -28,13 +28,18 @@ const Accordion = ({
         )}
         onClick={() => onToggle?.(id)}
       >
-        <h3 className={cn('font-semibold', { 'text-(--clr-primary)': open })}>
+        <h3
+          className={cn(
+            'font-semibold transition-all duration-500',
+            !open ? 'text-black' : 'text-(--clr-primary)'
+          )}
+        >
           {title}
         </h3>
         <FaChevronDown
           className={cn(
-            'transition-transform duration-500',
-            !open ? 'rotate-0 ' : 'rotate-180 text-(--clr-primary)'
+            'transition-all duration-500',
+            !open ? 'rotate-0 text-black' : 'rotate-180 text-(--clr-primary)'
           )}
         />
       </div>
