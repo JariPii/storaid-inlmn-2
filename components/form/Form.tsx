@@ -1,4 +1,5 @@
 'use client';
+import { cn } from '@/lib/utils';
 import { useActionState, useEffect } from 'react';
 
 export type actionFunction = (
@@ -14,9 +15,10 @@ const initialState = {
 type FormProps = {
   action: actionFunction;
   children: React.ReactNode;
+  className?: string;
 };
 
-const Form = ({ action, children }: FormProps) => {
+const Form = ({ action, children, className }: FormProps) => {
   const [state, formAction] = useActionState(action, initialState);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const Form = ({ action, children }: FormProps) => {
   }, [state]);
 
   return (
-    <form action={formAction}>
+    <form action={formAction} className={cn('', className)}>
       {children} {state.message && <p>{state.message}</p>}
     </form>
   );
