@@ -2,6 +2,7 @@
 @import 'tailwindcss';
 
 :root {
+  interpolate-size: allow-keywords;
   --background: #ffffff;
   --clr-primary: hsl(0, 0%, 100%);
   --clr-secondary: hsl(159, 51%, 14%);
@@ -45,5 +46,21 @@ body {
 
   .image-frame {
     @apply border-[5px] border-(--clr-color-2);
+  }
+
+  .opens {
+    @apply rotate-180 duration-1000;
+  }
+
+  .closes {
+    @apply rotate-180 duration-1000;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

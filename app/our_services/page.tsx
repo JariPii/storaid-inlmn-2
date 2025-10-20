@@ -1,3 +1,4 @@
+import FAQSection from '@/components/faq/FAQSection';
 import HeroServices from '@/components/hero/HeroServices';
 import ServicesSection from '@/components/services/ServicesSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
@@ -13,6 +14,7 @@ const OurServicesPage = () => {
       <ServicesSection />
       <TestimonialsSection />
       {/* TODO: FAQ */}
+      <FAQSection />
       <SuggestionSection />
     </div>
   );
