@@ -8,7 +8,6 @@ const BookingsPage = () => {
       <Section>
         <HeroBooking />
       </Section>
-      <SubscribeSection />
     </div>
   );
 };

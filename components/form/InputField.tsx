@@ -33,7 +33,7 @@ const InputField = ({
         name={name}
         type={type}
         className={cn(
-          'border-[1px] border-(--clr-accent) placeholder:text-(--clr-accent) p-3.5 rounded-[10px] focus:border-(--clr-secondary) w-full',
+          'border-[1px] border-(--clr-accent) placeholder:text-(--clr-accent) p-3.5 rounded-[5px] focus:border-(--clr-secondary) w-full',
           className
         )}
         placeholder={placeholder}

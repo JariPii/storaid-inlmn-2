@@ -6,7 +6,7 @@ import Button from '../buttons/Button';
 
 const SubscribeForm = () => {
   return (
-    <div className=''>
+    <div className='w-full'>
       <Form action={subscribeEmil}>
         <InputField
           labelVisibility='hidden'
