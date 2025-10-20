@@ -1,7 +1,9 @@
+import { fetchAllFAQs } from '@/utils/actions';
 import AccordionList from '../accordion/AccordionList';
 import Section from '../utils/Section';
 
-const FAQSection = () => {
+const FAQSection = async () => {
+  const faqs = await fetchAllFAQs();
   return (
     <div>
       <Section variant='light' className='flex flex-col gap-4 py-20'>
@@ -19,7 +21,7 @@ const FAQSection = () => {
             </p>
           </div>
           <div className='flex flex-col items-center h-auto w-[auto] gap-4'>
-            <AccordionList />
+            <AccordionList faqs={faqs} />
           </div>
         </div>
       </Section>

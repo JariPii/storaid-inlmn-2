@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaArrowRight, FaCalendar, FaRegCalendar } from 'react-icons/fa6';
+import { FaArrowRight, FaRegCalendar } from 'react-icons/fa6';
 
 type BlogCardProps = {
   image: string;

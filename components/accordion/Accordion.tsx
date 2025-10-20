@@ -1,16 +1,22 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa6';
 
 type AccordionProps = {
+  id?: number | string;
   title: string;
   description: string;
+  open?: boolean;
+  onToggle?: (id?: number | string) => void;
 };
 
-const Accordion = ({ title, description }: AccordionProps) => {
-  const [open, setOpen] = useState(false);
-
+const Accordion = ({
+  title,
+  description,
+  id,
+  open = false,
+  onToggle,
+}: AccordionProps) => {
   return (
     <div className='w-full border-amber-200'>
       <div
@@ -20,15 +26,15 @@ const Accordion = ({ title, description }: AccordionProps) => {
             'bg-(--clr-accent)': open,
           }
         )}
-        onClick={() => {
-          setOpen(!open);
-        }}
+        onClick={() => onToggle?.(id)}
       >
-        <h3>{title}</h3>
+        <h3 className={cn('font-semibold', { 'text-(--clr-primary)': open })}>
+          {title}
+        </h3>
         <FaChevronDown
           className={cn(
             'transition-transform duration-500',
-            !open ? 'rotate-0' : 'rotate-180'
+            !open ? 'rotate-0 ' : 'rotate-180 text-(--clr-primary)'
           )}
         />
       </div>
