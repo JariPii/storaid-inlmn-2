@@ -5,36 +5,39 @@
 import { cn } from '@/lib/utils';
 
 type InputFieldProps = {
-  type: 'text' | 'email';
-  id: string;
+  type: string;
   name: string;
-  placeholder: string;
+  label?: string;
+  placeholder?: string;
+  defaultValue?: string;
   labelVisibility?: 'hidden' | 'block';
   className?: string;
 };
 
 const InputField = ({
   type,
-  id,
   name,
+  label,
   placeholder,
   labelVisibility = 'block',
   className,
+  defaultValue,
 }: InputFieldProps) => {
   return (
     <div className='flex flex-col gap-3 flex-1'>
-      <label htmlFor='name' className={`${labelVisibility}`}>
-        Your Name
+      <label htmlFor={name} className={`${labelVisibility}`}>
+        {label || name}
       </label>
       <input
-        type={type}
-        id={id}
+        id={name}
         name={name}
+        type={type}
         className={cn(
           'border-[1px] border-(--clr-accent) placeholder:text-(--clr-accent) p-3.5 rounded-[10px] focus:border-(--clr-secondary) w-full',
           className
         )}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         required
       />
     </div>
