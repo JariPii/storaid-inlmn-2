@@ -13,7 +13,6 @@ const OurServicesPage = () => {
       </Section>
       <ServicesSection />
       <TestimonialsSection />
-      {/* TODO: FAQ */}
       <FAQSection />
       <SuggestionSection />
     </div>

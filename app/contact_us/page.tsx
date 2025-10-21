@@ -5,11 +5,14 @@ import Image from 'next/image';
 import Form from '@/components/form/Form';
 import InputField from '@/components/form/InputField';
 import TextAreaInput from '@/components/form/TextAreaInput';
-import { subscribeEmil } from '@/utils/actions';
+import { fetchAllFAQs, subscribeEmil } from '@/utils/actions';
+import AccordionList from '@/components/accordion/AccordionList';
+import FAQSection from '@/components/faq/FAQSection';
 
-const ContactUsPage = () => {
+const ContactUsPage = async () => {
+  const faqs = await fetchAllFAQs();
   return (
-    <div>
+    <div className='flex flex-col'>
       <Section variant='light' className='grid grid-cols-2 h-auto gap-4 py-20'>
         <div className='flex flex-col gap-3'>
           <h3 className='text-2xl text-(--clr-accent) font-bold'>
@@ -76,6 +79,7 @@ const ContactUsPage = () => {
           </Form>
         </div>
       </Section>
+      <FAQSection />
     </div>
   );
 };
