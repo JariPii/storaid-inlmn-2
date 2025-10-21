@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist, Geist_Mono, Urbanist, Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
@@ -7,6 +7,11 @@ import SubscribeSection from '@/components/subscribe/SubscribeSection';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+const urbanist = Urbanist({
+  variable: '--font-urbanist',
   subsets: ['latin'],
 });
 
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${urbanist.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
         {children}
