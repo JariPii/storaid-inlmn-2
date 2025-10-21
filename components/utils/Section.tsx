@@ -25,13 +25,13 @@ const Section = ({
   };
 
   return (
-    <div className={`${withBackgroundImage[backroundImage]}`}>
+    <section className={`${withBackgroundImage[backroundImage]}`}>
       <div className={cn(`${backgroundColor[variant]} w-full h-auto`)}>
         <div className={cn('w-[min(100%,1320px)] mx-auto', className)}>
           {children}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Section;
