@@ -5,14 +5,13 @@ import Image from 'next/image';
 import Form from '@/components/form/Form';
 import InputField from '@/components/form/InputField';
 import TextAreaInput from '@/components/form/TextAreaInput';
-import { fetchAllFAQs, subscribeEmil } from '@/utils/actions';
-import AccordionList from '@/components/accordion/AccordionList';
+import { sendContactInformation } from '@/utils/actions';
 import FAQSection from '@/components/faq/FAQSection';
 import SubHeroContactUs from '@/components/hero/SubHeroContactUs';
 import HeroContact from '@/components/hero/HeroContact';
+import ContactInformationForm from '@/components/form/ContactInformationForm';
 
-const ContactUsPage = async () => {
-  const faqs = await fetchAllFAQs();
+const ContactUsPage = () => {
   return (
     <div className='flex flex-col'>
       <Section>
@@ -39,49 +38,7 @@ const ContactUsPage = async () => {
           </div>
         </div>
         <div className='grid bg-(--clr-color-3) p-5 rounded-[10px]'>
-          <Form action={subscribeEmil} className='grid gap-6'>
-            <InputField
-              name='name'
-              type='text'
-              defaultValue='Adam'
-              label='Your name'
-              placeholder='Your name'
-              required
-            />
-            <div className='flex gap-3 w-full'>
-              <InputField
-                name='email'
-                type='email'
-                defaultValue='Adam@adam.com'
-                label='Email'
-                placeholder='Email'
-                required
-              />
-
-              <InputField
-                name='phone'
-                type='text'
-                // defaultValue='Adam'
-                label='Telephone'
-                placeholder='Telephone'
-              />
-            </div>
-            <InputField
-              name='subject'
-              type='text'
-              defaultValue='Question'
-              label='Subject'
-              placeholder='Subject'
-              required
-            />
-            <TextAreaInput
-              labelText='Comments / Questions'
-              name='comment'
-              rows={6}
-              placeHolder='Comments'
-            />
-            <Button>Submit</Button>
-          </Form>
+          <ContactInformationForm />
         </div>
       </Section>
       <SubHeroContactUs />
