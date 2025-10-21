@@ -28,9 +28,15 @@ const Form = ({ action, children, className }: FormProps) => {
   }, [state]);
 
   return (
-    <form action={formAction} className={cn('', className)}>
-      {children} {state.message && <p>{state.message}</p>}
-    </form>
+    <>
+      <form
+        action={formAction}
+        className={cn('flex gap-2 w-full flex-1', className)}
+      >
+        {children}
+      </form>
+      <div>{state.message && <p>{state.message}</p>}</div>
+    </>
   );
 };
 export default Form;
