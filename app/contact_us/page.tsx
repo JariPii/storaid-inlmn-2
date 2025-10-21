@@ -8,6 +8,7 @@ import TextAreaInput from '@/components/form/TextAreaInput';
 import { fetchAllFAQs, subscribeEmil } from '@/utils/actions';
 import AccordionList from '@/components/accordion/AccordionList';
 import FAQSection from '@/components/faq/FAQSection';
+import SubHeroContactUs from '@/components/hero/SubHeroContactUs';
 
 const ContactUsPage = async () => {
   const faqs = await fetchAllFAQs();
@@ -34,7 +35,7 @@ const ContactUsPage = async () => {
           </div>
         </div>
         <div className='grid bg-(--clr-color-3) p-5 rounded-[10px]'>
-          <Form action={subscribeEmil} className='grid gap-2'>
+          <Form action={subscribeEmil} className='grid gap-6'>
             <InputField
               name='name'
               type='text'
@@ -72,13 +73,14 @@ const ContactUsPage = async () => {
             <TextAreaInput
               labelText='Comments / Questions'
               name='comment'
-              rows={5}
+              rows={6}
               placeHolder='Comments'
             />
             <Button>Submit</Button>
           </Form>
         </div>
       </Section>
+      <SubHeroContactUs />
       <FAQSection />
     </div>
   );
