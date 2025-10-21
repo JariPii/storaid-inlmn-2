@@ -9,11 +9,15 @@ import { fetchAllFAQs, subscribeEmil } from '@/utils/actions';
 import AccordionList from '@/components/accordion/AccordionList';
 import FAQSection from '@/components/faq/FAQSection';
 import SubHeroContactUs from '@/components/hero/SubHeroContactUs';
+import HeroContact from '@/components/hero/HeroContact';
 
 const ContactUsPage = async () => {
   const faqs = await fetchAllFAQs();
   return (
     <div className='flex flex-col'>
+      <Section>
+        <HeroContact />
+      </Section>
       <Section variant='light' className='grid grid-cols-2 h-auto gap-4 py-20'>
         <div className='flex flex-col gap-3'>
           <h3 className='text-2xl text-(--clr-accent) font-bold'>
