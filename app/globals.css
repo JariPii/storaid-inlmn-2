@@ -11,7 +11,7 @@
   --clr-color-2: #ececec;
   --clr-color-3: #faf8ec;
   --clr-color-4: hsl(100, 100%, 96%);
-  --clr-color-5: rgba(241, 255, 234, 0.56);
+  --clr-color-5: #f1ffea8f;
 }
 
 @theme inline {
