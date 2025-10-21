@@ -4,19 +4,20 @@ import { FaStar } from 'react-icons/fa6';
 
 type TestimonialProps = {
   //   rating?: string;
+  id?: number;
   rating: number;
-  description: string;
-  avatar: string;
+  comment: string;
+  avatarUrl: string;
   name: string;
-  role: string;
+  companyName: string;
 };
 
 const TestimonialCard = ({
   rating,
-  description,
-  avatar,
+  comment,
+  avatarUrl,
   name,
-  role,
+  companyName,
 }: TestimonialProps) => {
   return (
     <div className='w-[27.3rem] flex flex-col gap-8 p-8 rounded-[10px] border-2 bg-(--clr-primary)'>
@@ -25,11 +26,11 @@ const TestimonialCard = ({
           <FaStar key={i} />
         ))}
       </div>
-      <p className='w-[38ch]'>{description}</p>
+      <p className='w-[38ch]'>{comment}</p>
       <div className='flex justify-between'>
         <div className='flex gap-4 items-center'>
           <Image
-            src={avatar}
+            src={avatarUrl}
             alt={`${name}s avatar`}
             width={64}
             height={64}
@@ -38,7 +39,7 @@ const TestimonialCard = ({
           />
           <div>
             <h4 className='text-xl font-bold'>{name}</h4>
-            <p>{role}</p>
+            <p>{companyName}</p>
           </div>
         </div>
         <Image src={quotes} alt='quotes' />

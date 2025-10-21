@@ -1,17 +1,19 @@
 import { testimonials } from '@/mockData';
 import Section from '../utils/Section';
 import TestimonialCard from './TestimonialCard';
+import TestimonialsList from './TestimonialsList';
+import { fetchAllTesitmonials } from '@/utils/actions';
 
 type TestimonialBackgroundProps = {
   backgroundImage?: 'with' | 'withOut';
 };
 
-const TestimonialsSection = ({
+const TestimonialsSection = async ({
   backgroundImage = 'withOut',
 }: TestimonialBackgroundProps) => {
+  const testimonials = await fetchAllTesitmonials();
   return (
     <Section backroundImage={backgroundImage} className='py-24'>
-      {/* <div className='py-20'> */}
       <div className='flex flex-col items-center gap-4'>
         <h3 className='text-(--clr-accent) text-2xl font-bold'>Testimonials</h3>
         <h4 className='text-[3.125rem] text-(--clr-primary) font-bold'>
@@ -23,12 +25,9 @@ const TestimonialsSection = ({
           blandit nisi non sodales augue. Phasellus eget elit gravida.
         </p>
         <div className='flex gap-4'>
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} {...testimonial} />
-          ))}
+          <TestimonialsList testimonials={testimonials} />
         </div>
       </div>
-      {/* </div> */}
     </Section>
   );
 };
