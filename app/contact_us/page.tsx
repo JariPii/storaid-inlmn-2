@@ -30,8 +30,8 @@ const ContactUsPage = () => {
             />
           </div>
         </div>
-        <div className='flex flex-col bg-(--clr-color-3) p-5 rounded-[10px]'>
-          <Form action={subscribeEmil} className='flex flex-col gap-5'>
+        <div className='grid bg-(--clr-color-3) p-5 rounded-[10px]'>
+          <Form action={subscribeEmil} className='grid gap-2'>
             <InputField
               name='name'
               type='text'
@@ -40,7 +40,7 @@ const ContactUsPage = () => {
               placeholder='Your name'
               required
             />
-            <div className='flex gap-3'>
+            <div className='flex gap-3 w-full'>
               <InputField
                 name='email'
                 type='email'
