@@ -12,6 +12,7 @@ import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 import { subscribeEmil } from '@/utils/actions';
 import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
 import Image from 'next/image';
+import BookingForm from '@/components/form/BookingForm';
 
 const BookingsPage = () => {
   return (
@@ -48,7 +49,7 @@ const BookingsPage = () => {
               gravida.
             </p>
             <div className='grid bg-(--clr-color-3) p-5 rounded-[10px]'>
-              <Form action={subscribeEmil} className='grid gap-6'>
+              {/* <Form action={subscribeEmil} className='grid gap-6'>
                 <div className='flex gap-3 w-full'>
                   <InputField
                     name='email'
@@ -82,7 +83,8 @@ const BookingsPage = () => {
                   placeHolder='Comments'
                 />
                 <Button>Submit</Button>
-              </Form>
+              </Form> */}
+              <BookingForm />
             </div>
           </div>
         </Section>

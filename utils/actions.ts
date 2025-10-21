@@ -1,4 +1,5 @@
 'use server';
+
 export type FAQ = {
   id?: number;
   title: string;
@@ -158,6 +159,54 @@ export const sendContactInformation = async (
     return {
       success: false,
       message: result.message ?? 'Contact info failed to send',
+    };
+  }
+
+  return { success: true, message: result.message };
+};
+
+export type BokkingsInformation = {
+  name: string;
+  email: string;
+  selectedUnit: string;
+  prupose: string;
+};
+
+export const sendBookingInformation = async (
+  _prevState: unknown,
+  formData: FormData
+): Promise<{ success: boolean; message: string }> => {
+  const name = formData.get('name')?.toString().trim();
+  const email = formData.get('email')?.toString().trim();
+  const selectedUnit = formData.get('selectedUnit')?.toString().trim();
+  const purpose = formData.get('purpose')?.toString().trim();
+
+  if (!name || !email || !selectedUnit || !purpose) {
+    return { success: false, message: 'Fill in the required fields' };
+  }
+
+  const bookingInfo = { name, email, selectedUnit, purpose };
+
+  const url = process.env.BOOKING_API;
+
+  if (!url) {
+    return { success: false, message: 'Api not available' };
+  }
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(bookingInfo),
+  });
+
+  const result = await res.json();
+
+  if (!res.ok) {
+    return {
+      success: false,
+      message: result.message ?? 'Booking failed',
     };
   }
 
