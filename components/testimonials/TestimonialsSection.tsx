@@ -1,6 +1,4 @@
-import { testimonials } from '@/mockData';
 import Section from '../utils/Section';
-import TestimonialCard from './TestimonialCard';
 import TestimonialsList from './TestimonialsList';
 import { fetchAllTesitmonials } from '@/utils/actions';
 

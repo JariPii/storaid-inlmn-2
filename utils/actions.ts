@@ -83,7 +83,7 @@ export type Subscribe = {
 export const subscribeEmil = async (
   _prevState: unknown,
   formData: FormData
-): Promise<{ success: false; message: string }> => {
+): Promise<{ success: boolean; message: string }> => {
   const email = formData.get('subscribe');
 
   if (!email) {
@@ -111,4 +111,55 @@ export const subscribeEmil = async (
   }
 
   return { success: result.message, message: result.message };
+};
+
+export type ContactFormCredentials = {
+  name: string;
+  email: string;
+  phoneNumber?: string;
+  subject: string;
+  comment: string;
+};
+
+export const sendContactInformation = async (
+  _prevState: unknown,
+  formData: FormData
+): Promise<{ success: boolean; message: string }> => {
+  const name = formData.get('name')?.toString().trim();
+  const email = formData.get('email')?.toString().trim();
+  const phone = formData.get('phone')?.toString().trim();
+  const subject = formData.get('subject')?.toString().trim();
+  const comment = formData.get('comment')?.toString().trim();
+
+  if (!name || !email || !phone || !subject || !comment) {
+    return { success: false, message: 'Fill in the required fields' };
+  }
+
+  const contactInfo = { name, email, phone, subject, comment };
+  console.log('🚀 ~ sendContactInformation ~ contactInfo:', contactInfo);
+
+  const url = process.env.CONTACT_API;
+
+  if (!url) {
+    return { success: false, message: 'Api not available' };
+  }
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(contactInfo),
+  });
+
+  const result = await res.json();
+
+  if (!res.ok) {
+    return {
+      success: false,
+      message: result.message ?? 'Contact info failed to send',
+    };
+  }
+
+  return { success: true, message: result.message };
 };
