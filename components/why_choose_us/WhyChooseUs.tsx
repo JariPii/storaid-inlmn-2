@@ -29,16 +29,16 @@ const WhyChooseUs = () => {
             </p>
           </div>
         </div>
-        <div className='grid grid-cols-[auto_1fr] gap-10'>
+        <div className='grid grid-cols-[1fr_1fr] gap-10'>
           <div className='flex flex-col gap-6 p-4'>
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[83px] h-[83px] '
+              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
               >
                 <Image src={padlock} alt='padlock' />
               </div>
-              <div className='w-[55ch] flex flex-col gap-4'>
+              <div className='max-w-[55ch] grid gap-4'>
                 <h5 className='text-2xl font-semibold'>Security and Safety</h5>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
@@ -50,11 +50,11 @@ const WhyChooseUs = () => {
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[83px] h-[83px] '
+              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
               >
                 <Image src={moneybag} alt='padlock' />
               </div>
-              <div className='w-[55ch] flex flex-col gap-4'>
+              <div className='max-w-[55ch] grid gap-4'>
                 <h5 className='text-2xl font-semibold'>
                   Flexible and Affordable
                 </h5>
@@ -68,11 +68,11 @@ const WhyChooseUs = () => {
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[83px] h-[83px] '
+              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
               >
                 <Image src={broom} alt='padlock' />
               </div>
-              <div className='w-[55ch] flex flex-col gap-4'>
+              <div className='max-w-[55ch] grid gap-4'>
                 <h5 className='text-2xl font-semibold'>
                   Clean and Well-Maintained Facilities
                 </h5>
@@ -86,11 +86,11 @@ const WhyChooseUs = () => {
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[83px] h-[83px] '
+              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
               >
                 <Image src={clock} alt='padlock' />
               </div>
-              <div className='w-[55ch] flex flex-col gap-4'>
+              <div className='max-w-[55ch] grid gap-4'>
                 <h5 className='text-2xl font-semibold'>
                   24/7 and Convenient Access
                 </h5>
