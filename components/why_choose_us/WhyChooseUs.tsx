@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
+              justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
               >
                 <Image src={padlock} alt='padlock' />
               </div>
@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
+              justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
               >
                 <Image src={moneybag} alt='padlock' />
               </div>
@@ -68,7 +68,7 @@ const WhyChooseUs = () => {
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
+              justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
               >
                 <Image src={broom} alt='padlock' />
               </div>
@@ -86,7 +86,7 @@ const WhyChooseUs = () => {
             <div className='flex gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
-              justify-center rounded-full w-[5.125rem] h-[5.125rem] '
+              justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
               >
                 <Image src={clock} alt='padlock' />
               </div>
