@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import PersonImage from '@/public/images/ContactUsPerson.png';
 import Section from '../utils/Section';
-import { MdPhone } from 'react-icons/md';
 import HeaderSocials from '../header/Socials';
 import phone from '@/public/images/phone.svg';
 import envelope from '@/public/images/envelope.svg';
@@ -10,7 +9,7 @@ import mapPin from '@/public/images/map-pointer.svg';
 const SubHeroContactUs = () => {
   return (
     <Section className=''>
-      <div className='grid grid-cols-[60%_1fr] grid-rows-1 h-full relative'>
+      <div className='grid grid-cols-[1fr_55%] grid-rows-1 h-full relative'>
         <div className='flex h-full items-end justify-center'>
           <Image
             src={PersonImage}
@@ -19,7 +18,7 @@ const SubHeroContactUs = () => {
           />
         </div>
 
-        <div className='flex items-start justify-center flex-col bg-(--clr-color-5) h-full gap-8 p-[5rem] w-[80ch]'>
+        <div className='flex items-start justify-center flex-col bg-(--clr-color-5) h-full gap-8 p-[5rem] max-w-[80ch]'>
           <h2 className='text-[3.25rem] text-(--clr-secondary) font-bold leading-6 text-2xl'>
             Find Us On:
           </h2>
@@ -74,7 +73,7 @@ const SubHeroContactUs = () => {
             <h3 className='text-[1.5rem] font-semibold text-(--clr-secondary) tracking-tight'>
               Our Social Media
             </h3>
-            <div className='border-b-[1px] w-[11rem]'></div>
+            <div className='border-b-[1px] w-[8rem]'></div>
             <HeaderSocials />
           </div>
         </div>
