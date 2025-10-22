@@ -28,17 +28,17 @@ const ServicesSection = () => {
             </p>
           </div>
         </div>
-        <div className='grid grid-cols-[auto_1fr_auto] gap-4 grid-rows-[21rem]'>
+        <div className='grid grid-cols-[29.5%_1fr_29.5%] gap-8 grid-rows-[21rem]'>
           <div className='flex flex-col gap-4'>
             <Tile
               title='Diverse Unit Sizes'
               description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-              className='w-[40ch]'
+              className=''
             />
             <Tile
               title='Moving Assistance'
               description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-              className='w-[40ch]'
+              className=''
             />
           </div>
           {/* <div className='h-full w-full'> */}
@@ -52,12 +52,12 @@ const ServicesSection = () => {
             <Tile
               title='Vehicle Storage'
               description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-              className='w-[40ch]'
+              className=''
             />
             <Tile
               title='Top-Notch Security'
               description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.'
-              className='w-[40ch]'
+              className=''
             />
           </div>
         </div>

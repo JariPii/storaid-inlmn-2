@@ -1,5 +1,4 @@
 import Button from '@/components/buttons/Button';
-import HeroHome from '@/components/hero/HeroHome';
 import Section from '@/components/utils/Section';
 
 const ErrorPage = () => {
