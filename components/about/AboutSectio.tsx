@@ -10,7 +10,7 @@ const AboutSection = () => {
   return (
     <Section
       variant='light'
-      className='grid grid-cols-[1fr_70ch] py-[6rem] gap-4'
+      className='grid grid-cols-[1fr_1fr] py-[6rem] gap-4'
     >
       <div className='relative'>
         <Image
@@ -32,7 +32,7 @@ const AboutSection = () => {
           molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac
           blandit nisi, non sodales augue. Phasellus eget elit gravida.
         </p>
-        <div className='flex gap-4 mb-10'>
+        <div className='grid grid-cols-[1fr_1fr] gap-5 mb-10'>
           <Tile
             title='Vision'
             description='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque laudantium.'
