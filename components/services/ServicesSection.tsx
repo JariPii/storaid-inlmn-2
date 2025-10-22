@@ -14,11 +14,11 @@ const ServicesSection = () => {
         </div>
         <div className='flex justify-between gap-24'>
           <div>
-            <h4 className='text-[3.25rem] font-bold tracking-tighter w-[20ch] leading-[52px]'>
+            <h4 className='text-[3.25rem] font-bold tracking-tighter max-w-[20ch] leading-[52px]'>
               Specialized Storage for Every Special Item
             </h4>
           </div>
-          <div className='w-[90ch] flex items-center h-auto'>
+          <div className='max-w-[90ch] flex items-center h-auto'>
             {/* <p className='w-[95ch] leading-6'> */}
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
