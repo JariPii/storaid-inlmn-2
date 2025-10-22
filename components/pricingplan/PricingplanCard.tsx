@@ -1,6 +1,6 @@
 import Button from '../buttons/Button';
 import { cn } from '@/lib/utils';
-import { FaCheck } from 'react-icons/fa6';
+import { FaCircleCheck } from 'react-icons/fa6';
 
 type PricingplanCardProps = {
   title: string;
@@ -27,7 +27,7 @@ const PricingplanCard = ({
   return (
     <div
       className={cn(
-        'flex flex-col border-[3px] border-(--clr-color-2) p-9 items-center justify-center w-[20rem] gap-3 bg-(--clr-color-4) rounded-[10px] group hover:bg-(--clr-secondary)',
+        'flex flex-col border-[3px] border-(--clr-color-2) p-9 items-center justify-center max-w-[19rem] gap-3 bg-(--clr-color-4) rounded-[10px] group hover:bg-(--clr-secondary)',
         className
       )}
     >
@@ -45,22 +45,19 @@ const PricingplanCard = ({
           </p>
         </div>
       </div>
-      <p className='w-[28ch] text-center group-hover:text-(--clr-primary)'>
+      <p className='max-w-[28ch] text-center group-hover:text-(--clr-primary)'>
         {description}
       </p>
 
       <div className='border-b-[1px] w-full group-hover:border-(--clr-primary)'></div>
-      <ul className='flex flex-col gap-2'>
+      <ul className='flex flex-col gap-3'>
         {checks.map((item, index) => (
           <li
             key={index}
-            className='flex gap-4 group-hover:text-(--clr-primary)'
+            className='flex items-center gap-3 group-hover:text-(--clr-primary)'
           >
-            <div className=' bg-(--clr-secondary) group-hover:bg-(--clr-accent) rounded-full flex items-center justify-center p-1'>
-              {/* TODO: Change icon to FaCircleCheck */}
-              <FaCheck className='text-(--clr-color-4) group-hover:text-(--clr-secondary)' />
-            </div>
-            <span>{item.text}</span>
+            <FaCircleCheck className='text-(--clr-secondary) group-hover:text-(--clr-accent) ' />
+            <p>{item.text}</p>
           </li>
         ))}
       </ul>

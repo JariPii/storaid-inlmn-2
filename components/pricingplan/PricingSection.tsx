@@ -13,13 +13,13 @@ const PricingSection = () => {
         </div>
         <div className='grid grid-cols-2 gap-1'>
           <div className='w-full'>
-            <h4 className='text-[3.25rem] font-bold tracking-tighter leading-[52px]'>
+            <h4 className='text-[3.25rem] font-bold tracking-tight leading-[52px]'>
               Find the Perfect Plan for Your Storage Needs
             </h4>
           </div>
           <div className='flex items-center h-auto'></div>
         </div>
-        <div className='flex gap-6'>
+        <div className='flex flex-wrap gap-6'>
           {pricingPlans.map((plan) => (
             <PricingplanCard
               buttonLabel={'Rent now'}
