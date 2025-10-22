@@ -8,7 +8,7 @@ const StatsCard = ({ className }: StatsCardProps) => {
   return (
     <div
       className={cn(
-        'bg-(--clr-secondary) flex items-center justify-center p-4 rounded-[10px] gap-8 w-[38rem]',
+        'bg-(--clr-secondary) flex items-center justify-center p-4 rounded-[10px] gap-8 max-w-[38rem]',
         className
       )}
     >
