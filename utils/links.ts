@@ -3,6 +3,8 @@ type NavLink = {
   label: string;
 };
 
+// TODO: Fix BOOKINGS link so it does not appear in the nav list
+
 export const links: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },

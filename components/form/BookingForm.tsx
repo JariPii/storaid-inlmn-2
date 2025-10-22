@@ -30,7 +30,7 @@ const BookingForm = () => {
         <InputField
           name='selectedUnit'
           type='text'
-          defaultValue='Question'
+          // defaultValue='Question'
           label='Choose Unit'
           placeholder='Choose Unit'
           required
