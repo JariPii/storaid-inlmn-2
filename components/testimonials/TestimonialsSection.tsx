@@ -17,7 +17,7 @@ const TestimonialsSection = async ({
         <h4 className='text-[3.125rem] text-(--clr-primary) font-bold'>
           See What Our Clients Have to Say
         </h4>
-        <p className='text-(--clr-primary) w-[112ch] text-center'>
+        <p className='text-(--clr-primary) max-w-[112ch] text-center'>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
           molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac
           blandit nisi non sodales augue. Phasellus eget elit gravida.
