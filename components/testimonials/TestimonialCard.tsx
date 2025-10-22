@@ -20,13 +20,13 @@ const TestimonialCard = ({
   companyName,
 }: TestimonialProps) => {
   return (
-    <div className='w-[27.3rem] flex flex-col gap-8 p-8 rounded-[10px] border-2 bg-(--clr-primary)'>
+    <div className='max-w-[27.3rem] flex flex-col gap-8 p-8 rounded-[10px] border-2 bg-(--clr-primary)'>
       <div className='flex gap-0.5 text-(--clr-secondary)'>
         {Array.from({ length: rating }).map((_, i) => (
           <FaStar key={i} />
         ))}
       </div>
-      <p className='w-[38ch]'>{comment}</p>
+      <p className='max-w-[38ch]'>{comment}</p>
       <div className='flex justify-between'>
         <div className='flex gap-4 items-center'>
           <Image
