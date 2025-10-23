@@ -14,7 +14,6 @@ const SubscribeForm = () => {
           name='subscribe'
           placeholder='Enter you email'
           className='h-12'
-          defaultValue='w@r.com'
         />
         <Button className='h-12'>Submit</Button>
       </Form>
