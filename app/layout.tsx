@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import SubscribeSection from '@/components/subscribe/SubscribeSection';
+import { BookingProvider } from '@/hooks/BookingContext';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,8 +37,10 @@ export default function RootLayout({
         className={`${urbanist.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        {children}
-        <SubscribeSection />
+        <BookingProvider>
+          {children}
+          <SubscribeSection />
+        </BookingProvider>
         <Footer />
       </body>
     </html>

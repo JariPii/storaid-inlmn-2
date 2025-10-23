@@ -3,6 +3,7 @@
 // };
 
 import { cn } from '@/lib/utils';
+import React from 'react';
 
 type InputFieldProps = {
   type: string;
@@ -13,6 +14,8 @@ type InputFieldProps = {
   labelVisibility?: 'hidden' | 'block';
   className?: string;
   required?: boolean;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const InputField = ({
@@ -24,6 +27,8 @@ const InputField = ({
   className,
   defaultValue,
   required = false,
+  value,
+  onChange,
 }: InputFieldProps) => {
   return (
     <div className='flex flex-col gap-1 flex-1'>
@@ -41,6 +46,8 @@ const InputField = ({
         placeholder={placeholder}
         defaultValue={defaultValue}
         required={required}
+        // value={value}
+        onChange={onChange}
       />
     </div>
   );

@@ -13,6 +13,7 @@ import { subscribeEmil } from '@/utils/actions';
 import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
 import Image from 'next/image';
 import BookingForm from '@/components/form/BookingForm';
+import { BookingProvider } from '@/hooks/BookingContext';
 
 const BookingsPage = () => {
   return (
@@ -49,41 +50,6 @@ const BookingsPage = () => {
               gravida.
             </p>
             <div className='grid bg-(--clr-color-3) p-5 rounded-[10px]'>
-              {/* <Form action={subscribeEmil} className='grid gap-6'>
-                <div className='flex gap-3 w-full'>
-                  <InputField
-                    name='email'
-                    type='email'
-                    defaultValue='Adam@adam.com'
-                    label='Email'
-                    placeholder='Email'
-                    required
-                  />
-
-                  <InputField
-                    name='phone'
-                    type='text'
-                    // defaultValue='Adam'
-                    label='Telephone'
-                    placeholder='Telephone'
-                  />
-                </div>
-                <InputField
-                  name='subject'
-                  type='text'
-                  defaultValue='Question'
-                  label='Subject'
-                  placeholder='Subject'
-                  required
-                />
-                <TextAreaInput
-                  labelText='Comments / Questions'
-                  name='comment'
-                  rows={6}
-                  placeHolder='Comments'
-                />
-                <Button>Submit</Button>
-              </Form> */}
               <BookingForm />
             </div>
           </div>
