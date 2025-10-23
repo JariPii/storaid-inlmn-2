@@ -7,7 +7,7 @@ const ServicesSection = () => {
   return (
     <div>
       <Section variant='light' className='flex flex-col gap-4 py-8'>
-        <div>
+        <div className='bg-(--clr-secondary) px-2'>
           <h3 className='text-2xl text-(--clr-accent) font-bold'>
             Our Services
           </h3>

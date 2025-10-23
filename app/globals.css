@@ -5,12 +5,13 @@
   interpolate-size: allow-keywords;
   --background: #ffffff;
   --clr-primary: hsl(0, 0%, 100%);
-  --clr-secondary: hsl(159, 51%, 14%);
-  --clr-accent: hsl(48, 91%, 50%);
+  --clr-secondary: #113629;
+  --clr-accent: #f4c50b;
+  --clr-accent-muted: #8d7207;
   --clr-accent-3: hsla(159, 51%, 14%, 0.8);
   --clr-color-2: #ececec;
   --clr-color-3: #faf8ec;
-  --clr-color-4: hsl(100, 100%, 96%);
+  --clr-color-4: #f1ffeb;
   --clr-color-5: #f1ffea8f;
 }
 

@@ -21,9 +21,11 @@ const AboutSection = () => {
         <StatsCard className='absolute -bottom-1/12 left-1/20' />
       </div>
       <div className='flex flex-col gap-2'>
-        <h3 className='text-2xl text-(--clr-accent) font-bold leading-6 font-urbanist'>
-          About Us
-        </h3>
+        <div className='bg-(--clr-secondary) max-w-fit p-2 rounded-full'>
+          <h3 className='text-2xl text-(--clr-accent) font-bold leading-6 font-urbanist'>
+            About Us
+          </h3>
+        </div>
         <h4 className='text-[3.25rem] leading-[52px] tracking-tight font-bold font-urbanist'>
           Providing a Safe Space for Your Treasured Items
         </h4>
