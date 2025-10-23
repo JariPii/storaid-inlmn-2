@@ -1,4 +1,6 @@
 'use client';
+
+import { useBooking } from '@/hooks/BookingContext';
 import { cn } from '@/lib/utils';
 import { useActionState, useEffect } from 'react';
 
@@ -20,12 +22,14 @@ type FormProps = {
 
 const Form = ({ action, children, className }: FormProps) => {
   const [state, formAction] = useActionState(action, initialState);
+  const { resetBooking } = useBooking();
 
   useEffect(() => {
     if (state.message) {
       console.log(state.message);
+      resetBooking();
     }
-  }, [state]);
+  }, [state, resetBooking]);
 
   return (
     <>

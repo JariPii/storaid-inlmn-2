@@ -1,5 +1,8 @@
+'use client';
+import { useBooking } from '@/hooks/BookingContext';
 import Button from '../buttons/Button';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 import { FaCircleCheck } from 'react-icons/fa6';
 
 type PricingplanCardProps = {
@@ -24,6 +27,16 @@ const PricingplanCard = ({
   buttonLabel,
   className,
 }: PricingplanCardProps) => {
+  const router = useRouter();
+  const { setSelectedUnit } = useBooking();
+
+  const handleChoose = () => {
+    setSelectedUnit(title);
+    console.log(title);
+
+    router.push('/bookings');
+  };
+
   return (
     <div
       className={cn(
@@ -61,7 +74,9 @@ const PricingplanCard = ({
           </li>
         ))}
       </ul>
-      <Button hover='dark'>{buttonLabel}</Button>
+      <Button onClick={handleChoose} hover='dark'>
+        {buttonLabel}
+      </Button>
     </div>
   );
 };

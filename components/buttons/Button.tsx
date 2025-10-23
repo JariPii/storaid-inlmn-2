@@ -12,6 +12,8 @@ type ButtonProps = {
   href?: string;
   className?: string;
   children: React.ReactNode;
+  onClick?: () => void;
+  type?: 'submit' | 'reset' | 'button' | undefined;
 };
 
 const Button = ({
@@ -26,6 +28,8 @@ const Button = ({
   href,
   className,
   children,
+  onClick,
+  type = undefined,
 }: ButtonProps) => {
   const buttonHover = {
     light: 'hover:bg-(--clr-secondary) hover:text-(--clr-accent)',
@@ -37,6 +41,8 @@ const Button = ({
         `button-primary ${buttonHover[hover]} py-10 font-semibold`,
         className
       )}
+      type={type}
+      onClick={onClick}
     >
       {children}
     </button>

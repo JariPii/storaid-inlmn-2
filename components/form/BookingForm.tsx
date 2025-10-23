@@ -1,10 +1,15 @@
+'use client';
 import { sendBookingInformation } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
 import TextAreaInput from './TextAreaInput';
 import Button from '../buttons/Button';
+import { useBooking } from '@/hooks/BookingContext';
+import { useActionState, useEffect } from 'react';
 
 const BookingForm = () => {
+  const { selectedUnit } = useBooking();
+
   return (
     <>
       <Form action={sendBookingInformation} className='grid gap-6'>
@@ -21,7 +26,7 @@ const BookingForm = () => {
           <InputField
             name='email'
             type='email'
-            // defaultValue='Adam'
+            // defaultValue='Adam@adam.com'
             label='Email'
             placeholder='Email'
             required
@@ -30,7 +35,8 @@ const BookingForm = () => {
         <InputField
           name='selectedUnit'
           type='text'
-          // defaultValue='Question'
+          defaultValue={selectedUnit}
+          // value={selectedUnit}
           label='Choose Unit'
           placeholder='Choose Unit'
           required
@@ -41,7 +47,7 @@ const BookingForm = () => {
           rows={6}
           placeHolder='Describe your storage purpose so that we can match your request'
         />
-        <Button>Submit</Button>
+        <Button type='submit'>Submit</Button>
       </Form>
     </>
   );

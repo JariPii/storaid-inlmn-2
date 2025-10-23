@@ -48,7 +48,7 @@ const ContactInformationForm = () => {
           rows={6}
           placeHolder='Comments'
         />
-        <Button>Submit</Button>
+        <Button type='submit'>Submit</Button>
       </Form>
     </>
   );

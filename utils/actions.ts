@@ -165,7 +165,7 @@ export const sendContactInformation = async (
   return { success: true, message: result.message };
 };
 
-export type BokkingsInformation = {
+export type BookingsInformation = {
   name: string;
   email: string;
   selectedUnit: string;
@@ -176,10 +176,14 @@ export const sendBookingInformation = async (
   _prevState: unknown,
   formData: FormData
 ): Promise<{ success: boolean; message: string }> => {
-  const name = formData.get('name')?.toString().trim();
-  const email = formData.get('email')?.toString().trim();
-  const selectedUnit = formData.get('selectedUnit')?.toString().trim();
-  const purpose = formData.get('purpose')?.toString().trim();
+  const name = formData.get('name') as string;
+  const email = formData.get('email') as string;
+  const selectedUnit = formData.get('selectedUnit') as string;
+  const purpose = formData.get('purpose') as string;
+  // const name = formData.get('name')?.toString().trim();
+  // const email = formData.get('email')?.toString().trim();
+  // const selectedUnit = formData.get('selectedUnit')?.toString().trim();
+  // const purpose = formData.get('purpose')?.toString().trim();
 
   if (!name || !email || !selectedUnit || !purpose) {
     return { success: false, message: 'Fill in the required fields' };
