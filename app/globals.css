@@ -6,7 +6,8 @@
   --background: #ffffff;
   --clr-primary: hsl(0, 0%, 100%);
   --clr-secondary: #113629;
-  --clr-accent: #f4c50b;
+  /* --clr-accent: #f4c50b; */
+  --clr-accent: #f1c30c;
   --clr-accent-muted: #8d7207;
   --clr-accent-3: hsla(159, 51%, 14%, 0.8);
   --clr-color-2: #ececec;
