@@ -1,16 +1,14 @@
 import FAQSection from '@/components/faq/FAQSection';
-import HeroServices from '@/components/hero/HeroServices';
+import Hero from '@/components/hero/Hero';
+import { heroContent } from '@/components/hero/heroContent';
 import ServicesSection from '@/components/services/ServicesSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
-import Section from '@/components/utils/Section';
 
 const OurServicesPage = () => {
   return (
     <div>
-      <Section>
-        <HeroServices />
-      </Section>
+      <Hero {...heroContent.services} />
       <ServicesSection />
       <TestimonialsSection />
       <FAQSection />
