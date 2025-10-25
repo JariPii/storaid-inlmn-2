@@ -19,9 +19,11 @@ const HeroHome = () => {
           libero at iaculis luctus, nisi ex pellentesque nisi, at euismod sem
           ipsum ac dolor.
         </p>
-        <Button hover='dark' className=''>
-          <Link href='/about'>Discover More</Link>
-        </Button>
+        <Link href='/about'>
+          <Button hover='dark' className=''>
+            Discover More
+          </Button>
+        </Link>
       </div>
       {/* <div className='flex items-end justify-center border-2'> */}
       <Image
