@@ -65,4 +65,8 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .isExpandedText {
+    @apply text-(--clr-secondary) font-semibold;
+  }
 }
