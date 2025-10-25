@@ -1,40 +1,69 @@
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import Link from 'next/link';
 import { FaArrowRight, FaRegCalendar } from 'react-icons/fa6';
 
 type BlogCardProps = {
-  image: string;
-  alt: string;
-  date: string;
+  id?: string;
+  created: string;
+  imageUrl: string;
   title: string;
-  content: string;
+  description: string;
+  isExpanded?: boolean;
+  onToggle?: (id?: string) => void;
 };
 
-const BlogCard = ({ image, alt, date, title, content }: BlogCardProps) => {
+const BlogCard = ({
+  id,
+  imageUrl,
+  created,
+  title,
+  description,
+  isExpanded = false,
+  onToggle,
+}: BlogCardProps) => {
+  // const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
   return (
-    <div className='flex flex-col gap-4 w-[26.875rem] bg-(--clr-secondary) hover:bg-(--clr-color-4) hover:transition-colors hover:duration-500 group p-6 rounded-[5px]'>
+    <div
+      className={cn(
+        'flex flex-col gap-4 w-[26.875rem] bg-(--clr-secondary) hover:bg-(--clr-color-4) hover:transition-colors hover:duration-500 group p-6 rounded-[5px] hover:cursor-pointer h-[36rem]',
+        {
+          'h-auto': isExpanded,
+        }
+      )}
+      onClick={() => onToggle?.(id)}
+    >
       <Image
-        src={image}
-        alt={alt}
-        width={1000}
-        height={1000}
+        src={imageUrl}
+        alt='Blog image'
+        width={500}
+        height={500}
         className='rounded-[5px]'
       />
       <div className='flex gap-2 text-(--clr-primary)  items-baseline'>
         <FaRegCalendar className='text-lg group-hover:text-(--clr-secondary)' />
         <p className=' text-[14px] group-hover:text-(--clr-secondary)'>
-          {date}
+          {created}
         </p>
       </div>
       <h2 className='text-(--clr-primary) group-hover:text-(--clr-secondary) text-xl font-bold'>
         {title}
       </h2>
-      <p className='text-(--clr-primary) group-hover:text-(--clr-secondary)'>
-        {content}
+      <p
+        className={cn(
+          'text-(--clr-primary) group-hover:text-(--clr-secondary) overflow-hidden transition-[max-height] duration-300',
+          isExpanded ? 'line-clamp-none' : 'line-clamp-3'
+        )}
+      >
+        {description}
       </p>
-      <Link href='/' className='text-(--clr-accent) flex items-center gap-2'>
-        Read more <FaArrowRight />
-      </Link>
+      {isExpanded ? 'Read Less' : 'Read More'}
+      <FaArrowRight
+        className={cn(
+          'trasition-transform duration-500',
+          isExpanded ? 'rotate-180' : 'rotate-0'
+        )}
+      />
     </div>
   );
 };
