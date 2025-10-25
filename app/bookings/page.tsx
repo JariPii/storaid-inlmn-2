@@ -1,26 +1,17 @@
-import Button from '@/components/buttons/Button';
 import FAQSection from '@/components/faq/FAQSection';
-import Form from '@/components/form/Form';
-import InputField from '@/components/form/InputField';
-import TextAreaInput from '@/components/form/TextAreaInput';
-import HeroBooking from '@/components/hero/HeroBooking';
-import SubHeroContactUs from '@/components/hero/SubHeroContactUs';
-import SubscribeSection from '@/components/subscribe/SubscribeSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import Section from '@/components/utils/Section';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
-import { subscribeEmil } from '@/utils/actions';
 import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
 import Image from 'next/image';
 import BookingForm from '@/components/form/BookingForm';
-import { BookingProvider } from '@/hooks/BookingContext';
+import Hero from '@/components/hero/Hero';
+import { heroContent } from '@/components/hero/heroContent';
 
 const BookingsPage = () => {
   return (
     <div>
-      <Section>
-        <HeroBooking />
-      </Section>
+      <Hero {...heroContent.booking} />
       <div className='flex flex-col'>
         <Section
           variant='light'

@@ -43,12 +43,12 @@ export const heroContent: HeroContentList = {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
   },
   services: {
-    title: 'Our Services',
+    title: 'Services',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
   },
   booking: {
-    title: 'Book Storage now',
+    title: 'Booking',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
   },
