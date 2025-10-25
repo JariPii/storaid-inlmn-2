@@ -7,7 +7,6 @@ import PricingSection from '@/components/pricingplan/PricingSection';
 import ServicesSection from '@/components/services/ServicesSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
-import Section from '@/components/utils/Section';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 
 const HomePage = () => {
