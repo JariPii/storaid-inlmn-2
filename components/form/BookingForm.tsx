@@ -41,6 +41,21 @@ const BookingForm = () => {
           placeholder='Choose Unit'
           required
         />
+        <div className='flex flex-col gap-2 '>
+          <label htmlFor='choose-unit'>Choose Unit</label>
+          <select
+            name='selectedUnit'
+            id='choose-unit'
+            defaultValue={selectedUnit}
+            // className=' selectBor '
+          >
+            <option value=''>Choose Unit</option>
+            <option value='Small Unit'>Small</option>
+            <option value='Medium Unit'>Medium</option>
+            <option value='Large Unit'>Large</option>
+            <option value='Executive Unit'>Executive</option>
+          </select>
+        </div>
         <TextAreaInput
           labelText='Storage purpose'
           name='purpose'
