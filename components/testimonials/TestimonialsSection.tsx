@@ -1,3 +1,4 @@
+'use cache';
 import Section from '../utils/Section';
 import TestimonialsList from './TestimonialsList';
 import { fetchAllTesitmonials } from '@/utils/actions';

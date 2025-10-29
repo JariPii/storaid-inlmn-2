@@ -1,3 +1,4 @@
+'use cache';
 import { fetchAllFAQs } from '@/utils/actions';
 import AccordionList from '../accordion/AccordionList';
 import Section from '../utils/Section';

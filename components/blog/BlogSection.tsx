@@ -1,3 +1,4 @@
+'use cache';
 import Section from '../utils/Section';
 import BlogCard from './BlogCard';
 import { fetchAllBlogs } from '@/utils/actions';

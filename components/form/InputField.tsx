@@ -16,6 +16,7 @@ type InputFieldProps = {
   required?: boolean;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  ariaRequired?: boolean;
 };
 
 const InputField = ({
@@ -27,7 +28,7 @@ const InputField = ({
   className,
   defaultValue,
   required = false,
-  value,
+  ariaRequired,
   onChange,
 }: InputFieldProps) => {
   return (
@@ -40,13 +41,13 @@ const InputField = ({
         name={name}
         type={type}
         className={cn(
-          'border-[1px] border-(--clr-accent) placeholder:text-(--clr-accent) p-3 rounded-[10px] focus:border-(--clr-secondary) w-full',
+          'border-[1px] border-(--clr-accent) placeholder:text-(--clr-accent)  p-3 rounded-[10px] focus:border-(--clr-secondary) w-full',
           className
         )}
         placeholder={placeholder}
         defaultValue={defaultValue}
         required={required}
-        // value={value}
+        aria-required={ariaRequired}
         onChange={onChange}
       />
     </div>
