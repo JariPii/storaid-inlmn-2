@@ -1,5 +1,13 @@
 'use server';
 
+import { error } from 'console';
+import {
+  bookingSchema,
+  contactInfoSchema,
+  subscribeSchema,
+  validateWithZodSchema,
+} from './formSchemas';
+
 export type FAQ = {
   id?: number;
   title: string;
@@ -80,12 +88,12 @@ export const fetchAllBlogs = async (): Promise<Blog[]> => {
 export type Subscribe = {
   email: string;
 };
-
+// !! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export const subscribeEmil = async (
   _prevState: unknown,
   formData: FormData
 ): Promise<{ success: boolean; message: string }> => {
-  const email = formData.get('subscribe');
+  const email = formData.get('subscribe') as string;
 
   if (!email) {
     return { success: false, message: 'Need to be an email address' };
@@ -97,22 +105,63 @@ export const subscribeEmil = async (
     return { success: false, message: 'Subscription api not available' };
   }
 
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email }),
-  });
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email }),
+    });
 
-  const result = await res.json();
+    const result = await res.json();
 
-  if (!res.ok) {
-    return { success: false, message: result.message ?? 'Subscription failed' };
+    return { success: result.message, message: result.message };
+  } catch (error) {
+    console.log(error);
   }
 
-  return { success: result.message, message: result.message };
+  return { success: true, message: 'Great job!' };
 };
+
+// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export const subscribeEmail = async (
+  _prevState: unknown,
+  formData: FormData
+): Promise<{ success: boolean; message: string }> => {
+  try {
+    const email = Object.fromEntries(formData);
+
+    console.log('ENTRY OBJECT', email);
+
+    const inputData = validateWithZodSchema(subscribeSchema, email);
+
+    console.log('VALIDATED', inputData);
+
+    const url = process.env.SUBSCRIBE_EMAIL_API;
+
+    if (!url) {
+      return { success: false, message: 'Subscription api not available' };
+    }
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(inputData),
+    });
+
+    console.log('RES', res);
+    const result = await res.json();
+    console.log('RESULT', result);
+
+    return { success: result.message, message: result.message };
+  } catch (err) {
+    return { success: false, message: (err as Error).message };
+  }
+};
+// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export type ContactFormCredentials = {
   name: string;
@@ -122,48 +171,47 @@ export type ContactFormCredentials = {
   comment: string;
 };
 
+// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// MARK: !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 export const sendContactInformation = async (
   _prevState: unknown,
   formData: FormData
 ): Promise<{ success: boolean; message: string }> => {
-  const name = formData.get('name')?.toString().trim();
-  const email = formData.get('email')?.toString().trim();
-  const phone = formData.get('phone')?.toString().trim();
-  const subject = formData.get('subject')?.toString().trim();
-  const comment = formData.get('comment')?.toString().trim();
+  try {
+    const inputData = Object.fromEntries(formData);
+    const validatedFields = validateWithZodSchema(contactInfoSchema, inputData);
 
-  if (!name || !email || !phone || !subject || !comment) {
-    return { success: false, message: 'Fill in the required fields' };
+    console.log('ENTRY OBJECTs', inputData);
+
+    const url = process.env.CONTACT_API;
+
+    if (!url) {
+      return { success: false, message: 'Api not available' };
+    }
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(validatedFields),
+    });
+
+    console.log('LOGGING RES', res);
+
+    const result = await res.json();
+
+    console.log('CONTACT FORM', result);
+
+    return { success: result, message: result.message };
+  } catch (err) {
+    return { success: false, message: (err as Error).message };
   }
-
-  const contactInfo = { name, email, phone, subject, comment };
-  console.log('🚀 ~ sendContactInformation ~ contactInfo:', contactInfo);
-
-  const url = process.env.CONTACT_API;
-
-  if (!url) {
-    return { success: false, message: 'Api not available' };
-  }
-
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(contactInfo),
-  });
-
-  const result = await res.json();
-
-  if (!res.ok) {
-    return {
-      success: false,
-      message: result.message ?? 'Contact info failed to send',
-    };
-  }
-
-  return { success: true, message: result.message };
 };
+
+// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export type BookingsInformation = {
   name: string;
@@ -176,43 +224,38 @@ export const sendBookingInformation = async (
   _prevState: unknown,
   formData: FormData
 ): Promise<{ success: boolean; message: string }> => {
-  const name = formData.get('name') as string;
-  const email = formData.get('email') as string;
-  const selectedUnit = formData.get('selectedUnit') as string;
-  const purpose = formData.get('purpose') as string;
-  // const name = formData.get('name')?.toString().trim();
-  // const email = formData.get('email')?.toString().trim();
-  // const selectedUnit = formData.get('selectedUnit')?.toString().trim();
-  // const purpose = formData.get('purpose')?.toString().trim();
+  try {
+    const inputData = Object.fromEntries(formData);
+    const validatedFields = validateWithZodSchema(bookingSchema, inputData);
 
-  if (!name || !email || !selectedUnit || !purpose) {
-    return { success: false, message: 'Fill in the required fields' };
+    const url = process.env.BOOKING_API;
+
+    if (!url) {
+      return { success: false, message: 'Api not available' };
+    }
+
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(validatedFields),
+    });
+
+    const result = await res.json();
+
+    if (!res.ok) {
+      return {
+        success: false,
+        message: result.message ?? 'Booking failed',
+      };
+    }
+
+    return { success: true, message: result.message };
+  } catch (err) {
+    return { success: false, message: (err as Error).message };
   }
-
-  const bookingInfo = { name, email, selectedUnit, purpose };
-
-  const url = process.env.BOOKING_API;
-
-  if (!url) {
-    return { success: false, message: 'Api not available' };
-  }
-
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(bookingInfo),
-  });
-
-  const result = await res.json();
-
-  if (!res.ok) {
-    return {
-      success: false,
-      message: result.message ?? 'Booking failed',
-    };
-  }
-
-  return { success: true, message: result.message };
 };
+
+// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

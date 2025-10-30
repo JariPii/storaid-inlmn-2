@@ -17,7 +17,6 @@ const BookingForm = () => {
           <InputField
             name='name'
             type='text'
-            // defaultValue='Adam@adam.com'
             label='Name'
             placeholder='Name'
             required
@@ -26,7 +25,6 @@ const BookingForm = () => {
           <InputField
             name='email'
             type='email'
-            // defaultValue='Adam@adam.com'
             label='Email'
             placeholder='Email'
             required
@@ -36,7 +34,6 @@ const BookingForm = () => {
           name='selectedUnit'
           type='text'
           defaultValue={selectedUnit}
-          // value={selectedUnit}
           label='Choose Unit'
           placeholder='Choose Unit'
           required
