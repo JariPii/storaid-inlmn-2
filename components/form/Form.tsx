@@ -27,9 +27,8 @@ const Form = ({ action, children, className }: FormProps) => {
   useEffect(() => {
     if (state.message) {
       console.log(state.message);
-      resetBooking();
     }
-  }, [state, resetBooking]);
+  }, [state]);
 
   return (
     <>

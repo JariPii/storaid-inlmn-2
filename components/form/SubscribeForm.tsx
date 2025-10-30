@@ -1,5 +1,5 @@
 'use client';
-import { subscribeEmil } from '@/utils/actions';
+import { subscribeEmail, subscribeEmil } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
 import Button from '../buttons/Button';
@@ -7,11 +7,11 @@ import Button from '../buttons/Button';
 const SubscribeForm = () => {
   return (
     <div className='w-full'>
-      <Form action={subscribeEmil}>
+      <Form action={subscribeEmail}>
         <InputField
           labelVisibility='hidden'
           type='email'
-          name='subscribe'
+          name='email'
           placeholder='Enter you email'
           className='h-12'
         />
