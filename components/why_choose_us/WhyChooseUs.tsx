@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
         </div>
         <div className='grid grid-cols-[1fr_1fr] gap-10'>
           <div className='flex flex-col gap-6 p-4'>
-            <div className='flex gap-4'>
+            <div className='grid grid-cols-[6rem_1fr] gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
               justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
                 </p>
               </div>
             </div>
-            <div className='flex gap-4'>
+            <div className='grid grid-cols-[6rem_1fr] gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
               justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
@@ -65,7 +65,7 @@ const WhyChooseUs = () => {
                 </p>
               </div>
             </div>
-            <div className='flex gap-4'>
+            <div className='grid grid-cols-[6rem_1fr] gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
               justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
                 </p>
               </div>
             </div>
-            <div className='flex gap-4'>
+            <div className='grid grid-cols-[6rem_1fr] gap-4'>
               <div
                 className='bg-(--clr-secondary) flex items-center
               justify-center rounded-full max-w-[5.125rem] max-h-[5.125rem] '
