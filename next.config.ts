@@ -16,13 +16,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  experimental: {
-    cacheComponents: true,
-  },
   logging: {
     fetches: {
       fullUrl: true,
     },
+  },
+  experimental: {
+    cacheComponents: true,
   },
 };
 
