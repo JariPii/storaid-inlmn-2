@@ -1,3 +1,7 @@
+import { Suspense } from 'react';
+import TestimonialSkeleton, {
+  LoadingTestimonialsContainer,
+} from '../global/TestimonialSkeleton';
 import Section from '../utils/Section';
 import TestimonialsList from './TestimonialsList';
 import { fetchAllTesitmonials } from '@/utils/actions';
@@ -9,6 +13,7 @@ type TestimonialBackgroundProps = {
 const TestimonialsSection = async ({
   backgroundImage = 'withOut',
 }: TestimonialBackgroundProps) => {
+  'use cache';
   const testimonials = await fetchAllTesitmonials();
   return (
     <Section backroundImage={backgroundImage} className='py-24'>
@@ -23,7 +28,9 @@ const TestimonialsSection = async ({
           blandit nisi non sodales augue. Phasellus eget elit gravida.
         </p>
         <div className='flex gap-4'>
-          <TestimonialsList testimonials={testimonials} />
+          <Suspense fallback={<LoadingTestimonialsContainer />}>
+            <TestimonialsList testimonials={testimonials} />
+          </Suspense>
         </div>
       </div>
     </Section>
