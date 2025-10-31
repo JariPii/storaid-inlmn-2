@@ -71,15 +71,18 @@ const BlogCard = ({
       </p>
       <div className='flex items-center gap-1.5'>
         <p
-          className={cn('text-(--clr-accent)', {
-            isExpandedText: isExpanded,
-          })}
+          className={cn(
+            'text-(--clr-accent) group-hover:text-(--clr-secondary)',
+            {
+              isExpandedText: isExpanded,
+            }
+          )}
         >
           {isExpanded ? 'Read Less' : 'Read More'}
         </p>
         <FaArrowRight
           className={cn(
-            'text-(--clr-accent)',
+            'text-(--clr-accent) group-hover:text-(--clr-secondary)',
             'trasition-all duration-500',
             isExpanded ? 'rotate-180 text-(--clr-secondary)' : 'rotate-0'
           )}
