@@ -3,6 +3,7 @@ import AccordionList from '../accordion/AccordionList';
 import Section from '../utils/Section';
 
 const FAQSection = async () => {
+  'use cache';
   const faqs = await fetchAllFAQs();
   return (
     <div>

@@ -2,8 +2,13 @@ import Section from '../utils/Section';
 import BlogCard from './BlogCard';
 import { fetchAllBlogs } from '@/utils/actions';
 import BlogCardsList from './BlogCardsList';
+import { cacheLife } from 'next/cache';
+import { LoadingBlogContainer } from '../global/BlogCardSkeleton';
+import { Suspense } from 'react';
 
 const BlogSection = async () => {
+  'use cache';
+  cacheLife('days');
   const blogs = await fetchAllBlogs();
   return (
     <div>
@@ -32,7 +37,9 @@ const BlogSection = async () => {
           {/* {blogs.map((blog) => (
             <BlogCard key={blog.id} {...blog} />
           ))} */}
-          <BlogCardsList blogs={blogs} />
+          <Suspense fallback={<LoadingBlogContainer />}>
+            <BlogCardsList blogs={blogs} />
+          </Suspense>
         </div>
       </Section>
     </div>
