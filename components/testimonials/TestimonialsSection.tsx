@@ -13,7 +13,6 @@ type TestimonialBackgroundProps = {
 const TestimonialsSection = async ({
   backgroundImage = 'withOut',
 }: TestimonialBackgroundProps) => {
-  'use cache';
   const testimonials = await fetchAllTesitmonials();
   return (
     <Section backroundImage={backgroundImage} className='py-24'>
