@@ -17,10 +17,12 @@ const BookingsPage = () => {
           variant='light'
           className='grid grid-cols-2 h-auto gap-4 py-20'
         >
-          <div className='flex flex-col gap-3'>
-            <h3 className='text-2xl text-(--clr-accent) font-bold'>
-              Booking Unit
-            </h3>
+          <div className='flex flex-col gap-3 '>
+            <div className='bg-(--clr-secondary) p-1'>
+              <h3 className='text-2xl text-(--clr-accent) font-bold'>
+                Booking Unit
+              </h3>
+            </div>
             <h4 className='text-[3.25rem] font-bold tracking-tighter leading-[52px]'>
               Book Your Storage Unit Now & Simplify Your Life!
             </h4>
@@ -41,7 +43,9 @@ const BookingsPage = () => {
               gravida.
             </p>
             <div className='grid bg-(--clr-color-3) p-5 rounded-[10px]'>
-              <BookingForm />
+              <fieldset>
+                <BookingForm />
+              </fieldset>
             </div>
           </div>
         </Section>

@@ -7,7 +7,7 @@ const FAQSection = async () => {
   return (
     <div>
       <Section variant='light' className='flex flex-col gap-4 py-20'>
-        <div>
+        <div className='bg-(--clr-secondary) p-2'>
           <h3 className='text-2xl text-(--clr-accent) font-bold'>FAQs</h3>
         </div>
         <div className='grid grid-cols-2 gap-1'>
