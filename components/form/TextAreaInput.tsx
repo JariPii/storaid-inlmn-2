@@ -7,6 +7,7 @@ type TextAreaInputProps = {
   defaultValue?: string;
   className?: string;
   placeHolder?: string;
+  required?: string;
 };
 
 const TextAreaInput = ({
@@ -16,6 +17,7 @@ const TextAreaInput = ({
   defaultValue,
   className,
   placeHolder,
+  required,
 }: TextAreaInputProps) => {
   return (
     <div className='flex flex-col'>
@@ -25,12 +27,12 @@ const TextAreaInput = ({
         id={name}
         defaultValue={defaultValue}
         rows={rows}
-        required
         className={cn(
           'border-2 rounded-[5px] border-(--clr-accent) placeholder:text-(--clr-accent) p-3',
           className
         )}
         placeholder={placeHolder}
+        required
       />
     </div>
   );

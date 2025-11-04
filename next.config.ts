@@ -9,7 +9,17 @@ const nextConfig: NextConfig = {
         hostname: 'randomuser.me',
         pathname: '/api/portraits/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'win25jsfstorage.blob.core.windows.net',
+        pathname: '/images/blogs/**',
+      },
     ],
+  },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
   },
 };
 

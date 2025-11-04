@@ -1,8 +1,11 @@
-import { blogPosts } from '@/mockData';
 import Section from '../utils/Section';
-import BlogCard from './BlogCard';
+import { fetchAllBlogs } from '@/utils/actions';
+import BlogCardsList from './BlogCardsList';
+import { LoadingBlogContainer } from '../global/BlogCardSkeleton';
+import { Suspense } from 'react';
 
-const BlogSection = () => {
+const BlogSection = async () => {
+  const blogs = await fetchAllBlogs();
   return (
     <div>
       <Section variant='light' className='flex flex-col gap-4 py-20'>
@@ -27,9 +30,9 @@ const BlogSection = () => {
           </div>
         </div>
         <div className='flex gap-6'>
-          {blogPosts.map((blog, i) => (
-            <BlogCard key={i} {...blog} />
-          ))}
+          <Suspense fallback={<LoadingBlogContainer />}>
+            <BlogCardsList blogs={blogs} />
+          </Suspense>
         </div>
       </Section>
     </div>

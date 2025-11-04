@@ -11,7 +11,7 @@ const ContactInformationForm = () => {
         <InputField
           name='name'
           type='text'
-          defaultValue='Adam'
+          // defaultValue='Adam'
           label='Your name'
           placeholder='Your name'
           required
@@ -20,7 +20,7 @@ const ContactInformationForm = () => {
           <InputField
             name='email'
             type='email'
-            defaultValue='Adam@adam.com'
+            // defaultValue='Adam@adam.com'
             label='Email'
             placeholder='Email'
             required
@@ -29,7 +29,7 @@ const ContactInformationForm = () => {
           <InputField
             name='phone'
             type='text'
-            defaultValue='Adam'
+            // defaultValue='Adam'
             label='Telephone'
             placeholder='Telephone'
           />
@@ -37,7 +37,7 @@ const ContactInformationForm = () => {
         <InputField
           name='subject'
           type='text'
-          defaultValue='Question'
+          // defaultValue='Question'
           label='Subject'
           placeholder='Subject'
           required

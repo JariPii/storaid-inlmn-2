@@ -39,6 +39,17 @@ body {
   font-family: Urbanist, sans-serif;
 }
 
+.test {
+  height: 10svh;
+  width: 100%;
+  background: var(--clr-secondary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @layer utilities {
   .button-primary {
     @apply flex items-center justify-center bg-(--clr-accent) rounded-md text-(--clr-secondary) font-semibold leading-tight px-8 py-2 cursor-pointer;
@@ -66,5 +77,9 @@ body {
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .isExpandedText {
+    @apply text-(--clr-secondary) font-semibold;
   }
 }

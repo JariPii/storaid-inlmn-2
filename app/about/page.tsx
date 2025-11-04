@@ -1,21 +1,19 @@
 import AboutSection from '@/components/about/AboutSectio';
 import BrandsBar from '@/components/brands/BrandsBar';
-import HeroAbout from '@/components/hero/HeroAbout';
+import BlogCardSkeleton from '@/components/global/BlogCardSkeleton';
+import Hero from '@/components/hero/Hero';
+import { heroContent } from '@/components/hero/heroContent';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
-import Section from '@/components/utils/Section';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 
 const AboutPage = () => {
   return (
     <div>
-      <Section>
-        <HeroAbout />
-      </Section>
+      <Hero {...heroContent.about} />
       <AboutSection />
       <BrandsBar />
       <TestimonialsSection />
       <WhyChooseUs />
-      {/* <SubscribeSection /> */}
     </div>
   );
 };

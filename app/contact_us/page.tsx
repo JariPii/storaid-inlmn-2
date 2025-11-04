@@ -1,22 +1,16 @@
-import Button from '@/components/buttons/Button';
 import Section from '@/components/utils/Section';
 import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
 import Image from 'next/image';
-import Form from '@/components/form/Form';
-import InputField from '@/components/form/InputField';
-import TextAreaInput from '@/components/form/TextAreaInput';
-import { sendContactInformation } from '@/utils/actions';
 import FAQSection from '@/components/faq/FAQSection';
 import SubHeroContactUs from '@/components/hero/SubHeroContactUs';
-import HeroContact from '@/components/hero/HeroContact';
 import ContactInformationForm from '@/components/form/ContactInformationForm';
+import Hero from '@/components/hero/Hero';
+import { heroContent } from '@/components/hero/heroContent';
 
 const ContactUsPage = () => {
   return (
     <div className='flex flex-col'>
-      <Section>
-        <HeroContact />
-      </Section>
+      <Hero {...heroContent.contact} />
       <Section variant='light' className='grid grid-cols-2 h-auto gap-4 py-20'>
         <div className='flex flex-col gap-3'>
           <h3 className='text-2xl text-(--clr-accent) font-bold'>
