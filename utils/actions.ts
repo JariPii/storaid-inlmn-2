@@ -151,8 +151,8 @@ export const subscribeEmail = async (
       },
       body: JSON.stringify(inputData),
     });
+    console.log('🚀 ~ subscribeEmail ~ res:', res);
 
-    console.log('RES', res);
     const result = await res.json();
     console.log('RESULT', result);
 

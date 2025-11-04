@@ -44,12 +44,14 @@ const PricingplanCard = ({
         className
       )}
     >
-      <h2 className='text-(--clr-secondary) group-hover:text-(--clr-primary) text-2xl font-semibold'>
+      <h2 className='text-(--clr-secondary) group-hover:text-(--clr-primary) text-2xl font-semibold '>
         {title}
       </h2>
       <div className='flex gap-4'>
-        <span className='text-(--clr-accent)'>$</span>
-        <h3 className='text-[3.25rem] text-(--clr-accent) leading-[52px] font-bold '>
+        <span className='text-(--clr-accent) text-shadow-xs text-shadow-black'>
+          $
+        </span>
+        <h3 className='text-[3.25rem] text-(--clr-accent) leading-[52px] font-bold text-shadow-md text-shadow-gray-600'>
           {price}
         </h3>
         <div>

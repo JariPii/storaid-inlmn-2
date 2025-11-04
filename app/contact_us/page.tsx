@@ -13,9 +13,11 @@ const ContactUsPage = () => {
       <Hero {...heroContent.contact} />
       <Section variant='light' className='grid grid-cols-2 h-auto gap-4 py-20'>
         <div className='flex flex-col gap-3'>
-          <h3 className='text-2xl text-(--clr-accent) font-bold'>
-            Get in Touch
-          </h3>
+          <div className='bg-(--clr-secondary) p-2'>
+            <h3 className='text-2xl text-(--clr-accent) font-bold'>
+              Get in Touch
+            </h3>
+          </div>
           <h4 className='text-[3.25rem] font-bold tracking-tighter leading-[52px]'>
             Get Personalized Assistance – Contact Us
           </h4>

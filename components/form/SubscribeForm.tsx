@@ -1,5 +1,5 @@
 'use client';
-import { subscribeEmail, subscribeEmil } from '@/utils/actions';
+import { subscribeEmail } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
 import Button from '../buttons/Button';
@@ -15,7 +15,9 @@ const SubscribeForm = () => {
           placeholder='Enter you email'
           className='h-12'
         />
-        <Button className='h-12'>Submit</Button>
+        <Button className='h-12' type='submit'>
+          Submit
+        </Button>
       </Form>
     </div>
   );

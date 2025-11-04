@@ -14,6 +14,7 @@
   --clr-color-3: #faf8ec;
   --clr-color-4: #f1ffeb;
   --clr-color-5: #f1ffea8f;
+  --clr-text-shadow: rgba(17, 54, 41, 0.8);
 }
 
 @theme inline {
@@ -81,5 +82,9 @@ body {
 
   .isExpandedText {
     @apply text-(--clr-secondary) font-semibold;
+  }
+
+  .shadow-green {
+    @apply text-shadow-(--clr-secondary);
   }
 }
