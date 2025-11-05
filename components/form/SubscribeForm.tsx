@@ -3,6 +3,7 @@ import { subscribeEmail } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
 import Button from '../buttons/Button';
+// import Form from 'next/form';
 
 const SubscribeForm = () => {
   return (
@@ -14,6 +15,7 @@ const SubscribeForm = () => {
           name='email'
           placeholder='Enter you email'
           className='h-12'
+          defaultValue={''}
         />
         <Button className='h-12' type='submit'>
           Submit
