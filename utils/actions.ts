@@ -15,7 +15,7 @@ export type FAQ = {
 };
 
 export const fetchAllFAQs = async (): Promise<FAQ[]> => {
-  const url = API.FAQS;
+  const url = API.FAQ;
 
   if (!url) {
     throw new Error('FAQ_API is borken');
@@ -121,7 +121,7 @@ export const subscribeEmail = async (
     const result = await res.json();
     console.log('RESULT', result);
 
-    return { success: result.message, message: result.message };
+    return { success: true, message: result.message };
   } catch (err) {
     return { success: false, message: (err as Error).message };
   }
