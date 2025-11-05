@@ -9,8 +9,9 @@ export type SubscribeSchema = z.infer<typeof subscribeSchema>;
 export const contactInfoSchema = z.object({
   name: z.string({ message: 'Enter name' }).min(2),
   email: z.email({ message: 'CONTACT US Email' }),
+  phoner: z.string().optional(),
   subject: z.string({ message: 'Entrar un commento' }),
-  comment: z.string({ message: 'SUBJECT MISSING' }).min(10).max(150),
+  comment: z.string({ message: 'SUBJECT MISSING' }).min(5).max(150),
 });
 
 export type ContactInfoSchema = z.infer<typeof contactInfoSchema>;
@@ -19,7 +20,15 @@ export const bookingSchema = z.object({
   name: z.string({ message: 'Please enter your name' }),
   email: z.email({ message: 'Enter a valid email' }),
   selectedUnit: z.string({ message: 'Enter a unit' }),
-  purpose: z.string({ message: 'Enter your purpose for the unit' }),
+  purpose: z.string().refine(
+    (purpose) => {
+      const wordCount = purpose.split(' ').length;
+      return wordCount >= 5 && wordCount <= 30;
+    },
+    {
+      message: 'Enter your purpose for the unit',
+    }
+  ),
 });
 
 export function validateWithZodSchema<T>(
