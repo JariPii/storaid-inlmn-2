@@ -54,9 +54,14 @@ const BookingForm = () => {
               defaultValue={state?.inputs?.purpose}
               required
             />
-            <Button type='submit' disabled={isPending}>
-              Submit
-            </Button>
+            <div className='flex justify-between p-1.5'>
+              <Button type='reset' buttonTypes='reset'>
+                Reset
+              </Button>
+              <Button type='submit' disabled={isPending}>
+                Submit
+              </Button>
+            </div>
             {state?.message && <p>{state.message}</p>}
           </>
         )}
