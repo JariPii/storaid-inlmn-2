@@ -12,7 +12,7 @@ export const LoadingBlogContainer = () => {
 
 const BlogCardSkeleton = () => {
   return (
-    <div className='flex flex-col gap-4 w-[26.875rem] bg-(--clr-primary) border-[1px] border-gray-300 p-6 rounded-[5px] h-[36rem] animate-pulse'>
+    <div className='flex flex-col gap-4 w-[26.875rem] bg-(--clr-secondary) border-[1px] border-gray-300 p-6 rounded-[5px] h-[36rem] animate-pulse'>
       <div className='bg-gray-200 h-1/2 w-full rounded-[5px]'></div>
       <div className='flex gap-2 text-(--clr-primary) '>
         <div className='bg-gray-200 w-2/5 h-5 rounded-[5px]'></div>
