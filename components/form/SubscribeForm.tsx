@@ -22,7 +22,11 @@ const SubscribeForm = () => {
                   error={state?.errors?.email?.[0]}
                 />
 
-                <Button type='submit' disabled={isPending}>
+                <Button
+                  type='submit'
+                  disabled={isPending}
+                  className='max-h-full'
+                >
                   Submit
                 </Button>
               </div>

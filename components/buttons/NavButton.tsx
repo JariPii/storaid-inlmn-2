@@ -14,14 +14,12 @@ const NavButton = ({ dest }: NavButtonProps) => {
   if (!link) return null;
 
   return (
-    // <Button>
     <Link
       href={link.href}
-      className='py-1 px-3 rounded-[5px] flex items-center justify-center bg-(--clr-accent) hover:bg-(--clr-secondary) hover:text-(--clr-accent)'
+      className='py-2 px-4 rounded-[5px] flex font-semibold items-center justify-center bg-(--clr-accent) hover:bg-(--clr-secondary) hover:text-(--clr-accent) max-h-fit'
     >
       {link.label}
     </Link>
-    // </Button>
   );
 };
 export default NavButton;
