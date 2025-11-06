@@ -55,9 +55,6 @@ const BookingForm = () => {
               required
             />
             <div className='flex justify-between p-1.5'>
-              <Button type='reset' buttonTypes='reset'>
-                Reset
-              </Button>
               <Button type='submit' disabled={isPending}>
                 Submit
               </Button>
