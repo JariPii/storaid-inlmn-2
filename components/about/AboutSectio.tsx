@@ -20,7 +20,7 @@ const AboutSection = () => {
           fetchPriority='high'
           priority
         />
-        <StatsCard className='absolute -bottom-1/12 left-1/20' />
+        <StatsCard className='absolute -bottom-4 left-6' />
       </div>
       <div className='flex flex-col gap-2'>
         <div className='bg-(--clr-secondary) p-2'>
@@ -46,7 +46,7 @@ const AboutSection = () => {
             description='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque laudantium.'
           />
         </div>
-        <div className='flex justify-between w-[90%]'>
+        <div className='flex justify-between items-center w-[90%]'>
           <Button>Discover More</Button>
           <div className='flex gap-3 p-2'>
             <div className='bg-(--clr-secondary) flex items-center justify-center rounded-full p-4'>
