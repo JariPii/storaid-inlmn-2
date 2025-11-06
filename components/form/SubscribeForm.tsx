@@ -3,23 +3,32 @@ import { subscribeEmail } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
 import Button from '../buttons/Button';
-// import Form from 'next/form';
 
 const SubscribeForm = () => {
   return (
     <div className='w-full'>
       <Form action={subscribeEmail}>
-        <InputField
-          labelVisibility='hidden'
-          type='email'
-          name='email'
-          placeholder='Enter you email'
-          className='h-12'
-          defaultValue={''}
-        />
-        <Button className='h-12' type='submit'>
-          Submit
-        </Button>
+        {({ isPending, state }) => {
+          console.log('🚀 ~ SubscribeForm ~ state:', state);
+          return (
+            <div className='w-full'>
+              <div className='flex w-full gap-3'>
+                <InputField
+                  labelVisibility='hidden'
+                  type='email'
+                  name='email'
+                  placeholder='Enter your email'
+                  defaultValue={state?.inputs?.email}
+                  error={state?.errors?.email?.[0]}
+                />
+                <Button type='submit' disabled={isPending}>
+                  Submit
+                </Button>
+              </div>
+              {state?.message && <p>{state.message}</p>}
+            </div>
+          );
+        }}
       </Form>
     </div>
   );

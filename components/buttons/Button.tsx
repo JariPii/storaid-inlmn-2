@@ -14,6 +14,7 @@ type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
   type?: 'submit' | 'reset' | 'button' | undefined;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -30,6 +31,7 @@ const Button = ({
   children,
   onClick,
   type = undefined,
+  disabled,
 }: ButtonProps) => {
   const buttonHover = {
     light: 'hover:bg-(--clr-secondary) hover:text-(--clr-accent)',
@@ -43,6 +45,7 @@ const Button = ({
       )}
       type={type}
       onClick={onClick}
+      disabled={disabled}
     >
       {children}
     </button>
