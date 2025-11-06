@@ -1,15 +1,7 @@
 import { cn } from '@/lib/utils';
 
 type ButtonProps = {
-  height?: string;
-  width?: string;
-  padding?: string;
-  margin?: string;
-  color?: string;
   hover?: 'light' | 'dark';
-  background?: string;
-  text?: string;
-  href?: string;
   className?: string;
   children: React.ReactNode;
   onClick?: () => void;
@@ -19,15 +11,7 @@ type ButtonProps = {
 };
 
 const Button = ({
-  height,
-  width,
-  padding,
-  margin,
-  color,
   hover = 'light',
-  background,
-  text,
-  href,
   className,
   children,
   onClick,
