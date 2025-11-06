@@ -7,7 +7,9 @@ type TextAreaInputProps = {
   defaultValue?: string;
   className?: string;
   placeHolder?: string;
-  required?: string;
+  required?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  error?: string;
 };
 
 const TextAreaInput = ({
@@ -18,6 +20,7 @@ const TextAreaInput = ({
   className,
   placeHolder,
   required,
+  onChange,
 }: TextAreaInputProps) => {
   return (
     <div className='flex flex-col'>
@@ -32,7 +35,8 @@ const TextAreaInput = ({
           className
         )}
         placeholder={placeHolder}
-        required
+        required={required}
+        onChange={onChange}
       />
     </div>
   );

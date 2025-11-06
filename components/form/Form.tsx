@@ -2,26 +2,34 @@
 
 import { useBooking } from '@/hooks/BookingContext';
 import { cn } from '@/lib/utils';
+import { ActionResponse } from '@/utils/types';
 import { useActionState, useEffect } from 'react';
 
-export type actionFunction = (
-  prevState: unknown,
-  formData: FormData
-) => Promise<{ success: boolean; message: string }>;
-
-const initialState = {
+const initialState: ActionResponse<Record<string, unknown>> = {
   success: false,
   message: '',
+  errors: {},
+  inputs: {},
 };
 
-type FormProps = {
-  action: actionFunction;
-  children: React.ReactNode;
+type FormProps<T extends Record<string, unknown>> = {
+  action: (
+    _prevState: ActionResponse<T> | null,
+    formData: FormData
+  ) => Promise<ActionResponse<T>>;
+  children: (args: {
+    isPending: boolean;
+    state: ActionResponse<T>;
+  }) => React.ReactNode;
   className?: string;
 };
 
-const Form = ({ action, children, className }: FormProps) => {
-  const [state, formAction] = useActionState(action, initialState);
+const Form = <T extends Record<string, unknown>>({
+  action,
+  children,
+  className,
+}: FormProps<T>) => {
+  const [state, formAction, isPending] = useActionState(action, initialState);
   const { resetBooking } = useBooking();
 
   useEffect(() => {
@@ -37,9 +45,8 @@ const Form = ({ action, children, className }: FormProps) => {
         action={formAction}
         className={cn('flex gap-2 w-full flex-1', className)}
       >
-        {children}
+        {children({ isPending, state })}
       </form>
-      <div>{state.message && <p>{state.message}</p>}</div>
     </>
   );
 };

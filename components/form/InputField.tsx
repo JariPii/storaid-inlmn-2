@@ -14,8 +14,8 @@ type InputFieldProps = {
   labelVisibility?: 'hidden' | 'block';
   className?: string;
   required?: boolean;
-  value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: string;
 };
 
 const InputField = ({
@@ -27,7 +27,7 @@ const InputField = ({
   className,
   defaultValue,
   required = false,
-  value,
+  error,
   onChange,
 }: InputFieldProps) => {
   return (
@@ -40,7 +40,9 @@ const InputField = ({
         name={name}
         type={type}
         className={cn(
-          'border-2 border-(--clr-accent) placeholder:text-(--clr-accent-3) p-3 rounded-[10px] focus:border-(--clr-secondary) w-full',
+          `border-2 placeholder:text-(--clr-accent-3) p-3 rounded-[10px] focus:border-(--clr-secondary) w-full ${
+            error ? 'border-red-500' : ' border-(--clr-accent)'
+          }`,
           className
         )}
         placeholder={placeholder}
@@ -49,6 +51,7 @@ const InputField = ({
         // value={value}
         onChange={onChange}
       />
+      {error && <p className='text-red-500 text-sm mt-1'>{error}</p>}
     </div>
   );
 };
