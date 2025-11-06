@@ -51,22 +51,43 @@ export type Testimonial = {
 };
 
 export const fetchAllTesitmonials = async (): Promise<Testimonial[]> => {
-  const url = API.TESTIMONIALS;
+  try {
+    const url = API.TESTIMONIALS;
 
-  if (!url) {
-    throw new Error('Testimonials API is borken');
+    if (!url) {
+      throw new Error('Testimonials API is borken');
+    }
+
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error('Failed to fetch Testimonials!');
+    }
+
+    const testimonials = (await res.json()) as Testimonial[];
+
+    return testimonials;
+  } catch (error) {
+    throw new Error('Something aint feelin raijt');
   }
-
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch Testimonials!');
-  }
-
-  const testimonials = (await res.json()) as Testimonial[];
-
-  return testimonials;
 };
+// export const fetchAllTesitmonials = async (): Promise<Testimonial[]> => {
+//   const url = API.TESTIMONIALS;
+
+//   if (!url) {
+//     throw new Error('Testimonials API is borken');
+//   }
+
+//   const res = await fetch(url);
+
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch Testimonials!');
+//   }
+
+//   const testimonials = (await res.json()) as Testimonial[];
+
+//   return testimonials;
+// };
 
 export type Blog = {
   id: string;
