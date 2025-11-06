@@ -14,7 +14,7 @@ export type BookingData = {
   name: string;
   email: string;
   selectedUnit: string;
-  prupose: string;
+  purpose: string;
 };
 
 export type ActionResponse<T extends Record<string, unknown>> = {

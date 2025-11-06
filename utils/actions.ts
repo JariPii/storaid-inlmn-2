@@ -3,7 +3,9 @@
 import z from 'zod/v4';
 import { API } from './apiConfig';
 import {
+  BookingSchema,
   bookingSchema,
+  ContactInfoSchema,
   contactInfoSchema,
   subscribeSchema,
   validateWithZodSchema,
@@ -149,42 +151,6 @@ export const subscribeEmail = async (
     return { success: false, message: (err as Error).message };
   }
 };
-// export const subscribeEmail = async (
-//   _prevState: unknown,
-//   formData: FormData
-// ): Promise<{ success: boolean; message: string }> => {
-//   try {
-//     const email = Object.fromEntries(formData);
-
-//     console.log('ENTRY OBJECT', email);
-
-//     const inputData = validateWithZodSchema(subscribeSchema, email);
-
-//     console.log('VALIDATED', inputData);
-
-//     const url = API.SUBSCRIBE;
-
-//     if (!url) {
-//       return { success: false, message: 'Subscription api not available' };
-//     }
-
-//     const res = await fetch(url, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(inputData),
-//     });
-//     console.log('🚀 ~ subscribeEmail ~ res:', res);
-
-//     const result = await res.json();
-//     console.log('RESULT', result);
-
-//     return { success: true, message: result.message };
-//   } catch (err) {
-//     return { success: false, message: (err as Error).message };
-//   }
-// };
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export type ContactFormCredentials = {
@@ -203,16 +169,35 @@ export const sendContactInformation = async (
   formData: FormData
 ): Promise<ActionResponse<ContactData>> => {
   try {
-    const rawData = Object.fromEntries(formData);
+    const rawData = Object.fromEntries(
+      Object.keys(contactInfoSchema.shape).map((key) => [
+        key,
+        formData.get(key) || '',
+      ])
+    ) as ContactInfoSchema;
+
     const validatedFields = contactInfoSchema.safeParse(rawData);
 
     console.log('ENTRY OBJECTs', rawData);
 
     if (!validatedFields.success) {
+      const errorTree = z.treeifyError(validatedFields.error);
+
+      const errors: Record<string, string[]> = {};
+      const errorProps = errorTree.properties as Record<
+        string,
+        { errors?: string[] }
+      >;
+
+      for (const [key, value] of Object.entries(errorProps)) {
+        if (value.errors && value.errors.length > 0) {
+          errors[key] = value.errors;
+        }
+      }
       return {
         success: false,
-        message: 'Field input is invalid',
-        errors: validatedFields.error.flatten().fieldErrors,
+        message: 'Invalid email',
+        errors,
         inputs: rawData,
       };
     }
@@ -258,18 +243,33 @@ export const sendBookingInformation = async (
   formData: FormData
 ): Promise<ActionResponse<BookingData>> => {
   try {
-    const rawData = Object.fromEntries(formData);
+    const rawData = Object.fromEntries(
+      Object.keys(bookingSchema.shape).map((key) => [
+        key,
+        formData.get(key) || '',
+      ])
+    ) as BookingSchema;
+
     const validatedFields = bookingSchema.safeParse(rawData);
-    console.log(
-      '🚀 ~ sendBookingInformation ~ validatedFields:',
-      validatedFields
-    );
 
     if (!validatedFields.success) {
+      const errorTree = z.treeifyError(validatedFields.error);
+
+      const errors: Record<string, string[]> = {};
+      const errorProps = errorTree.properties as Record<
+        string,
+        { errors?: string[] }
+      >;
+
+      for (const [key, value] of Object.entries(errorProps)) {
+        if (value.errors && value.errors.length > 0) {
+          errors[key] = value.errors;
+        }
+      }
       return {
         success: false,
-        message: 'Field input is invalid',
-        errors: validatedFields.error.flatten().fieldErrors,
+        message: `Fill out the required fields`,
+        errors,
         inputs: rawData,
       };
     }
@@ -302,42 +302,6 @@ export const sendBookingInformation = async (
     return { success: false, message: (err as Error).message };
   }
 };
-// export const sendBookingInformation = async (
-//   _prevState: unknown,
-//   formData: FormData
-// ): Promise<{ success: boolean; message: string }> => {
-//   try {
-//     const inputData = Object.fromEntries(formData);
-//     const validatedFields = validateWithZodSchema(bookingSchema, inputData);
-
-//     const url = API.BOOKING;
-
-//     if (!url) {
-//       return { success: false, message: 'Api not available' };
-//     }
-
-//     const res = await fetch(url, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(validatedFields),
-//     });
-
-//     const result = await res.json();
-
-//     if (!res.ok) {
-//       return {
-//         success: false,
-//         message: result.message ?? 'Booking failed',
-//       };
-//     }
-
-//     return { success: true, message: result.message };
-//   } catch (err) {
-//     return { success: false, message: (err as Error).message };
-//   }
-// };
 
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

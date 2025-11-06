@@ -11,7 +11,7 @@ export const contactInfoSchema = z.object({
     .string({ message: 'Enter name' })
     .min(2, { message: 'Must contain atleast 2 letters' }),
   email: z.email({ message: 'Enter a valid email address' }),
-  phoner: z.string().optional(),
+  phoneNumber: z.string().optional(),
   subject: z.string({ message: 'Enter a valid subject' }),
   comment: z.string({ message: 'Please provide a message' }).min(5).max(150),
 });
@@ -34,6 +34,8 @@ export const bookingSchema = z.object({
     }
   ),
 });
+
+export type BookingSchema = z.infer<typeof bookingSchema>;
 
 export function validateWithZodSchema<T>(
   schema: z.ZodType<T>,

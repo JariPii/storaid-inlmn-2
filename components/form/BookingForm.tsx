@@ -39,17 +39,20 @@ const BookingForm = () => {
             <InputField
               name='selectedUnit'
               type='text'
-              defaultValue={selectedUnit || state?.inputs?.selectedUnit}
               label='Choose Unit'
               placeholder='Choose Unit'
               required
+              error={state?.errors?.selectedUnit?.[0]}
+              defaultValue={selectedUnit || state?.inputs?.selectedUnit}
             />
             <TextAreaInput
               labelText='Storage purpose'
               name='purpose'
               rows={6}
               placeHolder='Describe your storage purpose so that we can match your request'
-              defaultValue={state?.inputs?.prupose}
+              error={state?.errors?.purpose?.[0]}
+              defaultValue={state?.inputs?.purpose}
+              required
             />
             <Button type='submit' disabled={isPending}>
               Submit

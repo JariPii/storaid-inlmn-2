@@ -17,6 +17,8 @@ const AboutSection = () => {
           src={moversImg}
           alt='Moving truck and movers trying to lift a big window.'
           className='image-frame'
+          fetchPriority='high'
+          priority
         />
         <StatsCard className='absolute -bottom-1/12 left-1/20' />
       </div>
