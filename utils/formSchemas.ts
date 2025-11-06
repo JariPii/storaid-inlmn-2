@@ -1,4 +1,4 @@
-import * as z from 'zod';
+import * as z from 'zod/v4';
 
 export const subscribeSchema = z.object({
   email: z.email({ message: 'Enter a valid email' }),

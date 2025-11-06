@@ -1,5 +1,6 @@
 'use server';
 
+import z from 'zod/v4';
 import { API } from './apiConfig';
 import {
   bookingSchema,
@@ -102,20 +103,24 @@ export const subscribeEmail = async (
 ): Promise<ActionResponse<SubscribeData>> => {
   try {
     const rawData: SubscribeData = {
-      email: formData.get('email') as string,
+      email: (formData.get('email') as string) || '',
     };
     // const rawData = Object.fromEntries(formData);
-    console.log('🚀 ~ subscribeEmail ~ rawData:', rawData);
 
     const validatedData = subscribeSchema.safeParse(rawData);
-    console.log('🚀 ~ subscribeEmail ~ validatedData:', validatedData);
-    console.log('🚀 ~ subscribeEmail ~ validatedData:', validatedData.success);
 
     if (!validatedData.success) {
+      const errorTree = z.treeifyError(validatedData.error);
+
+      const mappedErrors: { email?: string[] } = {};
+      if (errorTree.properties?.email?.errors?.length) {
+        mappedErrors.email = errorTree.properties.email.errors;
+      }
+
       return {
         success: false,
-        message: 'Invalid email',
-        errors: validatedData.error.flatten().fieldErrors,
+        message: mappedErrors.email?.[0] || 'Invalid email',
+        errors: mappedErrors,
         inputs: rawData,
       };
     }

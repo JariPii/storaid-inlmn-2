@@ -21,6 +21,7 @@ const SubscribeForm = () => {
                   defaultValue={state?.inputs?.email}
                   error={state?.errors?.email?.[0]}
                 />
+
                 <Button type='submit' disabled={isPending}>
                   Submit
                 </Button>
