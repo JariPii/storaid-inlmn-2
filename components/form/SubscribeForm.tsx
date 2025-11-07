@@ -9,7 +9,6 @@ const SubscribeForm = () => {
     <div className='w-full'>
       <Form action={subscribeEmail}>
         {({ isPending, state }) => {
-          console.log('🚀 ~ SubscribeForm ~ state:', state);
           return (
             <div className='w-full'>
               <div className='flex w-full gap-3'>
