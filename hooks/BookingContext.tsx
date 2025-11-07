@@ -1,4 +1,5 @@
 'use client';
+import { pricingPlans } from '@/mockData';
 import { createContext, useContext, useState } from 'react';
 
 type BookingContextType = {

@@ -2,9 +2,10 @@ import Image from 'next/image';
 import Section from '../utils/Section';
 import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
 import Tile from '../utils/Tiles';
-import Button from '../buttons/Button';
+import { Button, NavButton } from '../buttons/Buttons';
 import { MdPhone } from 'react-icons/md';
 import StatsCard from '../utils/StatsCard';
+import Link from 'next/link';
 
 const AboutSection = () => {
   return (
@@ -47,7 +48,7 @@ const AboutSection = () => {
           />
         </div>
         <div className='flex justify-between items-center w-[90%]'>
-          <Button>Discover More</Button>
+          <NavButton href='/bookings' label='Discover More' />
           <div className='flex gap-3 p-2'>
             <div className='bg-(--clr-secondary) flex items-center justify-center rounded-full p-4'>
               <MdPhone className='text-(--clr-accent) w-[1.875rem] h-[1.875rem]' />

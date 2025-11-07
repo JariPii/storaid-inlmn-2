@@ -274,6 +274,7 @@ export const sendBookingInformation = async (
     const validatedFields = bookingSchema.safeParse(rawData);
 
     if (!validatedFields.success) {
+      console.log('Validation failed, returning inputs:', rawData);
       const errorTree = z.treeifyError(validatedFields.error);
 
       const errors: Record<string, string[]> = {};
@@ -287,6 +288,7 @@ export const sendBookingInformation = async (
           errors[key] = value.errors;
         }
       }
+
       return {
         success: false,
         message: `Fill out the required fields`,
@@ -294,6 +296,9 @@ export const sendBookingInformation = async (
         inputs: rawData,
       };
     }
+
+    const jsonData = JSON.stringify(validatedFields.data);
+    console.log('🚀 ~ sendBookingInformation ~ jsonData:', jsonData);
 
     const url = API.BOOKING;
 
@@ -310,6 +315,7 @@ export const sendBookingInformation = async (
     });
 
     const result = await res.json();
+    console.log('🚀 ~ sendBookingInformation ~ result:', result);
 
     if (!res.ok) {
       return {
@@ -318,7 +324,7 @@ export const sendBookingInformation = async (
       };
     }
 
-    return { success: true, message: result.message };
+    return { success: true, message: result.message, errors: {}, inputs: {} };
   } catch (err) {
     return { success: false, message: (err as Error).message };
   }

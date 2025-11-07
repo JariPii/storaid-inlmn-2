@@ -2,14 +2,13 @@
 import { subscribeEmail } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
-import Button from '../buttons/Button';
+import { Button } from '../buttons/Buttons';
 
 const SubscribeForm = () => {
   return (
     <div className='w-full'>
       <Form action={subscribeEmail}>
         {({ isPending, state }) => {
-          console.log('🚀 ~ SubscribeForm ~ state:', state);
           return (
             <div className='w-full'>
               <div className='flex w-full gap-3'>

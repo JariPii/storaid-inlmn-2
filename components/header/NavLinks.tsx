@@ -1,4 +1,5 @@
 'use client';
+import { cn } from '@/lib/utils';
 import { links } from '@/utils/links';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -15,11 +16,14 @@ const NavLinks = () => {
             <Link
               key={link.href}
               href={link.href}
-              className={`${
-                isActive
-                  ? 'text-(--clr-accent) bg-(--clr-secondary) p-1 rounded-sm'
-                  : 'text-(--clr-secondary)'
-              } hover:text-(--clr-accent) hover:bg-(--clr-accent-3) p-1 rounded-sm`}
+              className={cn(
+                ' px-3 py-1 rounded-sm hover:text-(--clr-primary) hover:bg-(--clr-accent-3)',
+                `${
+                  isActive
+                    ? 'text-(--clr-accent) bg-(--clr-secondary)'
+                    : 'text-(--clr-secondary)'
+                }`
+              )}
             >
               {link.label}
             </Link>

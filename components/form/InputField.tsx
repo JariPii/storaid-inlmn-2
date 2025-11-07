@@ -32,8 +32,11 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <div className='flex flex-col gap-1 flex-1'>
-      <label htmlFor={name} className={`${labelVisibility}`}>
-        {label || name}
+      <label
+        htmlFor={name}
+        className={cn(`${labelVisibility}`, error ? 'text-red-500' : '')}
+      >
+        {error ? `${label} *` : `${label || name}`}
       </label>
       <input
         id={name}
