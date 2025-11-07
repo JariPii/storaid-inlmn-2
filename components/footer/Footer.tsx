@@ -10,12 +10,16 @@ const Footer = () => {
       </div>
       <div className='flex gap-5'>
         <div className='flex items-center gap-2 '>
-          <FaChevronCircleRight className='text-(--clr-primary)' />
-          <p className='text-(--clr-primary)'>Terms & Conditions</p>
+          <a href='/terms' className='flex items-center gap-2'>
+            <FaChevronCircleRight className='text-(--clr-primary)' />
+            <p className='text-(--clr-primary)'>Terms & Conditions</p>
+          </a>
         </div>
         <div className='flex items-center gap-2'>
-          <FaChevronCircleRight className='text-(--clr-primary)' />
-          <p className='text-(--clr-primary)'> Privacy Policy</p>
+          <a href='/privacy' className='flex items-center gap-2'>
+            <FaChevronCircleRight className='text-(--clr-primary)' />
+            <p className='text-(--clr-primary)'> Privacy Policy</p>
+          </a>
         </div>
       </div>
     </div>

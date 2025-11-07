@@ -2,7 +2,7 @@
 import { subscribeEmail } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
-import Button from '../buttons/Button';
+import { Button } from '../buttons/Buttons';
 
 const SubscribeForm = () => {
   return (

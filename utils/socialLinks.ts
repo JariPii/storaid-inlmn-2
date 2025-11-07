@@ -13,8 +13,24 @@ type SocialLink = {
 };
 
 export const socialLinks: SocialLink[] = [
-  { icon: FaFacebookF, href: '/', ariaLabelName: 'Facebook' },
-  { icon: FaInstagram, href: '/', ariaLabelName: 'Instagram' },
-  { icon: FaXTwitter, href: '/', ariaLabelName: 'X former Twitter' },
-  { icon: FaYoutube, href: '/', ariaLabelName: 'YouTube' },
+  {
+    icon: FaFacebookF,
+    href: 'http://www.facebook.com',
+    ariaLabelName: 'Facebook',
+  },
+  {
+    icon: FaInstagram,
+    href: 'https://www.instagram.com',
+    ariaLabelName: 'Instagram',
+  },
+  {
+    icon: FaXTwitter,
+    href: 'https://x.com',
+    ariaLabelName: 'X former Twitter',
+  },
+  {
+    icon: FaYoutube,
+    href: 'https://www.youtube.com',
+    ariaLabelName: 'YouTube',
+  },
 ];

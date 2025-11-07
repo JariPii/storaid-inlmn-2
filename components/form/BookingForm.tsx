@@ -3,7 +3,7 @@ import { sendBookingInformation } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
 import TextAreaInput from './TextAreaInput';
-import Button from '../buttons/Button';
+import { Button } from '../buttons/Buttons';
 import { useBooking } from '@/hooks/BookingContext';
 import { pricingPlans } from '@/utils/unitPricing';
 import Dropdown from './Dropdown';

@@ -1,6 +1,6 @@
 'use client';
 import { useBooking } from '@/hooks/BookingContext';
-import Button from '../buttons/Button';
+import { Button } from '../buttons/Buttons';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 import { FaCircleCheck } from 'react-icons/fa6';

@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import Section from '../utils/Section';
-import Button from '../buttons/Button';
 import Link from 'next/link';
+import { NavButton } from '../buttons/Buttons';
 
 export type HeroProps = {
   invitation?: string;
@@ -38,9 +38,7 @@ const Hero = ({
             {description}
           </p>
           {buttonText && buttonLink && (
-            <Link href={`/${buttonLink}`}>
-              <Button hover='dark'>{buttonText}</Button>
-            </Link>
+            <NavButton href={'/bookings'} colorVariant='darkBg' />
           )}
         </div>
         {imgSrc && (
