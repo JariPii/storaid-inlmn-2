@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'StorAid',
     images: [
       {
-        url: 'https://storaid-inlmn-2.vercel.app/storaid-og-1200x630.png',
+        url: 'https://storaid-inlmn-2.vercel.app/storaid-og.png',
         width: 1200,
         height: 630,
         alt: 'StorAid logo',
