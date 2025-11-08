@@ -180,8 +180,6 @@ export const sendContactInformation = async (
 
     const validatedFields = contactInfoSchema.safeParse(rawData);
 
-    console.log('ENTRY OBJECTs', rawData);
-
     if (!validatedFields.success) {
       const errorTree = z.treeifyError(validatedFields.error);
 
@@ -221,11 +219,7 @@ export const sendContactInformation = async (
       body: JSON.stringify(validatedFields.data),
     });
 
-    console.log('LOGGING RES', res);
-
     const result = await res.json();
-
-    console.log('CONTACT FORM', result);
 
     return { success: result, message: result.message };
   } catch (err) {
@@ -257,7 +251,6 @@ export const sendBookingInformation = async (
     const validatedFields = bookingSchema.safeParse(rawData);
 
     if (!validatedFields.success) {
-      console.log('Validation failed, returning inputs:', rawData);
       const errorTree = z.treeifyError(validatedFields.error);
 
       const errors: Record<string, string[]> = {};
@@ -281,7 +274,6 @@ export const sendBookingInformation = async (
     }
 
     const jsonData = JSON.stringify(validatedFields.data);
-    console.log('🚀 ~ sendBookingInformation ~ jsonData:', jsonData);
 
     const url = API.BOOKING;
 
@@ -298,7 +290,6 @@ export const sendBookingInformation = async (
     });
 
     const result = await res.json();
-    console.log('🚀 ~ sendBookingInformation ~ result:', result);
 
     if (!res.ok) {
       return {

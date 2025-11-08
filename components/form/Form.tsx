@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { ActionResponse } from '@/utils/types';
 import { useActionState, useEffect, useEffectEvent } from 'react';
 import { toast } from 'sonner';
+import { successToast, warningToast } from '../global/CustomToasts';
 
 const initialState: ActionResponse<Record<string, unknown>> = {
   success: false,
@@ -38,20 +39,24 @@ const Form = <T extends Record<string, unknown>>({
   });
 
   useEffect(() => {
+    if (!state.message) {
+      return;
+    }
     if (!state.success) {
-    } else if (state.success) handleReset();
-    toast(state.message);
-    // if (state.success) {
-    //   console.log('Resetting booking context...');
-    // }
+      warningToast(state.message);
+    } else {
+      successToast(state.message);
+      // toast(state.message);
+      handleReset();
+    }
   }, [state]);
 
   return (
     <>
       <form
-        // key={formKey}
         action={formAction}
         className={cn('flex gap-2 w-full flex-1', className)}
+        noValidate
       >
         {children({ isPending, state })}
       </form>

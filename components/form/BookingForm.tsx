@@ -16,7 +16,6 @@ const BookingForm = () => {
     label: unit.title,
   }));
 
-  console.log('🚀 ~ BookingForm ~ chosenUnit:', selectedUnit);
   return (
     <>
       <Form action={sendBookingInformation} className='grid gap-6'>
@@ -55,8 +54,8 @@ const BookingForm = () => {
                 options={options}
                 defaultValue={chosenUnit}
                 onChange={setSelectedUnit}
-                required
                 error={state?.errors?.selectedUnit?.[0]}
+                required
               />
               <TextAreaInput
                 labelText='Storage purpose'
@@ -67,13 +66,11 @@ const BookingForm = () => {
                 defaultValue={state?.inputs?.purpose}
                 required
               />
-              <div className='flex justify-between p-1.5'>
+              <div className='flex justify-end p-1.5'>
                 <Button type='submit' disabled={isPending}>
                   Submit
                 </Button>
               </div>
-
-              {/* {state?.message && toast(state.message)} */}
             </>
           );
         }}
