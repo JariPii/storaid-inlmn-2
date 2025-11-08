@@ -1,8 +1,5 @@
-// type LabelProps = {
-//   label?: 'hidden' | 'visible';
-// };
-
 import { cn } from '@/lib/utils';
+
 import React from 'react';
 
 type InputFieldProps = {
@@ -51,7 +48,6 @@ const InputField = ({
         placeholder={placeholder}
         defaultValue={defaultValue}
         required={required}
-        // value={value}
         onChange={onChange}
       />
       {error && <p className='text-red-500 text-sm mt-1'>{error}</p>}

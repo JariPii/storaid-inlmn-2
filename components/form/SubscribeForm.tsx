@@ -3,6 +3,7 @@ import { subscribeEmail } from '@/utils/actions';
 import Form from './Form';
 import InputField from './InputField';
 import { Button } from '../buttons/Buttons';
+import { toast } from 'sonner';
 
 const SubscribeForm = () => {
   return (
@@ -29,7 +30,7 @@ const SubscribeForm = () => {
                   Submit
                 </Button>
               </div>
-              {state?.message && <p>{state.message}</p>}
+              {/* {state?.message && toast(state?.message)} */}
             </div>
           );
         }}

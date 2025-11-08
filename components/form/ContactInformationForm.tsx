@@ -63,7 +63,6 @@ const ContactInformationForm = () => {
               </Button>
               <Button type='submit'>Submit</Button>
             </div>
-            {state?.message && <p>{state.message}</p>}
           </>
         )}
       </Form>

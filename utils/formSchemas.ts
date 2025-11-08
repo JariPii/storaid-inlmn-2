@@ -13,7 +13,15 @@ export const contactInfoSchema = z.object({
   email: z.email({ message: 'Enter a valid email address' }),
   phoneNumber: z.string().optional(),
   subject: z.string({ message: 'Enter a valid subject' }),
-  comment: z.string({ message: 'Please provide a message' }).min(5).max(150),
+  comment: z.string().refine(
+    (purpose) => {
+      const wordCount = purpose.split(' ').length;
+      return wordCount >= 2 && wordCount <= 30;
+    },
+    {
+      message: 'Please enter a message',
+    }
+  ),
 });
 
 export type ContactInfoSchema = z.infer<typeof contactInfoSchema>;
