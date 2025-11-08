@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import PersonImage from '@/public/images/ContactUsPerson.png';
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import HeaderSocials from '../header/Socials';
 import phone from '@/public/images/phone.svg';
 import envelope from '@/public/images/envelope.svg';

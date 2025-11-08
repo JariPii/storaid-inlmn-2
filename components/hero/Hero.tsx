@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import { NavButton } from '../buttons/Buttons';
 
 export type HeroProps = {

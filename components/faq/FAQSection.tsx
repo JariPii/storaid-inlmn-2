@@ -1,6 +1,6 @@
 import { fetchAllFAQs } from '@/utils/actions';
 import AccordionList from '../accordion/AccordionList';
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import FAQSkeleton from '../global/FAQSkeleton';
 
 const FAQSection = async () => {

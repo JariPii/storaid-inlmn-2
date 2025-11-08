@@ -1,4 +1,4 @@
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import SubscribeForm from '../form/SubscribeForm';
 
 const SubscribeSection = () => {

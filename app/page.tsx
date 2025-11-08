@@ -1,7 +1,6 @@
 import AboutSection from '@/components/about/AboutSectio';
 import BlogSection from '@/components/blog/BlogSection';
 import BrandsBar from '@/components/brands/BrandsBar';
-import { NavButton } from '@/components/buttons/Buttons';
 import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import PricingSection from '@/components/pricingplan/PricingSection';

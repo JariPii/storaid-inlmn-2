@@ -15,7 +15,6 @@ import {
   ContactData,
   SubscribeData,
 } from './types';
-import { toast } from 'sonner';
 
 export type FAQ = {
   id?: number;

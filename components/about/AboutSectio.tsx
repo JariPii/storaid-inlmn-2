@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
-import Tile from '../utils/Tiles';
+import Tile from '../global/Tiles';
 import { Button, NavButton } from '../buttons/Buttons';
 import { MdPhone } from 'react-icons/md';
-import StatsCard from '../utils/StatsCard';
+import StatsCard from '../global/StatsCard';
 import Link from 'next/link';
 
 const AboutSection = () => {

@@ -1,5 +1,5 @@
 import { Button, NavButton } from '../buttons/Buttons';
-import Section from '../utils/Section';
+import Section from '../global/Section';
 
 const SuggestionSection = () => {
   return (

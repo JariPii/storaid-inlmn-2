@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Section from '../utils/Section';
-import Tile from '../utils/Tiles';
+import Section from '../global/Section';
+import Tile from '../global/Tiles';
 import serviceImage from '../../public/images/layoutImages/chuttersnap-BNBA1h-NgdY-unsplash.jpg';
 
 const ServicesSection = () => {
