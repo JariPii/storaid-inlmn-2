@@ -34,7 +34,7 @@ const Button = ({
   return (
     <button
       className={cn(
-        `flex items-center ${buttonType[buttonTypes]} justify-center rounded-md font-semibold leading-tight px-9 py-3 cursor-pointer ${buttonHover[hover]} font-semibold max-h-fit`,
+        `flex items-center ${buttonType[buttonTypes]} justify-center rounded-md font-semibold leading-tight px-9 py-4 cursor-pointer ${buttonHover[hover]} font-semibold h-fit`,
         className
       )}
       type={type}

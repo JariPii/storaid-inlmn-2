@@ -34,7 +34,7 @@ const TextAreaInput = ({
         defaultValue={defaultValue}
         rows={rows}
         className={cn(
-          `border-2 rounded-[5px] border-(--clr-accent) placeholder:text-(--clr-accent-3) p-3  `,
+          `border-2 rounded-[5px] border-(--clr-accent) placeholder:text-(--clr-accent-3) p-3  resize-none`,
           error ? 'border-red-500' : '',
           className
         )}
