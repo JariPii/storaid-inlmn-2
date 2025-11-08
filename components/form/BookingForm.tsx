@@ -7,6 +7,7 @@ import { Button } from '../buttons/Buttons';
 import { useBooking } from '@/hooks/BookingContext';
 import { pricingPlans } from '@/utils/unitPricing';
 import Dropdown from './Dropdown';
+import { toast } from 'sonner';
 
 const BookingForm = () => {
   const { selectedUnit, setSelectedUnit } = useBooking();
@@ -71,7 +72,8 @@ const BookingForm = () => {
                   Submit
                 </Button>
               </div>
-              {state?.message && <p>{state.message}</p>}
+
+              {/* {state?.message && toast(state.message)} */}
             </>
           );
         }}

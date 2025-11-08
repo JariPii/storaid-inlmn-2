@@ -1,3 +1,6 @@
+import { cn } from '@/lib/utils';
+import { useState } from 'react';
+
 type DropdownProps = {
   onChange?: (value: string) => void;
   label: string;
@@ -21,21 +24,31 @@ const Dropdown = ({
   error,
   defaultValue,
 }: DropdownProps) => {
+  const [selected, setSelected] = useState(defaultValue || '');
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col gap-1 flex-1'>
       <label htmlFor={id}>{label}</label>
       <select
         id={id}
         name={name}
-        // value={value || ''}
         onChange={(e) => onChange?.(e.target.value)}
         required={required}
-        className={error ? 'border-2 border-red-500' : ''}
+        className={cn(
+          'border-2 border-(--clr-accent) p-3 rounded-[10px] text-(--clr-accent-3)',
+          error ? 'border-red-500' : '',
+          selected ? 'font-semibold' : ''
+        )}
         defaultValue={defaultValue || ''}
       >
-        <option value=''>{optionTitle}</option>
+        <option value='' className='text-(--clr-accent-3) font-bold'>
+          {optionTitle}
+        </option>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option
+            key={option.value}
+            value={option.value}
+            className='text-(--clr-accent-3) font-bold'
+          >
             {option.label}
           </option>
         ))}

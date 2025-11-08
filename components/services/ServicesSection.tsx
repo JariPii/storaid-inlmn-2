@@ -12,7 +12,7 @@ const ServicesSection = () => {
             Our Services
           </h3>
         </div>
-        <div className='flex justify-between gap-24'>
+        <div className='grid grid-cols-2 justify-between gap-24'>
           <div>
             <h4 className='text-[3.25rem] font-bold tracking-tighter max-w-[20ch] leading-[52px]'>
               Specialized Storage for Every Special Item

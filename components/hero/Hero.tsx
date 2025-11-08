@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from 'next/image';
 import Section from '../utils/Section';
-import Link from 'next/link';
 import { NavButton } from '../buttons/Buttons';
 
 export type HeroProps = {
@@ -38,7 +37,11 @@ const Hero = ({
             {description}
           </p>
           {buttonText && buttonLink && (
-            <NavButton href={'/bookings'} colorVariant='darkBg' />
+            <NavButton
+              href='/bookings'
+              label='Discover More'
+              colorVariant='darkBg'
+            />
           )}
         </div>
         {imgSrc && (

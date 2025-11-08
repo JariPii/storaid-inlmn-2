@@ -4,6 +4,7 @@ import { useBooking } from '@/hooks/BookingContext';
 import { cn } from '@/lib/utils';
 import { ActionResponse } from '@/utils/types';
 import { useActionState, useEffect, useEffectEvent } from 'react';
+import { toast } from 'sonner';
 
 const initialState: ActionResponse<Record<string, unknown>> = {
   success: false,
@@ -37,9 +38,9 @@ const Form = <T extends Record<string, unknown>>({
   });
 
   useEffect(() => {
-    if (state.success) {
-      handleReset();
-    }
+    if (!state.success) {
+    } else if (state.success) handleReset();
+    toast(state.message);
     // if (state.success) {
     //   console.log('Resetting booking context...');
     // }
