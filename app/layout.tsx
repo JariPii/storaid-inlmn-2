@@ -6,7 +6,6 @@ import Footer from '@/components/footer/Footer';
 import SubscribeSection from '@/components/subscribe/SubscribeSection';
 import { BookingProvider } from '@/hooks/BookingContext';
 import Providers from './providers';
-import Logo from '../public/images/Logo.png';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     siteName: 'StorAid',
     images: [
       {
-        url: 'https://storaid-inlmn-2.vercel.app/ogImage.png',
+        url: 'https://storaid-inlmn-2.vercel.app/storaid-og-1200x630.png',
         width: 1000,
         height: 666,
         alt: 'StorAid logo',
