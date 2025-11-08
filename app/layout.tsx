@@ -24,6 +24,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  title: 'StorAid',
+  description: 'Stoages for all needs',
   authors: [{ name: 'Jari Leminaho' }],
   openGraph: {
     type: 'website',
