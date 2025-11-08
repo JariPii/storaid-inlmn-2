@@ -6,7 +6,7 @@ import Footer from '@/components/footer/Footer';
 import SubscribeSection from '@/components/subscribe/SubscribeSection';
 import { BookingProvider } from '@/hooks/BookingContext';
 import Providers from './providers';
-import { Toaster } from 'sonner';
+import Logo from '../public/images/Logo.png';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,7 +33,11 @@ export const metadata: Metadata = {
     title: 'StorAid',
     description: 'Stoages for all needs',
     siteName: 'StorAid',
-    images: [{ url: '../public/images/Logo.png' }],
+    images: [
+      {
+        url: 'https://github.com/JariPii/storaid-inlmn-2/blob/main/public/images/Logo.png',
+      },
+    ],
   },
 };
 
