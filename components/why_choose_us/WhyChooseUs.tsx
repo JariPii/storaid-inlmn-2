@@ -1,4 +1,4 @@
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import moversImg from '../../public/images/layoutImages/alberto-rodriguez--aCrA9FmT8Y-unsplash.jpg';
 import Image from 'next/image';
 import { padlock, moneybag, broom, clock } from '@/public/images/icons/icons';

@@ -1,5 +1,6 @@
-import Button from '@/components/buttons/Button';
-import Section from '@/components/utils/Section';
+import { Button, NavButton } from '@/components/buttons/Buttons';
+import Section from '@/components/global/Section';
+import Link from 'next/link';
 
 const ErrorPage = () => {
   return (
@@ -12,7 +13,7 @@ const ErrorPage = () => {
         Sorry, the page you are looking for does not exist. It may have been
         moved, removed altogether or is temporarily unavailable.
       </p>
-      <Button>Back To Home</Button>
+      <NavButton href='/' />
     </Section>
   );
 };

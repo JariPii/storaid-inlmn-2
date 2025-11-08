@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Section from '../utils/Section';
-import Tile from '../utils/Tiles';
+import Section from '../global/Section';
+import Tile from '../global/Tiles';
 import serviceImage from '../../public/images/layoutImages/chuttersnap-BNBA1h-NgdY-unsplash.jpg';
 
 const ServicesSection = () => {
@@ -12,7 +12,7 @@ const ServicesSection = () => {
             Our Services
           </h3>
         </div>
-        <div className='flex justify-between gap-24'>
+        <div className='grid grid-cols-2 justify-between gap-24'>
           <div>
             <h4 className='text-[3.25rem] font-bold tracking-tighter max-w-[20ch] leading-[52px]'>
               Specialized Storage for Every Special Item

@@ -1,5 +1,5 @@
-import Button from '../buttons/Button';
-import Section from '../utils/Section';
+import { Button, NavButton } from '../buttons/Buttons';
+import Section from '../global/Section';
 
 const SuggestionSection = () => {
   return (
@@ -12,7 +12,7 @@ const SuggestionSection = () => {
         molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac
         blandit nisi non sodales augue. Phasellus eget elit gravida.
       </p>
-      <Button>Book Now</Button>
+      <NavButton href='/bookings' label='Book Now' />
     </Section>
   );
 };

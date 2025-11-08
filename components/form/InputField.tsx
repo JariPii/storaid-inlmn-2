@@ -1,8 +1,5 @@
-// type LabelProps = {
-//   label?: 'hidden' | 'visible';
-// };
-
 import { cn } from '@/lib/utils';
+
 import React from 'react';
 
 type InputFieldProps = {
@@ -32,8 +29,11 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <div className='flex flex-col gap-1 flex-1'>
-      <label htmlFor={name} className={`${labelVisibility}`}>
-        {label || name}
+      <label
+        htmlFor={name}
+        className={cn(`${labelVisibility}`, error ? 'text-red-500' : '')}
+      >
+        {error ? `${label} *` : `${label || name}`}
       </label>
       <input
         id={name}
@@ -48,7 +48,6 @@ const InputField = ({
         placeholder={placeholder}
         defaultValue={defaultValue}
         required={required}
-        // value={value}
         onChange={onChange}
       />
       {error && <p className='text-red-500 text-sm mt-1'>{error}</p>}

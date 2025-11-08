@@ -3,7 +3,9 @@
 import { useBooking } from '@/hooks/BookingContext';
 import { cn } from '@/lib/utils';
 import { ActionResponse } from '@/utils/types';
-import { useActionState, useEffect } from 'react';
+import { useActionState, useEffect, useEffectEvent } from 'react';
+import { toast } from 'sonner';
+import { successToast, warningToast } from '../global/CustomToasts';
 
 const initialState: ActionResponse<Record<string, unknown>> = {
   success: false,
@@ -32,18 +34,29 @@ const Form = <T extends Record<string, unknown>>({
   const [state, formAction, isPending] = useActionState(action, initialState);
   const { resetBooking } = useBooking();
 
+  const handleReset = useEffectEvent(() => {
+    resetBooking();
+  });
+
   useEffect(() => {
-    if (state.message) {
-      console.log(state.message);
-      resetBooking();
+    if (!state.message) {
+      return;
     }
-  }, [state, resetBooking]);
+    if (!state.success) {
+      warningToast(state.message);
+    } else {
+      successToast(state.message);
+      // toast(state.message);
+      handleReset();
+    }
+  }, [state]);
 
   return (
     <>
       <form
         action={formAction}
         className={cn('flex gap-2 w-full flex-1', className)}
+        noValidate
       >
         {children({ isPending, state })}
       </form>

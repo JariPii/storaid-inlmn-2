@@ -1,5 +1,5 @@
 import { pricingPlans } from '@/mockData';
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import PricingplanCard from './PricingplanCard';
 
 const PricingSection = () => {

@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import TestimonialSkeleton, {
   LoadingTestimonialsContainer,
 } from '../global/TestimonialSkeleton';
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import TestimonialsList from './TestimonialsList';
 import { fetchAllTesitmonials } from '@/utils/actions';
 

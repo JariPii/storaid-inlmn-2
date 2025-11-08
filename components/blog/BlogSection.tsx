@@ -1,4 +1,4 @@
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import { fetchAllBlogs } from '@/utils/actions';
 import BlogCardsList from './BlogCardsList';
 import BlogCardSkeleton, {

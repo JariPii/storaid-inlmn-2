@@ -8,7 +8,6 @@ import {
   ContactInfoSchema,
   contactInfoSchema,
   subscribeSchema,
-  validateWithZodSchema,
 } from './formSchemas';
 import {
   ActionResponse,
@@ -71,23 +70,6 @@ export const fetchAllTesitmonials = async (): Promise<Testimonial[]> => {
     throw new Error('Something aint feelin raijt');
   }
 };
-// export const fetchAllTesitmonials = async (): Promise<Testimonial[]> => {
-//   const url = API.TESTIMONIALS;
-
-//   if (!url) {
-//     throw new Error('Testimonials API is borken');
-//   }
-
-//   const res = await fetch(url);
-
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch Testimonials!');
-//   }
-
-//   const testimonials = (await res.json()) as Testimonial[];
-
-//   return testimonials;
-// };
 
 export type Blog = {
   id: string;
@@ -128,7 +110,6 @@ export const subscribeEmail = async (
     const rawData: SubscribeData = {
       email: (formData.get('email') as string) || '',
     };
-    // const rawData = Object.fromEntries(formData);
 
     const validatedData = subscribeSchema.safeParse(rawData);
 
@@ -183,7 +164,6 @@ export type ContactFormCredentials = {
 };
 
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// MARK: !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export const sendContactInformation = async (
   _prevState: ActionResponse<ContactData> | null,
@@ -199,8 +179,6 @@ export const sendContactInformation = async (
 
     const validatedFields = contactInfoSchema.safeParse(rawData);
 
-    console.log('ENTRY OBJECTs', rawData);
-
     if (!validatedFields.success) {
       const errorTree = z.treeifyError(validatedFields.error);
 
@@ -215,9 +193,12 @@ export const sendContactInformation = async (
           errors[key] = value.errors;
         }
       }
+
+      const errorMessage = Object.values(errors)[0]?.[0];
+
       return {
         success: false,
-        message: 'Invalid email',
+        message: errorMessage,
         errors,
         inputs: rawData,
       };
@@ -237,11 +218,7 @@ export const sendContactInformation = async (
       body: JSON.stringify(validatedFields.data),
     });
 
-    console.log('LOGGING RES', res);
-
     const result = await res.json();
-
-    console.log('CONTACT FORM', result);
 
     return { success: result, message: result.message };
   } catch (err) {
@@ -249,7 +226,6 @@ export const sendContactInformation = async (
   }
 };
 
-// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export type BookingsInformation = {
@@ -287,6 +263,7 @@ export const sendBookingInformation = async (
           errors[key] = value.errors;
         }
       }
+
       return {
         success: false,
         message: `Fill out the required fields`,
@@ -294,6 +271,8 @@ export const sendBookingInformation = async (
         inputs: rawData,
       };
     }
+
+    const jsonData = JSON.stringify(validatedFields.data);
 
     const url = API.BOOKING;
 
@@ -318,11 +297,10 @@ export const sendBookingInformation = async (
       };
     }
 
-    return { success: true, message: result.message };
+    return { success: true, message: result.message, errors: {}, inputs: {} };
   } catch (err) {
     return { success: false, message: (err as Error).message };
   }
 };
 
-// !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

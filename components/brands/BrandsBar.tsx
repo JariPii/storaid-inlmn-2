@@ -1,4 +1,4 @@
-import Section from '../utils/Section';
+import Section from '../global/Section';
 import Image from 'next/image';
 import logo1 from '../../public/images/Logoipsum1.png';
 import logo2 from '../../public/images/Logoipsum2.png';

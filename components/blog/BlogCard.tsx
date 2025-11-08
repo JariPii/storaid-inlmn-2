@@ -21,6 +21,11 @@ const BlogCard = ({
   isExpanded = false,
   onToggle,
 }: BlogCardProps) => {
+  const formattedDate = new Date(created).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
   return (
     <div
       className={cn(
@@ -49,7 +54,7 @@ const BlogCard = ({
             isExpandedText: isExpanded,
           })}
         >
-          {created}
+          {formattedDate}
         </p>
       </div>
       <h2
