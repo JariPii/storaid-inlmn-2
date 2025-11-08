@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'StorAid',
-  description: 'Stoages for all needs',
+  description: 'Storages for all needs',
   authors: [{ name: 'Jari Leminaho' }],
   openGraph: {
     type: 'website',
@@ -36,11 +36,12 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://storaid-inlmn-2.vercel.app/_next/image?url…t%2Fstatic%2Fmedia%2FLogo.2c4745fb.png&w=256&q=75',
+        width: 1200,
+        height: 630,
+        alt: 'StorAid logo',
       },
     ],
   },
-
-  facebook: { appId: '123456' },
 };
 
 export default function RootLayout({
