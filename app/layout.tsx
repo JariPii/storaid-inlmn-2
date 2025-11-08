@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     title: 'StorAid',
     description: 'Stoages for all needs',
     siteName: 'StorAid',
+    images: [{ url: '../public/images/Logo.png' }],
   },
 };
 
