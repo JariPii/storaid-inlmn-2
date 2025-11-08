@@ -25,19 +25,23 @@ export type FAQ = {
 export const fetchAllFAQs = async (): Promise<FAQ[]> => {
   const url = API.FAQ;
 
-  if (!url) {
-    throw new Error('FAQ_API is borken');
+  try {
+    if (!url) {
+      throw new Error('FAQ_API is borken');
+    }
+
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error('Failed to fetch FAQs!');
+    }
+
+    const faqs = (await res.json()) as FAQ[];
+
+    return faqs;
+  } catch (error) {
+    throw new Error('Something aint feelin raijt');
   }
-
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch FAQs!');
-  }
-
-  const faqs = (await res.json()) as FAQ[];
-
-  return faqs;
 };
 
 export type Testimonial = {
@@ -81,20 +85,23 @@ export type Blog = {
 
 export const fetchAllBlogs = async (): Promise<Blog[]> => {
   const url = API.BLOGS;
+  try {
+    if (!url) {
+      throw new Error('Blog API is not available');
+    }
 
-  if (!url) {
-    throw new Error('Blog API is not available');
+    const res = await fetch(url);
+
+    if (!res.ok) {
+      throw new Error('Failed to fetch blogs');
+    }
+
+    const blogs = (await res.json()) as Blog[];
+
+    return blogs;
+  } catch (error) {
+    throw new Error('Something aint feelin raijt');
   }
-
-  const res = await fetch(url);
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch blogs');
-  }
-
-  const blogs = (await res.json()) as Blog[];
-
-  return blogs;
 };
 
 export type Subscribe = {
