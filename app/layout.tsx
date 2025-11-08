@@ -35,10 +35,12 @@ export const metadata: Metadata = {
     siteName: 'StorAid',
     images: [
       {
-        url: 'https://github.com/JariPii/storaid-inlmn-2/blob/main/public/images/Logo.png',
+        url: 'public/images/Logo.png',
       },
     ],
   },
+
+  facebook: { appId: '123456' },
 };
 
 export default function RootLayout({
