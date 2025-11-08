@@ -61,10 +61,7 @@ const ContactInformationForm = () => {
                 defaultValue={state?.inputs?.comment}
                 required
               />
-              <div className='flex p-1.5 justify-between'>
-                <Button type='reset' buttonTypes='reset' className=''>
-                  Reset
-                </Button>
+              <div className='flex p-1.5 justify-end'>
                 <Button type='submit'>Submit</Button>
               </div>
             </>
