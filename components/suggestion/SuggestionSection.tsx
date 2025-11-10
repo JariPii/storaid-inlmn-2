@@ -12,7 +12,7 @@ const SuggestionSection = () => {
         molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris ac
         blandit nisi non sodales augue. Phasellus eget elit gravida.
       </p>
-      <NavButton href='/bookings' label='Book Now' />
+      <NavButton href='/bookings' colorVariant='darkBg' label='Book Now' />
     </Section>
   );
 };

@@ -5,6 +5,7 @@ import TestimonialSkeleton, {
 import Section from '../global/Section';
 import TestimonialsList from './TestimonialsList';
 import { fetchAllTesitmonials } from '@/utils/actions';
+import { cacheLife } from 'next/cache';
 
 type TestimonialBackgroundProps = {
   backgroundImage?: 'with' | 'withOut';
@@ -13,6 +14,7 @@ type TestimonialBackgroundProps = {
 const TestimonialsSection = async ({
   backgroundImage = 'withOut',
 }: TestimonialBackgroundProps) => {
+  'use cache';
   try {
     const testimonials = await fetchAllTesitmonials();
     return (
@@ -56,7 +58,7 @@ const TestimonialsSection = async ({
           </p>
           <div className='flex gap-4'>
             <h3 className='text-3xl text-red-400 font-bold'>
-              * Testimonials are unavailable at them moment *
+              * Testimonials are unavailable at the moment *
             </h3>
           </div>
           <div className='flex gap-6'>

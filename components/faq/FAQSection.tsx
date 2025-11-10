@@ -4,6 +4,7 @@ import Section from '../global/Section';
 import FAQSkeleton from '../global/FAQSkeleton';
 
 const FAQSection = async () => {
+  'use cache';
   try {
     const faqs = await fetchAllFAQs();
     return (
