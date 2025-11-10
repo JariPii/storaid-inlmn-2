@@ -2,9 +2,12 @@ import { fetchAllFAQs } from '@/utils/actions';
 import AccordionList from '../accordion/AccordionList';
 import Section from '../global/Section';
 import FAQSkeleton from '../global/FAQSkeleton';
+import { cacheLife } from 'next/cache';
+import { Suspense } from 'react';
 
 const FAQSection = async () => {
   'use cache';
+  cacheLife('days');
   try {
     const faqs = await fetchAllFAQs();
     return (
@@ -24,7 +27,9 @@ const FAQSection = async () => {
               </p>
             </div>
             <div className='flex flex-col items-center h-auto w-[auto] gap-4'>
-              <AccordionList faqs={faqs} />
+              <Suspense fallback={<FAQSkeleton />}>
+                <AccordionList faqs={faqs} />
+              </Suspense>
             </div>
           </div>
         </Section>

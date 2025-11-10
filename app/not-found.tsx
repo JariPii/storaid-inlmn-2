@@ -1,6 +1,5 @@
-import { Button, NavButton } from '@/components/buttons/Buttons';
+import { NavButton } from '@/components/buttons/Buttons';
 import Section from '@/components/global/Section';
-import Link from 'next/link';
 
 const ErrorPage = () => {
   return (

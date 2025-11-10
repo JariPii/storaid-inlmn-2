@@ -15,6 +15,7 @@ const TestimonialsSection = async ({
   backgroundImage = 'withOut',
 }: TestimonialBackgroundProps) => {
   'use cache';
+  cacheLife('days');
   try {
     const testimonials = await fetchAllTesitmonials();
     return (
