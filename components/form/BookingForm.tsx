@@ -4,17 +4,22 @@ import Form from './Form';
 import InputField from './InputField';
 import TextAreaInput from './TextAreaInput';
 import { Button } from '../buttons/Buttons';
-import { useBooking } from '@/hooks/BookingContext';
+import { useBooking, useName } from '@/hooks/BookingContext';
 import { pricingPlans } from '@/utils/unitPricing';
 import Dropdown from './Dropdown';
-import { toast } from 'sonner';
 
 const BookingForm = () => {
   const { selectedUnit, setSelectedUnit } = useBooking();
+  const { setSenderName } = useName();
+
   const options = pricingPlans.map((unit) => ({
     value: unit.title,
     label: unit.title,
   }));
+
+  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSenderName(e.target.value);
+  };
 
   return (
     <>
@@ -33,6 +38,7 @@ const BookingForm = () => {
                   required
                   error={state?.errors?.name?.[0]}
                   defaultValue={state?.inputs?.name}
+                  onChange={handleName}
                 />
 
                 <InputField
