@@ -1,10 +1,15 @@
+import { BookingProvider, NameProvider } from '@/hooks/BookingContext';
 import { Toaster } from 'sonner';
 
 function Providers({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Toaster position='top-center' />
-      {children}
+      <BookingProvider>
+        <NameProvider>
+          <Toaster position='top-center' />
+          {children}
+        </NameProvider>
+      </BookingProvider>
     </>
   );
 }

@@ -1,10 +1,9 @@
 'use client';
 
-import { useBooking } from '@/hooks/BookingContext';
+import { useBooking, useName } from '@/hooks/BookingContext';
 import { cn } from '@/lib/utils';
 import { ActionResponse } from '@/utils/types';
 import { useActionState, useEffect, useEffectEvent } from 'react';
-import { toast } from 'sonner';
 import { successToast, warningToast } from '../global/CustomToasts';
 
 const initialState: ActionResponse<Record<string, unknown>> = {
@@ -33,9 +32,11 @@ const Form = <T extends Record<string, unknown>>({
 }: FormProps<T>) => {
   const [state, formAction, isPending] = useActionState(action, initialState);
   const { resetBooking } = useBooking();
+  const { senderName: senderName, resetSenderName } = useName();
 
   const handleReset = useEffectEvent(() => {
     resetBooking();
+    resetSenderName();
   });
 
   useEffect(() => {
@@ -45,8 +46,8 @@ const Form = <T extends Record<string, unknown>>({
     if (!state.success) {
       warningToast(state.message);
     } else {
-      successToast(state.message);
-      // toast(state.message);
+      successToast(state.message, senderName);
+
       handleReset();
     }
   }, [state]);

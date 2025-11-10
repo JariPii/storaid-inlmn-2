@@ -113,29 +113,29 @@ export const subscribeEmail = async (
   _prevState: ActionResponse<SubscribeData> | null,
   formData: FormData
 ): Promise<ActionResponse<SubscribeData>> => {
-  try {
-    const rawData: SubscribeData = {
-      email: (formData.get('email') as string) || '',
-    };
+  const rawData: SubscribeData = {
+    email: (formData.get('email') as string) || '',
+  };
 
-    const validatedData = subscribeSchema.safeParse(rawData);
+  const validatedData = subscribeSchema.safeParse(rawData);
 
-    if (!validatedData.success) {
-      const errorTree = z.treeifyError(validatedData.error);
+  if (!validatedData.success) {
+    const errorTree = z.treeifyError(validatedData.error);
 
-      const mappedErrors: { email?: string[] } = {};
-      if (errorTree.properties?.email?.errors?.length) {
-        mappedErrors.email = errorTree.properties.email.errors;
-      }
-
-      return {
-        success: false,
-        message: mappedErrors.email?.[0] || 'Invalid email',
-        errors: mappedErrors,
-        inputs: rawData,
-      };
+    const mappedErrors: { email?: string[] } = {};
+    if (errorTree.properties?.email?.errors?.length) {
+      mappedErrors.email = errorTree.properties.email.errors;
     }
 
+    return {
+      success: false,
+      message: mappedErrors.email?.[0] || 'Invalid email',
+      errors: mappedErrors,
+      inputs: rawData,
+    };
+  }
+
+  try {
     const url = API.SUBSCRIBE;
 
     if (!url) {
@@ -227,7 +227,10 @@ export const sendContactInformation = async (
 
     const result = await res.json();
 
-    return { success: result, message: result.message };
+    return {
+      success: result,
+      message: result.message,
+    };
   } catch (err) {
     return { success: false, message: (err as Error).message };
   }

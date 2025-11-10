@@ -1,19 +1,24 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { Button } from '../buttons/Buttons';
 import Form from './Form';
 import InputField from './InputField';
 import TextAreaInput from './TextAreaInput';
 import { sendContactInformation } from '@/utils/actions';
+import { useName } from '@/hooks/BookingContext';
 
 const ContactInformationForm = () => {
+  const { setSenderName } = useName();
+
+  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSenderName(e.target.value);
+  };
+
   return (
     <>
       <Form action={sendContactInformation} className='grid gap-6'>
         {({ isPending, state }) => {
-          console.log('errors:', state?.errors);
-          console.log('inputs:', state?.inputs);
-
           return (
             <>
               <InputField
@@ -23,6 +28,7 @@ const ContactInformationForm = () => {
                 placeholder='Your name'
                 error={state?.errors?.name?.[0]}
                 defaultValue={state?.inputs?.name}
+                onChange={handleName}
                 required
               />
               <div className='flex gap-3 w-full'>
