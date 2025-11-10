@@ -1,8 +1,15 @@
 import { toast } from 'sonner';
 import Image from 'next/image';
 import logo from '@/public/images/Logo.png';
+import {
+  capitalizeFirstLetter,
+  returnMessages,
+  separateEmail,
+} from '@/utils/toastMessages';
 
-export function successToast(message: string) {
+export function successToast(message: string, senderName?: any) {
+  const { heading, body } = returnMessages(message);
+
   toast.custom((t) => (
     <div
       className='p-4 flex flex-col items-center bg-(--clr-secondary) rounded-sm gap-2 border-2 border-(--clr-accent) hover:cursor-pointer'
@@ -13,7 +20,15 @@ export function successToast(message: string) {
         alt='Company logo'
         className='bg-(--clr-primary) h-10 w-auto'
       />
-      <p className=' text-(--clr-accent) w-full text-center'>{message}</p>
+      <h2 className='text-(--clr-accent) text-center text-nowrap text-3xl'>
+        {/* {heading}  */}
+        {senderName ? `${heading} ${senderName}!` : `${heading}`}
+      </h2>
+      {body && (
+        <p className=' text-(--clr-accent) text-nowrap text-center normal-case'>
+          {body}
+        </p>
+      )}
     </div>
   ));
 }
@@ -29,7 +44,7 @@ export function warningToast(message: string) {
         alt='Company logo'
         className='bg-(--clr-primary) h-10 w-auto'
       />
-      <p className='mt-3 text-red-500'>{message}</p>
+      <p className='mt-3 text-red-500 text-2xl'>{message}</p>
     </div>
   ));
 }

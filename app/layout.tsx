@@ -54,12 +54,10 @@ export default function RootLayout({
         className={`${urbanist.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <BookingProvider>
-          <Providers>
-            {children}
-            <SubscribeSection />
-          </Providers>
-        </BookingProvider>
+        <Providers>
+          {children}
+          <SubscribeSection />
+        </Providers>
         <Footer />
       </body>
     </html>

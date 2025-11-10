@@ -30,7 +30,7 @@ const PricingplanCard = ({
   const router = useRouter();
   const { setSelectedUnit } = useBooking();
 
-  const handleChoose = () => {
+  const handleChooseUnit = () => {
     setSelectedUnit(title);
     console.log(title);
 
@@ -76,7 +76,7 @@ const PricingplanCard = ({
           </li>
         ))}
       </ul>
-      <Button onClick={handleChoose} hover='dark'>
+      <Button onClick={handleChooseUnit} hover='dark'>
         {buttonLabel}
       </Button>
     </div>
