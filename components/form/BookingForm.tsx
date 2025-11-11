@@ -7,6 +7,7 @@ import { Button } from '../buttons/Buttons';
 import { useBooking, useName } from '@/hooks/BookingContext';
 import { pricingPlans } from '@/utils/unitPricing';
 import Dropdown from './Dropdown';
+import { bookingSchema } from '@/utils/formSchemas';
 
 const BookingForm = () => {
   const { selectedUnit, setSelectedUnit } = useBooking();
@@ -23,8 +24,12 @@ const BookingForm = () => {
 
   return (
     <>
-      <Form action={sendBookingInformation} className='grid gap-6'>
-        {({ isPending, state }) => {
+      <Form
+        action={sendBookingInformation}
+        schema={bookingSchema}
+        className='grid gap-6'
+      >
+        {({ isPending, state, handleFieldChange }) => {
           const chosenUnit = state?.inputs?.selectedUnit || selectedUnit || '';
 
           return (
@@ -37,7 +42,10 @@ const BookingForm = () => {
                   placeholder='Name'
                   error={state?.errors?.name?.[0]}
                   defaultValue={state?.inputs?.name}
-                  onChange={handleName}
+                  onChange={(e) => {
+                    setSenderName(e.target.value);
+                    handleFieldChange('name', e.target.value);
+                  }}
                 />
 
                 <InputField
@@ -47,6 +55,9 @@ const BookingForm = () => {
                   placeholder='Email'
                   error={state?.errors?.email?.[0]}
                   defaultValue={state?.inputs?.email}
+                  onChange={(e) => {
+                    handleFieldChange('email', e.target.value);
+                  }}
                 />
               </div>
               <Dropdown
@@ -57,7 +68,10 @@ const BookingForm = () => {
                 optionTitle='Choose unit'
                 options={options}
                 defaultValue={chosenUnit}
-                onChange={setSelectedUnit}
+                onChange={(value) => {
+                  setSelectedUnit(value);
+                  handleFieldChange?.('selectedUnit', value);
+                }}
                 error={state?.errors?.selectedUnit?.[0]}
               />
               <TextAreaInput
@@ -67,6 +81,9 @@ const BookingForm = () => {
                 placeHolder='Describe your storage purpose so that we can match your request'
                 error={state?.errors?.purpose?.[0]}
                 defaultValue={state?.inputs?.purpose}
+                onChange={(e) => {
+                  handleFieldChange('purpose', e.target.value);
+                }}
               />
               <div className='flex justify-end p-1.5'>
                 <Button type='submit' disabled={isPending}>

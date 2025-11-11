@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { Button } from '../buttons/Buttons';
 import Form from './Form';
 import InputField from './InputField';
@@ -8,6 +7,7 @@ import TextAreaInput from './TextAreaInput';
 import { sendContactInformation } from '@/utils/actions';
 import { useName } from '@/hooks/BookingContext';
 import { useState } from 'react';
+import { contactInfoSchema } from '@/utils/formSchemas';
 
 const ContactInformationForm = () => {
   const { setSenderName } = useName();
@@ -19,8 +19,12 @@ const ContactInformationForm = () => {
 
   return (
     <>
-      <Form action={sendContactInformation} className='grid gap-6'>
-        {({ isPending, state }) => {
+      <Form
+        action={sendContactInformation}
+        schema={contactInfoSchema}
+        className='grid gap-6'
+      >
+        {({ isPending, state, handleFieldChange }) => {
           return (
             <>
               <InputField
@@ -30,7 +34,10 @@ const ContactInformationForm = () => {
                 placeholder='Your name'
                 error={state?.errors?.name?.[0]}
                 defaultValue={state?.inputs?.name}
-                onChange={handleName}
+                onChange={(e) => {
+                  setSenderName(e.target.value);
+                  handleFieldChange('name', e.target.value);
+                }}
               />
               <div className='flex gap-3 w-full'>
                 <InputField
@@ -40,6 +47,9 @@ const ContactInformationForm = () => {
                   placeholder='Email'
                   error={state?.errors?.email?.[0]}
                   defaultValue={state?.inputs?.email}
+                  onChange={(e) => {
+                    handleFieldChange('email', e.target.value);
+                  }}
                 />
 
                 <InputField
@@ -58,6 +68,9 @@ const ContactInformationForm = () => {
                 placeholder='Subject'
                 error={state?.errors?.subject?.[0]}
                 defaultValue={state?.inputs?.subject}
+                onChange={(e) => {
+                  handleFieldChange('subject', e.target.value);
+                }}
               />
               <TextAreaInput
                 labelText='Comments / Questions'
@@ -66,6 +79,9 @@ const ContactInformationForm = () => {
                 placeHolder='Comments'
                 error={state?.errors?.comment?.[0]}
                 defaultValue={state?.inputs?.comment}
+                onChange={(e) => {
+                  handleFieldChange('comment', e.target.value);
+                }}
               />
               <div className='flex p-1.5 justify-end'>
                 <Button type='submit'>Submit</Button>

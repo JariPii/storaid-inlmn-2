@@ -157,7 +157,12 @@ export const subscribeEmail = async (
 
     return { success: true, message: result.message };
   } catch (err) {
-    return { success: false, message: (err as Error).message };
+    let message = 'Something went wrong. Please try again later.';
+
+    if (err instanceof TypeError) {
+      message: 'Could not connect to the server.';
+    }
+    return { success: false, message };
   }
 };
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -232,7 +237,12 @@ export const sendContactInformation = async (
       message: result.message,
     };
   } catch (err) {
-    return { success: false, message: (err as Error).message };
+    let message = 'Something went wrong. Please try again later.';
+
+    if (err instanceof TypeError) {
+      message: 'Could not connect to the server.';
+    }
+    return { success: false, message };
   }
 };
 
@@ -311,7 +321,12 @@ export const sendBookingInformation = async (
 
     return { success: true, message: result.message, errors: {}, inputs: {} };
   } catch (err) {
-    return { success: false, message: (err as Error).message };
+    let message = 'Something went wrong. Please try again later.';
+
+    if (err instanceof TypeError) {
+      message: 'Could not connect to the server.';
+    }
+    return { success: false, message };
   }
 };
 
