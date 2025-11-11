@@ -4,7 +4,7 @@ import BrandsBar from '@/components/brands/BrandsBar';
 import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import PricingSection from '@/components/pricingplan/PricingSection';
-import ServicesSection from '@/components/services/ServicesSection';
+import ServicesSection from '@/components/our_services/ServicesSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';

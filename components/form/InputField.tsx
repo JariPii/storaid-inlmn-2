@@ -10,7 +10,6 @@ type InputFieldProps = {
   defaultValue?: string;
   labelVisibility?: 'hidden' | 'block';
   className?: string;
-  required?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: string;
 };
@@ -23,10 +22,12 @@ const InputField = ({
   labelVisibility = 'block',
   className,
   defaultValue,
-  required = false,
   error,
   onChange,
 }: InputFieldProps) => {
+  const errorUnderInput = Boolean(defaultValue && error);
+  const errorInPlaceholder = Boolean(!defaultValue && error);
+
   return (
     <div className='flex flex-col gap-1 flex-1'>
       <label
@@ -43,14 +44,14 @@ const InputField = ({
           `border-2 placeholder:text-(--clr-accent-3) p-3 rounded-[10px] focus:border-(--clr-secondary) w-full ${
             error ? 'border-red-500' : ' border-(--clr-accent)'
           }`,
+          errorInPlaceholder && 'text-black font-bold bg-red-50',
           className
         )}
-        placeholder={placeholder}
+        placeholder={errorInPlaceholder ? error : placeholder}
         defaultValue={defaultValue}
-        required={required}
         onChange={onChange}
       />
-      {error && <p className='text-red-500 text-sm mt-1'>{error}</p>}
+      {errorUnderInput && <p className='text-red-500 text-sm mt-1'>{error}</p>}
     </div>
   );
 };

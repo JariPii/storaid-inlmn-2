@@ -23,6 +23,8 @@ const TextAreaInput = ({
   onChange,
   error,
 }: TextAreaInputProps) => {
+  const errorUnderInput = Boolean(defaultValue && error);
+  const errorInPlaceholder = Boolean(!defaultValue && error);
   return (
     <div className='flex flex-col'>
       <label htmlFor={name} className={cn(error ? 'text-red-500' : '')}>
@@ -36,13 +38,14 @@ const TextAreaInput = ({
         className={cn(
           `border-2 rounded-[5px] border-(--clr-accent) placeholder:text-(--clr-accent-3) p-3  resize-none`,
           error ? 'border-red-500' : '',
+          errorInPlaceholder && 'text-black font-bold bg-red-50 ',
           className
         )}
-        placeholder={placeHolder}
+        placeholder={errorInPlaceholder ? error : placeHolder}
         required={required}
         onChange={onChange}
       />
-      {error && <p className='text-red-500 text-sm mt-1'>{error}</p>}
+      {errorUnderInput && <p className='text-red-500 text-sm mt-1'>{error}</p>}
     </div>
   );
 };

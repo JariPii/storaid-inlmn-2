@@ -7,9 +7,11 @@ import InputField from './InputField';
 import TextAreaInput from './TextAreaInput';
 import { sendContactInformation } from '@/utils/actions';
 import { useName } from '@/hooks/BookingContext';
+import { useState } from 'react';
 
 const ContactInformationForm = () => {
   const { setSenderName } = useName();
+  const [isEmpty, setIsEmpty] = useState('');
 
   const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSenderName(e.target.value);
@@ -29,7 +31,6 @@ const ContactInformationForm = () => {
                 error={state?.errors?.name?.[0]}
                 defaultValue={state?.inputs?.name}
                 onChange={handleName}
-                required
               />
               <div className='flex gap-3 w-full'>
                 <InputField
@@ -39,14 +40,15 @@ const ContactInformationForm = () => {
                   placeholder='Email'
                   error={state?.errors?.email?.[0]}
                   defaultValue={state?.inputs?.email}
-                  required
                 />
 
                 <InputField
-                  name='phone'
-                  type='number'
+                  name='phoneNumber'
+                  type='text'
                   label='Telephone'
                   placeholder='Telephone'
+                  error={state?.errors?.phoneNumber?.[0]}
+                  defaultValue={state?.inputs?.phoneNumber}
                 />
               </div>
               <InputField
@@ -56,7 +58,6 @@ const ContactInformationForm = () => {
                 placeholder='Subject'
                 error={state?.errors?.subject?.[0]}
                 defaultValue={state?.inputs?.subject}
-                required
               />
               <TextAreaInput
                 labelText='Comments / Questions'
@@ -65,7 +66,6 @@ const ContactInformationForm = () => {
                 placeHolder='Comments'
                 error={state?.errors?.comment?.[0]}
                 defaultValue={state?.inputs?.comment}
-                required
               />
               <div className='flex p-1.5 justify-end'>
                 <Button type='submit'>Submit</Button>

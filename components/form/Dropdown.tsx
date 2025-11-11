@@ -25,9 +25,15 @@ const Dropdown = ({
   defaultValue,
 }: DropdownProps) => {
   const [selected, setSelected] = useState(defaultValue || '');
+
+  const errorUnderOption = Boolean(defaultValue && error);
+  const errorInSelect = Boolean(!defaultValue && error);
+
   return (
     <div className='flex flex-col gap-1 flex-1'>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className={cn(error ? 'text-red-500' : '')}>
+        {error ? `${label} *` : label}
+      </label>
       <select
         id={id}
         name={name}
@@ -36,12 +42,13 @@ const Dropdown = ({
         className={cn(
           'border-2 border-(--clr-accent) p-3 rounded-[10px] text-(--clr-accent-3)',
           error ? 'border-red-500' : '',
-          selected ? 'font-semibold' : ''
+          selected ? 'font-semibold' : '',
+          errorInSelect && 'text-blac font-bold bg-red-50'
         )}
         defaultValue={defaultValue || ''}
       >
         <option value='' className='text-(--clr-accent-3) font-bold'>
-          {optionTitle}
+          {errorInSelect ? error : optionTitle}
         </option>
         {options.map((option) => (
           <option
@@ -53,7 +60,7 @@ const Dropdown = ({
           </option>
         ))}
       </select>
-      {error && <p className='text-red-500 text-sm mt-1'>{error}</p>}
+      {errorUnderOption && <p className='text-red-500 text-sm mt-1'>{error}</p>}
     </div>
   );
 };
