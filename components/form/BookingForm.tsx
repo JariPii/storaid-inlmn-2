@@ -35,7 +35,6 @@ const BookingForm = () => {
                   type='text'
                   label='Name'
                   placeholder='Name'
-                  required
                   error={state?.errors?.name?.[0]}
                   defaultValue={state?.inputs?.name}
                   onChange={handleName}
@@ -46,7 +45,6 @@ const BookingForm = () => {
                   type='email'
                   label='Email'
                   placeholder='Email'
-                  required
                   error={state?.errors?.email?.[0]}
                   defaultValue={state?.inputs?.email}
                 />
@@ -61,7 +59,6 @@ const BookingForm = () => {
                 defaultValue={chosenUnit}
                 onChange={setSelectedUnit}
                 error={state?.errors?.selectedUnit?.[0]}
-                required
               />
               <TextAreaInput
                 labelText='Storage purpose'
@@ -70,7 +67,6 @@ const BookingForm = () => {
                 placeHolder='Describe your storage purpose so that we can match your request'
                 error={state?.errors?.purpose?.[0]}
                 defaultValue={state?.inputs?.purpose}
-                required
               />
               <div className='flex justify-end p-1.5'>
                 <Button type='submit' disabled={isPending}>

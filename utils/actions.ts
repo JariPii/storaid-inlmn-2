@@ -274,9 +274,11 @@ export const sendBookingInformation = async (
         }
       }
 
+      const errorMessage = Object.values(errors)[0]?.[0];
+
       return {
         success: false,
-        message: `Fill out the required fields`,
+        message: errorMessage,
         errors,
         inputs: rawData,
       };
