@@ -21,7 +21,6 @@ export const contactInfoSchema = z.object({
     (val) => (val === '' ? undefined : val),
     z
       .string()
-      // .min(10, { error: 'Too short' })
       .regex(/^\+?[0-9\s]+$/, 'Only numbers')
       .refine((val) => val.replace(/[^\d]/g, '').length >= 9, {
         error: 'Invalid phonenumber.',
