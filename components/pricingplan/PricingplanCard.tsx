@@ -34,7 +34,7 @@ const PricingplanCard = ({
     setSelectedUnit(title);
     console.log(title);
 
-    router.push('/bookings');
+    router.push('/bookings/');
   };
 
   return (

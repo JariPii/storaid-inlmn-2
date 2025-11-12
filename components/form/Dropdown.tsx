@@ -43,7 +43,7 @@ const Dropdown = ({
           'border-2 border-(--clr-accent) p-3 rounded-[10px] text-(--clr-accent-3)',
           error ? 'border-red-500' : '',
           selected ? 'font-semibold' : '',
-          errorInSelect && 'text-blac font-bold bg-red-50'
+          errorInSelect && 'text-black  bg-red-50'
         )}
         defaultValue={defaultValue || ''}
       >

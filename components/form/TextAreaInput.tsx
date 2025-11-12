@@ -38,7 +38,7 @@ const TextAreaInput = ({
         className={cn(
           `border-2 rounded-[5px] border-(--clr-accent) placeholder:text-(--clr-accent-3) p-3  resize-none`,
           error ? 'border-red-500' : '',
-          errorInPlaceholder && 'text-black font-bold bg-red-50 ',
+          errorInPlaceholder && 'text-black bg-red-50 ',
           className
         )}
         placeholder={errorInPlaceholder ? error : placeHolder}

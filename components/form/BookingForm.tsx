@@ -39,6 +39,7 @@ const BookingForm = () => {
                   name='name'
                   type='text'
                   label='Name'
+                  labelOptionalError={state?.errors?.name?.[0]}
                   placeholder='Name'
                   error={state?.errors?.name?.[0]}
                   defaultValue={state?.inputs?.name}
@@ -53,6 +54,7 @@ const BookingForm = () => {
                   type='email'
                   label='Email'
                   placeholder='Email'
+                  labelOptionalError={state?.errors?.email?.[0]}
                   error={state?.errors?.email?.[0]}
                   defaultValue={state?.inputs?.email}
                   onChange={(e) => {

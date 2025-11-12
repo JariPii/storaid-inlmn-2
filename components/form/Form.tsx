@@ -61,7 +61,6 @@ const Form = <S extends ZodObject<any>>({
 
   const handleFieldChange = (field: keyof z.infer<S>, value: any) => {
     if (!schema) return;
-
     const fieldSchema = schema.pick({ [field]: true } as const);
 
     const partialData = { [field]: value } as Partial<z.infer<S>>;
