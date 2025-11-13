@@ -4,14 +4,20 @@ import { heroContent } from '@/components/hero/heroContent';
 import ServicesSection from '@/components/our_services/ServicesSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
+import { FAQError, TestimonailsError } from '../errorExports';
 
 const OurServicesPage = () => {
   return (
     <div>
       <Hero {...heroContent.services} />
       <ServicesSection />
-      <TestimonialsSection />
-      <FAQSection />
+      <ErrorBoundary errorComponent={TestimonailsError}>
+        <TestimonialsSection />
+      </ErrorBoundary>
+      <ErrorBoundary errorComponent={FAQError}>
+        <FAQSection />
+      </ErrorBoundary>
       <SuggestionSection />
     </div>
   );

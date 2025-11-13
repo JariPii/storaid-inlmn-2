@@ -5,6 +5,8 @@ import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
+import { TestimonailsError } from '../errorExports';
 
 const AboutPage = () => {
   return (
@@ -12,7 +14,9 @@ const AboutPage = () => {
       <Hero {...heroContent.about} />
       <AboutSection />
       <BrandsBar />
-      <TestimonialsSection />
+      <ErrorBoundary errorComponent={TestimonailsError}>
+        <TestimonialsSection />
+      </ErrorBoundary>
       <WhyChooseUs />
     </div>
   );

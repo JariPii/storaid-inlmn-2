@@ -4,6 +4,8 @@ import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import BookingSection from '@/components/bookings/BookingSection';
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
+import { FAQError } from '../errorExports';
 
 const BookingsPage = () => {
   return (
@@ -12,7 +14,9 @@ const BookingsPage = () => {
       <BookingSection />
       <WhyChooseUs />
       <SuggestionSection />
-      <FAQSection />
+      <ErrorBoundary errorComponent={FAQError}>
+        <FAQSection />
+      </ErrorBoundary>
     </div>
   );
 };

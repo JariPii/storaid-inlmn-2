@@ -37,7 +37,7 @@ export const fetchAllFAQs = async (): Promise<FAQ[]> => {
 
     return faqs;
   } catch (error) {
-    throw new Error('Something aint feelin raijt');
+    throw new Error('FAQs are unavailable right now');
   }
 };
 
@@ -59,7 +59,7 @@ export const fetchAllTesitmonials = async (): Promise<Testimonial[]> => {
 
     return testimonials;
   } catch (error) {
-    throw new Error('Something aint feelin raijt');
+    throw new Error('Testimonials are unavailable right now');
   }
 };
 

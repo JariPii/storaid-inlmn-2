@@ -3,6 +3,8 @@ import SubHeroContactUs from '@/components/hero/SubHeroContactUs';
 import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import ContactSection from '@/components/contact/ContactSection';
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
+import { FAQError } from '../errorExports';
 
 const ContactUsPage = () => {
   return (
@@ -10,7 +12,9 @@ const ContactUsPage = () => {
       <Hero {...heroContent.contact} />
       <ContactSection />
       <SubHeroContactUs />
-      <FAQSection />
+      <ErrorBoundary errorComponent={FAQError}>
+        <FAQSection />
+      </ErrorBoundary>
     </div>
   );
 };

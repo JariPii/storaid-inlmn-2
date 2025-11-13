@@ -9,7 +9,7 @@ import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
-import ErrorComp from './error';
+import { ErrorComp, TestimonailsError } from './errorExports';
 
 const HomePage = () => {
   return (
@@ -18,7 +18,9 @@ const HomePage = () => {
       <AboutSection />
       <BrandsBar />
       <ServicesSection />
-      <TestimonialsSection backgroundImage='with' />
+      <ErrorBoundary errorComponent={TestimonailsError}>
+        <TestimonialsSection backgroundImage='with' />
+      </ErrorBoundary>
       <WhyChooseUs />
       <PricingSection />
       <SuggestionSection />
