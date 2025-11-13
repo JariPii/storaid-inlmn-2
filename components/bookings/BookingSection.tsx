@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import BookingForm from '../form/BookingForm';
 import Section from '../global/Section';
-import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
+import moversImg from '../../public/images/layoutImages/lo-img1.webp';
 
 const BookingSection = () => {
   return (

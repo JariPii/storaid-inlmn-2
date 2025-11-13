@@ -8,6 +8,8 @@ import ServicesSection from '@/components/our_services/ServicesSection';
 import SuggestionSection from '@/components/suggestion/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
+import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
+import ErrorComp from './error';
 
 const HomePage = () => {
   return (
@@ -20,7 +22,9 @@ const HomePage = () => {
       <WhyChooseUs />
       <PricingSection />
       <SuggestionSection />
-      <BlogSection />
+      <ErrorBoundary errorComponent={ErrorComp}>
+        <BlogSection />
+      </ErrorBoundary>
     </main>
   );
 };

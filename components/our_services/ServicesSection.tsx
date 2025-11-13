@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Section from '../global/Section';
 import Tile from '../global/Tiles';
-import serviceImage from '../../public/images/layoutImages/chuttersnap-BNBA1h-NgdY-unsplash.jpg';
+import serviceImage from '../../public/images/layoutImages/lo-img2.webp';
 
 const ServicesSection = () => {
   return (

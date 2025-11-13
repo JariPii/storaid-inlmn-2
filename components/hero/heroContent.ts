@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import image from '../../public/images/Rectangle2.svg';
+import image from '../../public/images/Rectangle2.webp';
 
 type HeroContent = {
   invitation?: string;

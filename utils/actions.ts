@@ -80,7 +80,7 @@ export const fetchAllBlogs = async (): Promise<Blog[]> => {
 
     return blogs;
   } catch (error) {
-    throw new Error('Something aint feelin raijt');
+    throw new Error('Blogs are unavailable right now');
   }
 };
 

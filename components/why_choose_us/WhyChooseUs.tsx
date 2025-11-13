@@ -1,5 +1,5 @@
 import Section from '../global/Section';
-import moversImg from '../../public/images/layoutImages/alberto-rodriguez--aCrA9FmT8Y-unsplash.jpg';
+import moversImg from '../../public/images/layoutImages/lo-img3.webp';
 import Image from 'next/image';
 import { padlock, moneybag, broom, clock } from '@/public/images/icons/icons';
 

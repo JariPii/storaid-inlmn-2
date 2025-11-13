@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import quotes from '../../public/images/quotes.svg';
-import { FaStar } from 'react-icons/fa6';
+import { FaRegStar, FaStar } from 'react-icons/fa6';
 
 type TestimonialProps = {
   //   rating?: string;
@@ -22,8 +22,8 @@ const TestimonialCard = ({
   return (
     <div className='max-w-[27.3rem] flex flex-col gap-8 p-8 rounded-[10px] border-2 bg-(--clr-primary)'>
       <div className='flex gap-1 text-(--clr-secondary)'>
-        {Array.from({ length: rating }).map((_, i) => (
-          <FaStar key={i} size={25} />
+        {Array.from({ length: 5 }, (_, i) => (
+          <span key={i}>{i < rating ? <FaStar /> : <FaRegStar />} </span>
         ))}
       </div>
       <p className='max-w-[38ch]'>{comment}</p>

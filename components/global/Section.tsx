@@ -20,7 +20,7 @@ const Section = ({
   };
 
   const withBackgroundImage = {
-    with: 'bg-[url(/images/BgImg.png)] bg-no-repeat bg-cover bg-top',
+    with: 'bg-[url(/images/BgImg_opt.webp)] bg-no-repeat bg-cover bg-top',
     withOut: 'bg-transparent',
   };
 

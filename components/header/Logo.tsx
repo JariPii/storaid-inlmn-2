@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import logo from '../../public/images/Logo.png';
+import logo from '../../public/images/Logo_opt.webp';
 import Image from 'next/image';
 
 const Logo = () => {

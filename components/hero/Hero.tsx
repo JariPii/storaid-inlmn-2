@@ -51,6 +51,8 @@ const Hero = ({
             className='h-[32rem] absolute bottom-0 right-0'
             width={500}
             height={500}
+            priority={true}
+            fetchPriority='high'
           />
         )}
       </div>

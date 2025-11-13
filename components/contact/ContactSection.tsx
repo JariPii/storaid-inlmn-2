@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ContactInformationForm from '../form/ContactInformationForm';
 import Section from '../global/Section';
-import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
+import moversImg from '../../public/images/layoutImages/lo-img4.webp';
 
 const ContactSection = () => {
   return (

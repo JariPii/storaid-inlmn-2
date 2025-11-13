@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Section from '../global/Section';
-import moversImg from '../../public/images/layoutImages/centre-for-ageing-better-ZlOlRnWk8zU-unsplash.jpg';
+import moversImg from '../../public/images/layoutImages/lo-img1.webp';
 import Tile from '../global/Tiles';
 import { Button, NavButton } from '../buttons/Buttons';
 import { MdPhone } from 'react-icons/md';
@@ -18,8 +18,7 @@ const AboutSection = () => {
           src={moversImg}
           alt='Moving truck and movers trying to lift a big window.'
           className='image-frame'
-          fetchPriority='high'
-          priority
+          loading='lazy'
         />
         <StatsCard className='absolute -bottom-4 left-6' />
       </div>
