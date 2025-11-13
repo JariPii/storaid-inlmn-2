@@ -14,13 +14,10 @@ import {
   BookingData,
   ContactData,
   SubscribeData,
+  FAQ,
+  Blog,
+  Testimonial,
 } from './types';
-
-export type FAQ = {
-  id?: number;
-  title: string;
-  description: string;
-};
 
 export const fetchAllFAQs = async (): Promise<FAQ[]> => {
   const url = API.FAQ;
@@ -42,15 +39,6 @@ export const fetchAllFAQs = async (): Promise<FAQ[]> => {
   } catch (error) {
     throw new Error('Something aint feelin raijt');
   }
-};
-
-export type Testimonial = {
-  id?: number;
-  comment: string;
-  name: string;
-  companyName: string;
-  avatarUrl: string;
-  rating: number;
 };
 
 export const fetchAllTesitmonials = async (): Promise<Testimonial[]> => {
@@ -75,14 +63,6 @@ export const fetchAllTesitmonials = async (): Promise<Testimonial[]> => {
   }
 };
 
-export type Blog = {
-  id: string;
-  created: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-};
-
 export const fetchAllBlogs = async (): Promise<Blog[]> => {
   const url = API.BLOGS;
   try {
@@ -104,9 +84,6 @@ export const fetchAllBlogs = async (): Promise<Blog[]> => {
   }
 };
 
-export type Subscribe = {
-  email: string;
-};
 // !! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 export const subscribeEmail = async (
@@ -166,14 +143,6 @@ export const subscribeEmail = async (
   }
 };
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-export type ContactFormCredentials = {
-  name: string;
-  email: string;
-  phoneNumber?: string;
-  subject: string;
-  comment: string;
-};
 
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -247,13 +216,6 @@ export const sendContactInformation = async (
 };
 
 // !!!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-export type BookingsInformation = {
-  name: string;
-  email: string;
-  selectedUnit: string;
-  prupose: string;
-};
 
 export const sendBookingInformation = async (
   _prevState: ActionResponse<BookingData> | null,

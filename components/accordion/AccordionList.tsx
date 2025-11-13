@@ -1,5 +1,5 @@
 'use client';
-import { FAQ } from '@/utils/actions';
+import { FAQ } from '@/utils/types';
 import Accordion from './Accordion';
 import { useState } from 'react';
 

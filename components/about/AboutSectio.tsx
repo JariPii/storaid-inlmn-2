@@ -48,7 +48,7 @@ const AboutSection = () => {
           />
         </div>
         <div className='flex justify-between items-center w-[90%]'>
-          <NavButton href='/bookings' label='Discover More' />
+          <NavButton href='/about' label='Discover More' />
           <div className='flex gap-3 p-2'>
             <div className='bg-(--clr-secondary) flex items-center justify-center rounded-full p-4'>
               <MdPhone className='text-(--clr-accent) w-[1.875rem] h-[1.875rem]' />

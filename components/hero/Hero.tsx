@@ -24,7 +24,7 @@ const Hero = ({
   return (
     <Section>
       <div className='grid grid-cols-[60%_1fr] py-[10rem] grid-rows-[1fr] relative'>
-        <div className='flex items-start justify-center flex-col gap-4'>
+        <div className='flex items-start justify-center flex-col gap-6'>
           {invitation && (
             <h1 className='text-(--clr-accent) font-bold leading-6 text-2xl'>
               {invitation}
@@ -38,7 +38,7 @@ const Hero = ({
           </p>
           {buttonText && buttonLink && (
             <NavButton
-              href='/bookings'
+              href='/our_services'
               label='Discover More'
               colorVariant='darkBg'
             />

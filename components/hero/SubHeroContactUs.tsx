@@ -73,7 +73,7 @@ const SubHeroContactUs = () => {
             <h3 className='text-[1.5rem] font-semibold text-(--clr-secondary) tracking-tight'>
               Our Social Media
             </h3>
-            <div className='border-b-[1px] w-[8rem]'></div>
+            <div className='border-b-[1px] border-black w-[10rem]'></div>
             <HeaderSocials />
           </div>
         </div>
