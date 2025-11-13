@@ -1,5 +1,5 @@
 'use client';
-import { Blog } from '@/utils/actions';
+import { Blog } from '@/utils/types';
 import { useState } from 'react';
 import BlogCard from './BlogCard';
 

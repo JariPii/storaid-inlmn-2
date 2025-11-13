@@ -1,6 +1,6 @@
 'use client';
 
-import { Testimonial } from '@/utils/actions';
+import { Testimonial } from '@/utils/types';
 import TestimonialCard from './TestimonialCard';
 
 type Props = {
