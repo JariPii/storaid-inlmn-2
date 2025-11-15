@@ -10,10 +10,12 @@ export const contactInfoSchema = z.object({
   name: z
     .string()
     .regex(/^[A-Za-z\s]+$/, 'Enter name, only letters are accepted')
-    .refine((val) => val.replace(/\s/g, '').length >= 2, {
+    .min(2, {
       error: 'Name is too short.',
     })
-    .max(15, { error: 'Name is too long' }),
+    .refine((val) => val.replace(/\s/g, '').length <= 50, {
+      error: 'Name is too long',
+    }),
   email: z.email({
     error: 'Enter a valid email address',
   }),
@@ -57,9 +59,13 @@ export type ContactInfoSchema = z.infer<typeof contactInfoSchema>;
 export const bookingSchema = z.object({
   name: z
     .string()
-    .regex(/^[A-Za-z]+$/, 'Enter name, only letters are accepted')
-    .min(2, { error: 'Name must be atleast 2 letters' })
-    .max(15, { error: 'Name is too long' }),
+    .regex(/^[A-Za-z\s]+$/, 'Enter name, only letters are accepted')
+    .min(2, {
+      error: 'Name is too short.',
+    })
+    .refine((val) => val.replace(/\s/g, '').length <= 50, {
+      error: 'Name is too long',
+    }),
   email: z.email({ error: 'Enter a valid email' }),
   selectedUnit: z.string().min(1, { error: 'Choose a unit' }),
   purpose: z.string().superRefine((val, ctx) => {
