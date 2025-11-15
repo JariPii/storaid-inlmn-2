@@ -1,6 +1,6 @@
 'use client';
 
-import { useBooking, useName } from '@/hooks/BookingContext';
+import { useBooking, useName } from '@/hooks/FormContext';
 import { cn } from '@/lib/utils';
 import { ActionResponse } from '@/utils/types';
 import {

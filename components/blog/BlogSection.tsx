@@ -1,14 +1,14 @@
 'use cache';
 import Section from '../global/Section';
 import { fetchAllBlogs } from '@/utils/actions';
-import BlogCardsList from './BlogCardsList';
-import { LoadingBlogContainer } from '../global/BlogCardSkeleton';
+import { LoadingBlogContainer } from './BlogCardSkeleton';
 import { Suspense } from 'react';
 import { cacheLife } from 'next/cache';
+import BlogsContainer from './BlogsContainer';
 
 const BlogSection = async () => {
-  const blogs = await fetchAllBlogs();
   cacheLife('days');
+  const blogs = await fetchAllBlogs();
 
   return (
     <div>
@@ -35,7 +35,7 @@ const BlogSection = async () => {
         </div>
         <div className='flex gap-6'>
           <Suspense fallback={<LoadingBlogContainer />}>
-            <BlogCardsList blogs={blogs} />
+            <BlogsContainer />
           </Suspense>
         </div>
       </Section>

@@ -1,6 +1,6 @@
 import AboutSection from '@/components/about/AboutSectio';
 import BrandsBar from '@/components/brands/BrandsBar';
-import BlogCardSkeleton from '@/components/global/BlogCardSkeleton';
+import BlogCardSkeleton from '@/components/blog/BlogCardSkeleton';
 import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';

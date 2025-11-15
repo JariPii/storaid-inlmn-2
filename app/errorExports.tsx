@@ -1,11 +1,11 @@
 'use client';
 
-import BlogCardSkeleton from '@/components/global/BlogCardSkeleton';
-import TestimonialSkeleton from '@/components/global/TestimonialSkeleton';
+import BlogCardSkeleton from '@/components/blog/BlogCardSkeleton';
+import TestimonialSkeleton from '@/components/testimonials/TestimonialSkeleton';
 import Section from '@/components/global/Section';
-import FAQSkeleton from '@/components/global/FAQSkeleton';
+import FAQSkeleton from '@/components/faq/FAQSkeleton';
 
-export function ErrorComp({ error }: { error: Error }) {
+export function BlogsError({ error }: { error: Error }) {
   return (
     <div>
       <div>

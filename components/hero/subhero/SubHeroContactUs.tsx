@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import PersonImage from '@/public/images/ContactUsPerson.png';
-import Section from '../global/Section';
-import HeaderSocials from '../header/Socials';
 import phone from '@/public/images/phone.svg';
 import envelope from '@/public/images/envelope.svg';
 import mapPin from '@/public/images/map-pointer.svg';
+import Section from '@/components/global/Section';
+import HeaderSocials from '@/components/header/Socials';
 
 const SubHeroContactUs = () => {
   return (
