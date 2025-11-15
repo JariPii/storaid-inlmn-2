@@ -17,7 +17,7 @@ const NavLinks = () => {
               key={link.href}
               href={link.href}
               className={cn(
-                ' px-3 py-1 rounded-sm hover:text-(--clr-primary) hover:bg-(--clr-accent-3)',
+                ' px-3 py-1 text-lg rounded-sm hover:text-(--clr-primary) hover:bg-(--clr-accent-3)',
                 `${
                   isActive
                     ? 'text-(--clr-accent) bg-(--clr-secondary)'
