@@ -10,6 +10,7 @@ import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
 import { BlogsError, TestimonailsError } from './errorExports';
+import Section from '@/components/global/Section';
 
 const HomePage = () => {
   return (
@@ -19,9 +20,11 @@ const HomePage = () => {
       <BrandsBar />
       <ServicesSection />
       <ErrorBoundary errorComponent={TestimonailsError}>
-        <TestimonialsSection backgroundImage='with' />
+        <TestimonialsSection />
       </ErrorBoundary>
-      <WhyChooseUs />
+      <Section variant='brands' className='flex flex-col gap-4 py-20'>
+        <WhyChooseUs />
+      </Section>
       <PricingSection />
       <SuggestionSection />
       <ErrorBoundary errorComponent={BlogsError}>

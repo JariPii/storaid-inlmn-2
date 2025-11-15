@@ -12,13 +12,13 @@ const FAQSection = async () => {
   const faqs = await fetchAllFAQs();
   return (
     <div>
-      <Section variant='light' className='flex flex-col gap-4 py-20'>
+      <Section variant='light' className='flex flex-col gap-12 py-20'>
         <div className='bg-(--clr-secondary) p-2'>
           <h3 className='text-2xl text-(--clr-accent) font-bold'>FAQs</h3>
         </div>
         <div className='grid grid-cols-2 gap-1'>
           <div className='w-full'>
-            <h4 className='text-[3.25rem] font-bold tracking-tighter leading-[52px]'>
+            <h4 className='text-[3.25rem] text-(--clr-secondary) font-bold tracking-tight leading-[52px]'>
               Frequently Ask Questions
             </h4>
             <p className='leading-6 text-(--clr-secondary)'>

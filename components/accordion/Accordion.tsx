@@ -30,18 +30,15 @@ const Accordion = ({
       >
         <h3
           className={cn(
-            'font-semibold transition-all duration-500',
-            !open ? 'text-(--clr-secondary)' : 'text-(--clr-primary)'
+            'font-semibold transition-all duration-500 text-(--clr-secondary)'
           )}
         >
           {title}
         </h3>
         <FaChevronDown
           className={cn(
-            'transition-all duration-500',
-            !open
-              ? 'rotate-0 text-(--clr-secondary)'
-              : 'rotate-180 text-(--clr-primary)'
+            'transition-all duration-500 text-(--clr-secondary)',
+            !open ? 'rotate-0' : 'rotate-180'
           )}
         />
       </div>
