@@ -1,50 +1,30 @@
 'use client';
 
-// import BlogCardSkeleton from '@/components/global/BlogCardSkeleton';
-// import Section from '@/components/global/Section';
+import errorImg from '@/public/images/error.webp';
 
-// export default function ErrorComp({ error }: { error: Error }) {
-//   return (
-//     <div>
-//       <div>
-//         <Section variant='light' className='flex flex-col gap-4 py-20'>
-//           <div className='bg-(--clr-secondary) p-2'>
-//             <h3 className='text-2xl text-(--clr-accent) font-bold'>
-//               Latest Blog and News
-//             </h3>
-//           </div>
-//           <div className='grid grid-cols-2 gap-1'>
-//             <div className='w-full'>
-//               <h4 className='text-[3.25rem] font-bold leading-[52px]'>
-//                 Check Out Our Latest Blog and News Update
-//               </h4>
-//             </div>
+import Section from '@/components/global/Section';
+import Image from 'next/image';
 
-//             <div className='flex items-center h-auto'>
-//               <p>
-//                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-//                 molestie nisl sed dui lacinia gravida. Nulla quis nulla leo.
-//                 Mauris ac blandit nisi non sodales augue. Phasellus eget elit
-//                 gravida.
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className='flex flex-col items-center gap-6'>
-//             <div className='flex gap-4'>
-//               <h3 className='text-3xl text-red-400 font-bold'>
-//                 <span>{error.message}</span>
-//               </h3>
-//             </div>
-
-//             <div className='flex gap-6'>
-//               <BlogCardSkeleton />
-//               <BlogCardSkeleton />
-//               <BlogCardSkeleton />
-//             </div>
-//           </div>
-//         </Section>
-//       </div>
-//     </div>
-//   );
-// }
+export default function ErrorComp({ error }: { error: Error }) {
+  return (
+    <div className='h-full w-full relative overflow-hidden bg-[url(/images/error.webp)] bg-cover bg-center'>
+      <div className='absolute rotate-45 bg-(--clr-secondary) h-[15rem] w-[15rem] top-0 left-0 -translate-x-1/2 -translate-y-1/2' />
+      <div className='absolute rotate-45 bg-(--clr-secondary) h-[15rem] w-[15rem] top-0 right-0 translate-x-1/2 -translate-y-1/2' />
+      <div className='h-[80dvh] w-auto border-6 border-(--clr-secondary)'>
+        <div className='flex flex-col items-center justify-around h-full w-full bg-(--clr-error-img-overlay)'>
+          <h2 className='text-(--clr-accent) underline underline-offset-6 text-7xl font-bold text-shadow-lg text-shadow-red-500'>
+            We at StorAid are really sorry!
+          </h2>
+          <h3 className='text-(--clr-accent) text-6xl font-bold text-shadow-lg text-shadow-red-500'>
+            There seems to be some difficulties right now!
+          </h3>
+          <h3 className='text-(--clr-accent) text-6xl font-bold text-shadow-lg text-shadow-red-500'>
+            Please try again later!
+          </h3>
+        </div>
+      </div>
+      <div className='absolute rotate-45 bg-(--clr-secondary) h-[15rem] w-[15rem] bottom-0 left-0 -translate-x-1/2 translate-y-1/2' />
+      <div className='absolute rotate-45 bg-(--clr-secondary) h-[15rem] w-[15rem] bottom-0 right-0 translate-x-1/2 translate-y-1/2' />
+    </div>
+  );
+}

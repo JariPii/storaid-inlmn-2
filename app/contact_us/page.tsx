@@ -1,10 +1,10 @@
 import FAQSection from '@/components/faq/FAQSection';
-import SubHeroContactUs from '@/components/hero/SubHeroContactUs';
 import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import ContactSection from '@/components/contact/ContactSection';
 import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
 import { FAQError } from '../errorExports';
+import SubHeroContactUs from '@/components/hero/subhero/SubHeroContactUs';
 
 const ContactUsPage = () => {
   return (

@@ -1,5 +1,3 @@
-import { FaArrowRight, FaRegCalendar } from 'react-icons/fa6';
-
 export const LoadingBlogContainer = () => {
   return (
     <div className='flex gap-4'>

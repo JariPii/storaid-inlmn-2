@@ -5,11 +5,11 @@ import Hero from '@/components/hero/Hero';
 import { heroContent } from '@/components/hero/heroContent';
 import PricingSection from '@/components/pricingplan/PricingSection';
 import ServicesSection from '@/components/our_services/ServicesSection';
-import SuggestionSection from '@/components/suggestion/SuggestionSection';
+import SuggestionSection from '@/components/hero/subhero/SuggestionSection';
 import TestimonialsSection from '@/components/testimonials/TestimonialsSection';
 import WhyChooseUs from '@/components/why_choose_us/WhyChooseUs';
 import { ErrorBoundary } from 'next/dist/client/components/error-boundary';
-import { ErrorComp, TestimonailsError } from './errorExports';
+import { BlogsError, TestimonailsError } from './errorExports';
 
 const HomePage = () => {
   return (
@@ -24,7 +24,7 @@ const HomePage = () => {
       <WhyChooseUs />
       <PricingSection />
       <SuggestionSection />
-      <ErrorBoundary errorComponent={ErrorComp}>
+      <ErrorBoundary errorComponent={BlogsError}>
         <BlogSection />
       </ErrorBoundary>
     </main>

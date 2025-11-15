@@ -4,7 +4,7 @@ import Form from './Form';
 import InputField from './InputField';
 import TextAreaInput from './TextAreaInput';
 import { Button } from '../buttons/Buttons';
-import { useBooking, useName } from '@/hooks/BookingContext';
+import { useBooking, useName } from '@/hooks/FormContext';
 import { pricingPlans } from '@/utils/unitPricing';
 import Dropdown from './Dropdown';
 import { bookingSchema } from '@/utils/formSchemas';

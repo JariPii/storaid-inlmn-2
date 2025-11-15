@@ -28,7 +28,7 @@ const AboutSection = () => {
             About Us
           </h3>
         </div>
-        <h4 className='text-[3.25rem] leading-[52px] tracking-tight font-bold font-urbanist'>
+        <h4 className='text-[3.25rem] leading-[52px] font-bold font-urbanist'>
           Providing a Safe Space for Your Treasured Items
         </h4>
         <p className='leading-6 font-norma font-inter'>
