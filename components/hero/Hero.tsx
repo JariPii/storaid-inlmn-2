@@ -49,8 +49,6 @@ const Hero = ({
             src={imgSrc}
             alt={alt || 'hero image'}
             className='h-[34rem] w-auto absolute bottom-0 right-0'
-            // width={500}
-            // height={500}
             priority={true}
             fetchPriority='high'
           />

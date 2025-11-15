@@ -21,7 +21,7 @@ const Accordion = ({
     <div className='w-full border-amber-200'>
       <div
         className={cn(
-          'flex justify-between p-5 rounded-[5px] bg-(--clr-color-2) hover:bg-(--clr-accent)',
+          'flex justify-between p-5 rounded-[5px] bg-(--clr-color-2) hover:bg-(--clr-accent) hover:cursor-pointer',
           {
             'bg-(--clr-accent)': open,
           }

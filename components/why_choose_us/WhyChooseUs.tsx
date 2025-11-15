@@ -6,13 +6,11 @@ import { padlock, moneybag, broom, clock } from '@/public/images/icons/icons';
 const WhyChooseUs = () => {
   return (
     <div>
-      {/* <Section variant='brands' className='flex flex-col gap-4 py-20'> */}
       <div className='bg-(--clr-secondary) p-2'>
         <h3 className='text-2xl text-(--clr-accent) font-bold'>
           Why Choose Us
         </h3>
       </div>
-      {/* <div className='flex justify-between gap-24'> */}
       <div className='grid grid-cols-2 gap-1'>
         <div className='w-full'>
           <h4 className='text-[3.25rem] font-bold tracking-tighter leading-[52px]'>
@@ -20,7 +18,6 @@ const WhyChooseUs = () => {
           </h4>
         </div>
         <div className='flex items-center h-auto'>
-          {/* <p className='w-[95ch] leading-6'> */}
           <p className='leading-6 text-(--clr-secondary)'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             molestie nisl sed dui lacinia gravida. Nulla quis nulla leo. Mauris
@@ -103,7 +100,6 @@ const WhyChooseUs = () => {
           className='image-frame object-cover h-full w-full'
         />
       </div>
-      {/* </Section> */}
     </div>
   );
 };

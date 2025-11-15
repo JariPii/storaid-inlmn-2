@@ -1,15 +1,9 @@
-import { fetchAllFAQs } from '@/utils/actions';
-import AccordionList from '../accordion/AccordionList';
 import Section from '../global/Section';
 import FAQSkeleton from './FAQSkeleton';
-import { cacheLife } from 'next/cache';
 import { Suspense } from 'react';
 import FAQsContainer from './FAQsContainer';
 
-const FAQSection = async () => {
-  'use cache';
-  cacheLife('days');
-  const faqs = await fetchAllFAQs();
+const FAQSection = () => {
   return (
     <div>
       <Section variant='light' className='flex flex-col gap-12 py-20'>

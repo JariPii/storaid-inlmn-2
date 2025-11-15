@@ -1,18 +1,10 @@
 import { Suspense } from 'react';
-import TestimonialSkeleton, {
-  LoadingTestimonialsContainer,
-} from './TestimonialSkeleton';
+import { LoadingTestimonialsContainer } from './TestimonialSkeleton';
 import Section from '../global/Section';
-import TestimonialsList from './TestimonialsList';
-import { fetchAllTesitmonials } from '@/utils/actions';
-import { cacheLife } from 'next/cache';
 import TestimonialsContainer from './TestimonialsContainer';
 import SectionBackgroundImage from '../global/SectionBackgroundImage';
 
-const TestimonialsSection = async () => {
-  // 'use cache';
-  // cacheLife('days');
-
+const TestimonialsSection = () => {
   return (
     <SectionBackgroundImage>
       <Section className='py-24'>

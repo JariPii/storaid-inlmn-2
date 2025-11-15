@@ -1,11 +1,7 @@
 import { toast } from 'sonner';
 import Image from 'next/image';
 import logo from '@/public/images/Logo.png';
-import {
-  capitalizeFirstLetter,
-  returnMessages,
-  separateEmail,
-} from '@/utils/toastMessages';
+import { returnMessages } from '@/utils/toastMessages';
 
 export function successToast(message: string, senderName?: any) {
   const { heading, body } = returnMessages(message);
@@ -21,7 +17,6 @@ export function successToast(message: string, senderName?: any) {
         className='bg-(--clr-primary) h-10 w-auto'
       />
       <h2 className='text-(--clr-accent) text-center text-nowrap text-3xl'>
-        {/* {heading}  */}
         {senderName ? `${heading} ${senderName}!` : `${heading}`}
       </h2>
       {body && (

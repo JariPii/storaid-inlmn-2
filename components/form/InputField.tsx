@@ -29,8 +29,6 @@ const InputField = ({
   error,
   onChange,
 }: InputFieldProps) => {
-  // TODO: Add optional chaining to error and labelOptional text, default and error!!
-
   return (
     <div className='flex flex-col gap-1 flex-1'>
       <div className='flex gap-1'>

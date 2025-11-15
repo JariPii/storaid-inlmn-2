@@ -15,11 +15,8 @@ type PricingplanCardProps = {
   className?: string;
 };
 
-// TODO: Add destination to bookings page with chosen unit allready set in the form
-
 const PricingplanCard = ({
   title,
-  //   currency,
   checks,
   price,
   subscription,
@@ -32,7 +29,6 @@ const PricingplanCard = ({
 
   const handleChooseUnit = () => {
     setSelectedUnit(title);
-    console.log(title);
 
     router.push('/bookings/');
   };

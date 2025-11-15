@@ -6,16 +6,10 @@ import InputField from './InputField';
 import TextAreaInput from './TextAreaInput';
 import { sendContactInformation } from '@/utils/actions';
 import { useName } from '@/hooks/FormContext';
-import { useState } from 'react';
 import { contactInfoSchema } from '@/utils/formSchemas';
 
 const ContactInformationForm = () => {
   const { setSenderName } = useName();
-  const [isEmpty, setIsEmpty] = useState('');
-
-  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSenderName(e.target.value);
-  };
 
   return (
     <>

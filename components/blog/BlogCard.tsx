@@ -97,5 +97,3 @@ const BlogCard = ({
   );
 };
 export default BlogCard;
-
-// TODO: Finish the blogcards text and so on!!!

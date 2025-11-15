@@ -1,15 +1,9 @@
-'use cache';
 import Section from '../global/Section';
-import { fetchAllBlogs } from '@/utils/actions';
 import { LoadingBlogContainer } from './BlogCardSkeleton';
 import { Suspense } from 'react';
-import { cacheLife } from 'next/cache';
 import BlogsContainer from './BlogsContainer';
 
-const BlogSection = async () => {
-  cacheLife('days');
-  const blogs = await fetchAllBlogs();
-
+const BlogSection = () => {
   return (
     <div>
       <Section variant='light' className='flex flex-col gap-4 py-20'>

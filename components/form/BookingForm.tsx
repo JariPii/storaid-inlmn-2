@@ -18,10 +18,6 @@ const BookingForm = () => {
     label: unit.title,
   }));
 
-  const handleName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSenderName(e.target.value);
-  };
-
   return (
     <>
       <Form

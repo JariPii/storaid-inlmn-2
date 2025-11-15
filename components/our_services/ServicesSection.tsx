@@ -19,7 +19,6 @@ const ServicesSection = () => {
             </h4>
           </div>
           <div className='max-w-[90ch] flex items-center h-auto'>
-            {/* <p className='w-[95ch] leading-6'> */}
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
               molestie nisl sed dui lacinia gravida. Nulla quis nulla leo.
@@ -41,13 +40,11 @@ const ServicesSection = () => {
               className=''
             />
           </div>
-          {/* <div className='h-full w-full'> */}
           <Image
             src={serviceImage}
             alt='Warehouse shelves'
             className='image-frame object-cover h-full w-full'
           />
-          {/* </div> */}
           <div className='flex flex-col gap-4'>
             <Tile
               title='Vehicle Storage'

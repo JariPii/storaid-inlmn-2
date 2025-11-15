@@ -29,7 +29,6 @@ const SubHeroContactUs = () => {
           </p>
           <div className='flex gap-3'>
             <div className=' bg-(--clr-secondary) rounded-full flex items-center justify-center w-[4rem] h-[4rem]'>
-              {/* <MdPhone size={30} className='text-(--clr-accent) ' /> */}
               <Image src={phone} alt='Phone icon' />
             </div>
             <div>
@@ -43,7 +42,6 @@ const SubHeroContactUs = () => {
           </div>
           <div className='flex gap-3'>
             <div className=' bg-(--clr-secondary) rounded-full flex items-center justify-center w-[4rem] h-[4rem]'>
-              {/* <MdPhone className='text-(--clr-accent) text-3xl' /> */}
               <Image src={envelope} alt='Envelope icon' />
             </div>
             <div>
@@ -57,7 +55,6 @@ const SubHeroContactUs = () => {
           </div>
           <div className='flex gap-3'>
             <div className=' bg-(--clr-secondary) rounded-full flex items-center justify-center w-[4rem] h-[4rem]'>
-              {/* <MdPhone className='text-(--clr-accent) text-3xl' /> */}
               <Image src={mapPin} alt='Map pin icon' />
             </div>
             <div>

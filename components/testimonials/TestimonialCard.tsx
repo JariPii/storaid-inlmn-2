@@ -3,7 +3,6 @@ import quotes from '../../public/images/quotes.svg';
 import { FaRegStar, FaStar } from 'react-icons/fa6';
 
 type TestimonialProps = {
-  //   rating?: string;
   id?: number;
   rating: number;
   comment: string;
