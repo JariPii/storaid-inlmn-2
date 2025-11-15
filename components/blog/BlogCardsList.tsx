@@ -10,7 +10,6 @@ const BlogCardsList = ({ blogs }: Props) => {
 
   const handleToggleCard = (id?: string) => {
     if (id === undefined) return;
-    console.log(id);
 
     setIsExpanded((prev) => (prev === id ? null : id));
   };

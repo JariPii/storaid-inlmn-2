@@ -7,22 +7,13 @@ import { FormProvider } from '@/hooks/FormContext';
 import Providers from './providers';
 import SubscribeSection from '@/components/subscribe/SubscribeSection';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
 const urbanist = Urbanist({
   variable: '--font-urbanist',
   subsets: ['latin'],
 });
 
 const inter = Inter({
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+  variable: '--font-inter',
   subsets: ['latin'],
 });
 
@@ -54,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${urbanist.className} ${inter.className} antialiased`}>
+      <body className={`${urbanist.variable} ${inter.variable} antialiased`}>
         <Header />
         <Providers>
           {children}
